@@ -63,7 +63,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphBody" runat="Server">
     <fieldset>
-        <h3 class="searchTitle">Thông Tin Dự Án</h3>
+        <h3 class="searchTitle">Thông Tin</h3>
         <asp:FormView ID="FormView1" runat="server" DataSourceID="ObjectDataSource2" EnableModelValidation="True"
             Width="100%">
             <ItemTemplate>
@@ -98,11 +98,11 @@
     <asp:RadProgressArea ID="ProgressArea1" runat="server" Culture="vi-VN" DisplayCancelButton="True"
         HeaderText="Đang tải" Skin="Office2007" Style="position: fixed; top: 50% !important; left: 50% !important; margin: -93px 0 0 -188px;" />
     <asp:RadAsyncUpload ID="FileImageAlbum" runat="server" MultipleFileSelection="Automatic"
-        TargetFolder="~/res/projectcategory/album/" TemporaryFolder="~/res/TempAsync" Width="100%"
+        TargetFolder="~/res/projectcategory/album/" TemporaryFolder="~/res/TempAsync" CssClass="file-upload"
         AllowedFileExtensions="jpg,jpeg,gif,png" Localization-Select="Chọn" Localization-Cancel="Hủy"
         Localization-Remove="Xóa" OnFileUploaded="FileImageAlbum_FileUploaded">
     </asp:RadAsyncUpload>
-    <asp:RadButton ID="btnUpload" runat="server" Text="Thêm" ShowPostBackMask="False">
+    <asp:RadButton ID="btnUpload" runat="server" Text="Thêm" ShowPostBackMask="False" CssClass="btn-add">
         <Icon PrimaryIconUrl="~/ad/assets/images/up.png" />
     </asp:RadButton>
     <asp:RadAjaxPanel runat="server" ID="RadAjaxPanel1" ClientEvents-OnRequestStart="conditionalPostback">
@@ -172,6 +172,8 @@
                                     Text='<%# Eval("Priority") %>' EmptyMessage="Thứ tự..." Type="Number" ToolTip="Thứ tự">
                                     <NumberFormat AllowRounding="false" DecimalDigits="0" GroupSeparator="." />
                                 </asp:RadNumericTextBox>
+                                <asp:CheckBox ID="chkIsBackground" runat="server" Checked='<%# string.IsNullOrEmpty(Eval("IsBackground").ToString()) ? false : Eval("IsBackground") %>'
+                                    ToolTip="Background" TextAlign="Left" CssClass="checkbox vam" Text="Background" Visible="false"/>
                                 <asp:CheckBox ID="chkIsAvailable" runat="server" Checked='<%# string.IsNullOrEmpty(Eval("IsAvailable").ToString()) ? false : Eval("IsAvailable") %>'
                                     ToolTip="Hiển thị" TextAlign="Left" CssClass="checkbox vam" Text="Hiển thị"/>
                             </td>
@@ -238,6 +240,8 @@
                         </tr>
                         <tr>
                             <td class="left" colspan="2">
+                                <asp:CheckBox ID="chkAddIsBackground" runat="server" Checked='<%# (Container is RadListViewInsertItem) ? false : Eval("IsBackground")%>'
+                                    Text="Background" CssClass="checkbox" />
                                 <asp:CheckBox ID="chkAddIsAvailable" runat="server" Checked='<%# (Container is RadListViewInsertItem) ? true : Eval("IsAvailable")%>'
                                     Text="Hiển thị" CssClass="checkbox" />
                             </td>
@@ -317,6 +321,8 @@
                         </tr>
                         <tr>
                             <td class="left" colspan="2">
+                                <asp:CheckBox ID="chkAddIsBackground" runat="server" Checked='<%# (Container is RadListViewInsertItem) ? false : Eval("IsBackground")%>'
+                                    Text="Background" CssClass="checkbox" />
                                 <asp:CheckBox ID="chkAddIsAvailable" runat="server" Checked='<%# (Container is RadListViewInsertItem) ? true : Eval("IsAvailable")%>'
                                     Text="Hiển thị" CssClass="checkbox" />
                             </td>

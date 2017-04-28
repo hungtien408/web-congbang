@@ -6,9 +6,15 @@
     <div id="carousel-example-generic" class="carousel slide bg-ab-slide" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">
-            <li data-target="#carousel-example-generic" data-slide-to="0"></li>
-            <%--<li data-target="#carousel-example-generic" data-slide-to="1"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="2"></li>--%>
+            <asp:ListView ID="lstItem" runat="server"
+                DataSourceID="odsBannerService" EnableModelValidation="True">
+                <ItemTemplate>
+                    <li data-target="#carousel-example-generic" data-slide-to='<%# Container.DataItemIndex %>' class='<%# (Container.DataItemIndex) == 0 ? "active" : "" %>'></li>
+                </ItemTemplate>
+                <LayoutTemplate>
+                    <span runat="server" id="itemPlaceholder" />
+                </LayoutTemplate>
+            </asp:ListView>
         </ol>
 
         <!-- Wrapper for slides -->
@@ -16,7 +22,7 @@
             <div class="item">
                 <asp:Repeater ID="RepeaterBanner" runat="server" DataSourceID="odsBannerService">
                     <ItemTemplate>
-                        <img alt="" src='<%# "~/res/projectcategory/" + Eval("ImageName") %>' runat="server"
+                        <img alt="" src='<%# "~/res/projectcategory/album/" + Eval("ImageName") %>' runat="server"
                             visible='<%# string.IsNullOrEmpty( Eval("ImageName").ToString()) ? false : true %>' />
                     </ItemTemplate>
                 </asp:Repeater>
@@ -66,7 +72,7 @@
                             <asp:Parameter Name="IsShowOnHomePage" Type="String"></asp:Parameter>
                             <asp:Parameter DefaultValue="True" Name="IsAvailable" Type="String"></asp:Parameter>
                         </SelectParameters>
-                </asp:ObjectDataSource>
+                    </asp:ObjectDataSource>
                 </ul>
 
             </div>

@@ -269,7 +269,7 @@
                                         Danh mục cấp trên
                                     </td>
                                     <td>
-                                        <asp:RadComboBox ID="ddlParent" runat="server" DataSourceID='<%# (Container is GridEditFormInsertItem) ? "ObjectDataSource1" : "ObjectDataSource2" %>'
+                                        <asp:RadComboBox ID="ddlParent" runat="server" DataSourceID='<%# (Container is GridEditFormInsertItem) ? "ObjectDataSource1" : "ObjectDataSource1" %>'
                                             DataTextField="ProjectCategoryName" DataValueField="ProjectCategoryID" Filter="Contains"
                                             OnDataBound="DropDownList_DataBound" Width="504px">
                                         </asp:RadComboBox>

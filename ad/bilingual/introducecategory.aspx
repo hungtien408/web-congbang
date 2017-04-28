@@ -92,7 +92,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="cphBody" runat="Server">
     <h3 class="mainTitle">
         <img alt="" src="../assets/images/category.png" class="vam" />
-        Danh Mục Dự Án</h3>
+        Danh Mục Giới Thiệu</h3>
     <br />
     <asp:RadAjaxPanel ID="RadAjaxPanel1" runat="server" ClientEvents-OnRequestStart="conditionalPostback"
         Width="100%">
@@ -174,6 +174,14 @@
                             </div>
                         </ItemTemplate>
                     </asp:GridTemplateColumn>
+                    <asp:GridTemplateColumn DataField="ProjectCategoryNameCam" HeaderText="Tên danh mục(Tiếng Campuchia)">
+                        <ItemTemplate>
+                            <div class='<%#"catlevel level" +  Eval("Level") %>' style='padding-left: <%# string.IsNullOrEmpty(Eval("Level").ToString()) ? 0 : Convert.ToInt32(Eval("Level")) * 10 %>px'>
+                                <asp:Label ID="lblProjectCategoryNameCam" runat="server" Font-Bold='<%# Eval("ParentID").ToString() == "0" ? true : false %>'
+                                    Text='<%# Eval("ProjectCategoryNameCam")%>'></asp:Label>
+                            </div>
+                        </ItemTemplate>
+                    </asp:GridTemplateColumn>
                     <asp:GridBoundColumn DataField="ProjectCategoryID" HeaderText="ID" SortExpression="ProjectCategoryID">
                     </asp:GridBoundColumn>
                     <asp:GridTemplateColumn>
@@ -201,13 +209,13 @@
                                 Text='<%# Eval("ParentCategoryName")%>'></asp:Label>
                         </ItemTemplate>
                     </asp:GridTemplateColumn>
-                    <asp:GridTemplateColumn DataField="IsShowOnMenu" HeaderText="Xem trên menu">
+                    <asp:GridTemplateColumn DataField="IsShowOnMenu" HeaderText="Xem trên menu" Visible="false">
                         <ItemTemplate>
                             <asp:CheckBox ID="chkIsShowOnMenu" runat="server" Checked='<%# Eval("IsShowOnMenu") == DBNull.Value ? false : Convert.ToBoolean(Eval("IsShowOnMenu"))%>'
                                 CssClass="checkbox" />
                         </ItemTemplate>
                     </asp:GridTemplateColumn>
-                    <asp:GridTemplateColumn DataField="IsShowOnHomePage" HeaderText="Xem trên trang chủ">
+                    <asp:GridTemplateColumn DataField="IsShowOnHomePage" HeaderText="Xem trên trang chủ" Visible="false">
                         <ItemTemplate>
                             <asp:CheckBox ID="chkIsShowOnHomePage" runat="server" Checked='<%# Eval("IsShowOnHomePage") == DBNull.Value ? false : Convert.ToBoolean(Eval("IsShowOnHomePage"))%>'
                                 CssClass="checkbox" />
@@ -219,7 +227,7 @@
                                 CssClass="checkbox" />
                         </ItemTemplate>
                     </asp:GridTemplateColumn>
-                    <asp:GridTemplateColumn HeaderStyle-Width="1%">
+                    <asp:GridTemplateColumn HeaderStyle-Width="1%" Visible="false">
                         <ItemTemplate>
                             <div style="width: 55px">
                                 <img alt="Thư viện ảnh" title="Thư viện ảnh" src="../assets/images/PhotoAlbum.png"
@@ -231,9 +239,11 @@
                     <asp:GridTemplateColumn HeaderText="Ảnh">
                         <ItemTemplate>
                             <asp:Panel ID="Panel1" runat="server" Visible='<%# string.IsNullOrEmpty( Eval("ImageName").ToString()) ? false : true %>'>
-                                <a class="screenshot" rel='../../res/productcategory/<%# Eval("ImageName") %>'>
+                                <%--<a class="screenshot" rel='../../res/productcategory/<%# Eval("ImageName") %>'>
                                     <img alt="" src="../assets/images/photo.png" />
-                                </a>
+                                </a>--%>
+                                <img alt="" src='<%# "~/res/projectcategory/" + Eval("ImageName") %>' width="80" runat="server"
+                                    visible='<%# string.IsNullOrEmpty(Eval("ImageName").ToString()) ? false : true %>' />
                                 <asp:LinkButton ID="lnkDeleteImage" runat="server" CommandName="DeleteImage" OnClientClick="return confirm('Xóa ảnh này ?')"
                                     rel='<%#  Eval("ProjectCategoryID") + "#" + Eval("ImageName") %>'>
                             <img alt="Xóa ảnh" title="Xóa ảnh" src="../assets/images/delete-icon.png" />
@@ -249,7 +259,7 @@
                     <FormTemplate>
                         <asp:Panel ID="Panel1" runat="server" DefaultButton="lnkUpdate">
                             <h3 class="searchTitle">
-                                Thông Tin Danh Mục Dự Án</h3>
+                                Thông Tin Danh Mục Giới Thiệu</h3>
                             <table class="search">
                                 <tr>
                                     <td class="left" valign="top">
@@ -264,7 +274,7 @@
                                             Display="Dynamic" ErrorMessage="Sai định dạng ảnh (*.jpg, *.jpeg, *.gif, *.png)"></asp:CustomValidator>
                                     </td>
                                 </tr>
-                                <tr>
+                                <tr class="invisible">
                                     <td class="left" valign="top">
                                         Danh mục cấp trên
                                     </td>
