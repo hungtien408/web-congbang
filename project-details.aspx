@@ -38,13 +38,15 @@
                 <div class="content-left wrap-absolute">
                     <h1>PROJECTS DETAIL</h1>
                     <p>Appointed by Sekisui Foam International, Cong Bang Corporation is authorized distributor for Vietnam and Camobdia countries for all range of Thermobreak and Softlon products in Construction and Industry . <br /> <br />
-                    We have been supported large techical insulation and  offered  the best  solution for the most of projects to achieve saving engery, life span and comparetitive cost.</p>
-                    <span class="readmore">xem chi tiết</span>
+                    We have been supported large techical insulation and  offered  the best  solution for the most of projects to achieve saving engery, life span and comparetitive cost.
+                        Appointed by Sekisui Foam International, Cong Bang Corporation is authorized distributor for Vietnam and Camobdia countries for all range of Thermobreak and Softlon products in Construction and Industry . <br /> <br />
+                    We have been supported large techical insulation and  offered  the best  solution for the most of projects to achieve saving engery, life span and comparetitive cost.
+                    </p>
                 </div>
             </div>
         </div>
         <div class="right">
-            <div class="menu-right">
+            <div class="menu-right PJde-menu">
                 <ul>
                     <li><a href="#">Industrial Projects</a></li>
                     <li><a href="#">Commercial Projects</a></li>

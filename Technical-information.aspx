@@ -24,11 +24,11 @@
         <div class="left">
             <div class="content-left">
                 <h1>TECHNICAL INFORMATION</h1>
-                <ul>
-                    <li>Tiêu chuẩn an toàn chống cháy: Australia: AS1530.3 (1999)</li>
-                    <li>Tiêu chuẩn an toàn môi trường và con người: Certified ZERO VOC ( Certified "Green Star" Product)</li>
-                    <li>Lắp đặt dễ dàng, do có lớp keo đặc biệt G60 dán sẳn tiết kiệm tối đa chi phí và thời gian thi công, không cần vật tư phụ...<a href="#">Xem thêm <i class="fa fa-caret-down"></i></a></li>
-                </ul>
+                <p>
+                    Tiêu chuẩn an toàn chống cháy: Australia: AS1530.3 (1999) <br />
+                    Tiêu chuẩn an toàn môi trường và con người: Certified ZERO VOC ( Certified "Green Star" Product) <br />
+                    Lắp đặt dễ dàng, do có lớp keo đặc biệt G60 dán sẳn tiết kiệm tối đa chi phí và thời gian thi công, không cần vật tư phụ... <br />
+                </p>
             </div>
         </div>
         <div class="right">

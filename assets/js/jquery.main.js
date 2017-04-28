@@ -1,5 +1,6 @@
 ﻿(function ($) {
     $(window).load(function () {
+        main_img_project();
     });
     $(window).resize(function () {
         height_win();
@@ -8,14 +9,22 @@
     $(function () {
         myfunload();
         height_win();
-        respon_intro();
         bg_ab();
-        main_img_project();
         bg_swipper();
+        $('.wrap-absolute p').readmore({
+            speed: 500,
+            collapsedHeight: 48,
+            moreLink: '<a href="#" class="btn-showhide">Xem thêm</a>',
+            lessLink: '<a href="#" class="btn-showhide">Thu gọn</a>',
+        });
+        $(document).on('click','a.btn-showhide', function () {
+            $('.wrap-absolute').toggleClass('true-height');
+        })
     });
 })(jQuery);
 function height_win() {
     n = $(window).height();
+    $('.absolute-bg').height(n);
     if ($(window).width() >= 992) {
         $('#main-content').height(n);
     }
@@ -74,6 +83,9 @@ function myfunload() {
     $('.menu-mobile').mCustomScrollbar({
         theme: "dark-thick",
     });
+    $('.PJde-menu').mCustomScrollbar({
+        theme: "dark-thick",
+    });
 
     $('.hover-contact').click(function () {
         $(this).hide();
@@ -119,6 +131,8 @@ function myfunload() {
         //    }
         //}
     });
+
+    /***/
 }
 /*=========================================================================*/
 //================== scroll top
@@ -140,6 +154,9 @@ function main_img_project() {
     n = $(window).height();
     $('.main-img-project').height(n - 165);
     $('.news-slide').height(n - 420);
+    $('.main-wrap .right .menu-news').height(n - 390);
+    m = $('.img-project').height();
+    $('.PJde-menu').css('max-height',n - (m + 250));
 }
 function bg_swipper() {
     $('.swiper-container .swiper-slide').each(function () {
@@ -171,7 +188,3 @@ $(document).on('click', ".popup-btn-close, #overlay-screen-active", function () 
     $('#overlay-screen-active').remove();
     return false;
 });
-function respon_intro() {
-    $('.wrap-intro').append('<div class="intro_hidden"></div>');
-    $('.wrap-intro .carousel-inner').clone().appendTo('.intro_hidden');
-}

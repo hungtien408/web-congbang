@@ -10,7 +10,7 @@
     </div>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="copy_footer" runat="Server">
-    <div class="df-footer">
+    <div class="df-footer ft-trangchu">
         <div class="wrap-con">
             <div class="bor bg-df-ft">
                 <h1>Welcome to</h1>

@@ -73,6 +73,7 @@
                             file: 'https://www.youtube.com/watch?v=DydIus2xA3I',
                             flashplayer: "assets/js/jwplayer.flash.swf",
                             height: 160,
+                            quality: false,
                             width: 240,
                             dock: true,
                             //autostart: true,
