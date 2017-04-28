@@ -63,7 +63,7 @@
                     <asp:Repeater ID="Repeater1" runat="server" EnableViewState="false">
                         <ItemTemplate>
                             <h1><%# Eval("ProjectTitleEn") %></h1>
-                            <%# Eval("ContentEn") %>
+                            <p><%# Eval("ContentEn") %></p>
                             <span class="readmore">xem chi tiết</span>
                         </ItemTemplate>
                     </asp:Repeater>
@@ -97,7 +97,7 @@
             </div>
         </div>
         <div class="right">
-            <div class="menu-right">
+            <div class="menu-right PJde-menu">
                 <ul>
                     <asp:HiddenField ID="hdnProjectID" runat="server" />
                     <asp:HiddenField ID="hdnCategoryID" runat="server" />

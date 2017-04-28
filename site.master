@@ -197,9 +197,6 @@
             </div>
             <!--menumobile-->
             <div id="menumobile" class="mobile-panel mobilep-left">
-                <div class="close-menu">
-                    <a href="#menumobile" class="glyphicon glyphicon-remove-circle">close</a>
-                </div>
                 <div class="menu-in">
                     <div class="menu-mobile">
                         <div class="logo">
@@ -208,7 +205,7 @@
                             </a>
                         </div>
                         <ul id="menuMobiles" class="menu-nav">
-                            <li class="home"><a id="A3" href="~/" runat="server">Trang chủ</a></li>
+                            <%--<li class="home"><a id="A3" href="~/" runat="server">Trang chủ</a></li>--%>
                         </ul>
                     </div>
                 </div>
@@ -223,6 +220,7 @@
         <script src="assets/js/swiper.jquery.min.js"></script>
         <script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
         <script src="assets/js/owl.carousel.min.js"></script>
+        <script src="assets/js/readmore.js"></script>
 
         <%--<script src="assets/js/owl.carousel.min.js"></script> --%>
 
