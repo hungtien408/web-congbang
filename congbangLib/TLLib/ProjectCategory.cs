@@ -16,15 +16,20 @@ namespace TLLib
         public string ProjectCategoryInsert(
             string ProjectCategoryName,
             string ProjectCategoryNameEn,
+            string ProjectCategoryNameCam,
             string ConvertedProjectCategoryName,
             string Description,
             string DescriptionEn,
+            string DescriptionCam,
             string Content,
             string ContentEn,
+            string ContentCam,
             string MetaTitle,
             string MetaTitleEn,
+            string MetaTitleCam,
             string MetaDescription,
             string MetaDescriptionEn,
+            string MetaDescriptionCam,
             string ImageName,
             string ParentID,
             string IsShowOnMenu,
@@ -39,15 +44,20 @@ namespace TLLib
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@ProjectCategoryName", string.IsNullOrEmpty(ProjectCategoryName) ? dbNULL : (object)ProjectCategoryName);
                 cmd.Parameters.AddWithValue("@ProjectCategoryNameEn", string.IsNullOrEmpty(ProjectCategoryNameEn) ? dbNULL : (object)ProjectCategoryNameEn);
+                cmd.Parameters.AddWithValue("@ProjectCategoryNameCam", string.IsNullOrEmpty(ProjectCategoryNameCam) ? dbNULL : (object)ProjectCategoryNameCam);
                 cmd.Parameters.AddWithValue("@ConvertedProjectCategoryName", string.IsNullOrEmpty(ConvertedProjectCategoryName) ? dbNULL : (object)ConvertedProjectCategoryName);
                 cmd.Parameters.AddWithValue("@Description", string.IsNullOrEmpty(Description) ? dbNULL : (object)Description);
                 cmd.Parameters.AddWithValue("@DescriptionEn", string.IsNullOrEmpty(DescriptionEn) ? dbNULL : (object)DescriptionEn);
+                cmd.Parameters.AddWithValue("@DescriptionCam", string.IsNullOrEmpty(DescriptionCam) ? dbNULL : (object)DescriptionCam);
                 cmd.Parameters.AddWithValue("@Content", string.IsNullOrEmpty(Content) ? dbNULL : (object)Content);
                 cmd.Parameters.AddWithValue("@ContentEn", string.IsNullOrEmpty(ContentEn) ? dbNULL : (object)ContentEn);
+                cmd.Parameters.AddWithValue("@ContentCam", string.IsNullOrEmpty(ContentCam) ? dbNULL : (object)ContentCam);
                 cmd.Parameters.AddWithValue("@MetaTitle", string.IsNullOrEmpty(MetaTitle) ? dbNULL : (object)MetaTitle);
                 cmd.Parameters.AddWithValue("@MetaTitleEn", string.IsNullOrEmpty(MetaTitleEn) ? dbNULL : (object)MetaTitleEn);
+                cmd.Parameters.AddWithValue("@MetaTitleCam", string.IsNullOrEmpty(MetaTitleCam) ? dbNULL : (object)MetaTitleCam);
                 cmd.Parameters.AddWithValue("@MetaDescription", string.IsNullOrEmpty(MetaDescription) ? dbNULL : (object)MetaDescription);
                 cmd.Parameters.AddWithValue("@MetaDescriptionEn", string.IsNullOrEmpty(MetaDescriptionEn) ? dbNULL : (object)MetaDescriptionEn);
+                cmd.Parameters.AddWithValue("@MetaDescriptionCam", string.IsNullOrEmpty(MetaDescriptionCam) ? dbNULL : (object)MetaDescriptionCam);
                 cmd.Parameters.AddWithValue("@ImageName", string.IsNullOrEmpty(ImageName) ? dbNULL : (object)ImageName);
                 cmd.Parameters.AddWithValue("@ParentID", string.IsNullOrEmpty(ParentID) ? dbNULL : (object)ParentID);
                 cmd.Parameters.AddWithValue("@IsShowOnMenu", string.IsNullOrEmpty(IsShowOnMenu) ? dbNULL : (object)IsShowOnMenu);
@@ -80,15 +90,20 @@ namespace TLLib
             string ProjectCategoryID,
             string ProjectCategoryName,
             string ProjectCategoryNameEn,
+            string ProjectCategoryNameCam,
             string ConvertedProjectCategoryName,
             string Description,
             string DescriptionEn,
+            string DescriptionCam,
             string Content,
             string ContentEn,
+            string ContentCam,
             string MetaTitle,
             string MetaTitleEn,
+            string MetaTitleCam,
             string MetaDescription,
             string MetaDescriptionEn,
+            string MetaDescriptionCam,
             string ImageName,
             string ParentID,
             string IsShowOnMenu,
@@ -104,15 +119,20 @@ namespace TLLib
                 cmd.Parameters.AddWithValue("@ProjectCategoryID", string.IsNullOrEmpty(ProjectCategoryID) ? dbNULL : (object)ProjectCategoryID);
                 cmd.Parameters.AddWithValue("@ProjectCategoryName", string.IsNullOrEmpty(ProjectCategoryName) ? dbNULL : (object)ProjectCategoryName);
                 cmd.Parameters.AddWithValue("@ProjectCategoryNameEn", string.IsNullOrEmpty(ProjectCategoryNameEn) ? dbNULL : (object)ProjectCategoryNameEn);
+                cmd.Parameters.AddWithValue("@ProjectCategoryNameCam", string.IsNullOrEmpty(ProjectCategoryNameCam) ? dbNULL : (object)ProjectCategoryNameCam);
                 cmd.Parameters.AddWithValue("@ConvertedProjectCategoryName", string.IsNullOrEmpty(ConvertedProjectCategoryName) ? dbNULL : (object)ConvertedProjectCategoryName);
                 cmd.Parameters.AddWithValue("@Description", string.IsNullOrEmpty(Description) ? dbNULL : (object)Description);
                 cmd.Parameters.AddWithValue("@DescriptionEn", string.IsNullOrEmpty(DescriptionEn) ? dbNULL : (object)DescriptionEn);
+                cmd.Parameters.AddWithValue("@DescriptionCam", string.IsNullOrEmpty(DescriptionCam) ? dbNULL : (object)DescriptionCam);
                 cmd.Parameters.AddWithValue("@Content", string.IsNullOrEmpty(Content) ? dbNULL : (object)Content);
                 cmd.Parameters.AddWithValue("@ContentEn", string.IsNullOrEmpty(ContentEn) ? dbNULL : (object)ContentEn);
+                cmd.Parameters.AddWithValue("@ContentCam", string.IsNullOrEmpty(ContentCam) ? dbNULL : (object)ContentCam);
                 cmd.Parameters.AddWithValue("@MetaTitle", string.IsNullOrEmpty(MetaTitle) ? dbNULL : (object)MetaTitle);
                 cmd.Parameters.AddWithValue("@MetaTitleEn", string.IsNullOrEmpty(MetaTitleEn) ? dbNULL : (object)MetaTitleEn);
+                cmd.Parameters.AddWithValue("@MetaTitleCam", string.IsNullOrEmpty(MetaTitleCam) ? dbNULL : (object)MetaTitleCam);
                 cmd.Parameters.AddWithValue("@MetaDescription", string.IsNullOrEmpty(MetaDescription) ? dbNULL : (object)MetaDescription);
                 cmd.Parameters.AddWithValue("@MetaDescriptionEn", string.IsNullOrEmpty(MetaDescriptionEn) ? dbNULL : (object)MetaDescriptionEn);
+                cmd.Parameters.AddWithValue("@MetaDescriptionCam", string.IsNullOrEmpty(MetaDescriptionCam) ? dbNULL : (object)MetaDescriptionCam);
                 cmd.Parameters.AddWithValue("@ImageName", string.IsNullOrEmpty(ImageName) ? dbNULL : (object)ImageName);
                 cmd.Parameters.AddWithValue("@ParentID", string.IsNullOrEmpty(ParentID) ? dbNULL : (object)ParentID);
                 cmd.Parameters.AddWithValue("@IsShowOnMenu", string.IsNullOrEmpty(IsShowOnMenu) ? dbNULL : (object)IsShowOnMenu);
