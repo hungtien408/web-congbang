@@ -114,6 +114,8 @@ public partial class ad_single_projectcategory : System.Web.UI.Page
             string strMetaDescriptionEn = ((RadTextBox)row.FindControl("txtMetaDescriptionEn")).Text.Trim();
             string strImageName = FileImageName.UploadedFiles.Count > 0 ? FileImageName.UploadedFiles[0].GetName() : "";
             string strParentID = ((RadComboBox)row.FindControl("ddlParent")).SelectedValue;
+            if (string.IsNullOrEmpty(strParentID))
+                strParentID = "5";
             string strIsAvailable = ((CheckBox)row.FindControl("chkIsAvailable")).Checked.ToString();
             string strIsShowOnMenu = ((CheckBox)row.FindControl("chkIsShowOnMenu")).Checked.ToString();
             string strIsShowOnHomePage = ((CheckBox)row.FindControl("chkIsShowOnHomePage")).Checked.ToString();

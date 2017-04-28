@@ -219,6 +219,15 @@
                                 CssClass="checkbox" />
                         </ItemTemplate>
                     </asp:GridTemplateColumn>
+                    <asp:GridTemplateColumn HeaderStyle-Width="1%">
+                        <ItemTemplate>
+                            <div style="width: 55px">
+                                <img alt="Thư viện ảnh" title="Thư viện ảnh" src="../assets/images/PhotoAlbum.png"
+                                    onclick="openWindow('projectcategoryphotoalbum.aspx?PI=<%# Eval("ProjectCategoryID") %>','Thư viện ảnh')"
+                                    style="cursor: pointer" />
+                            </div>
+                        </ItemTemplate>
+                    </asp:GridTemplateColumn>
                     <asp:GridTemplateColumn HeaderText="Ảnh">
                         <ItemTemplate>
                             <asp:Panel ID="Panel1" runat="server" Visible='<%# string.IsNullOrEmpty( Eval("ImageName").ToString()) ? false : true %>'>
@@ -486,6 +495,13 @@
             <asp:Parameter Name="IsShowOnHomePage" Type="String" />
             <asp:Parameter Name="IsAvailable" Type="String" />
         </InsertParameters>
+        <SelectParameters>
+            <asp:Parameter DefaultValue="0" Name="parentID" Type="Int32" />
+            <asp:Parameter DefaultValue="5" Name="increaseLevelCount" Type="Int32" />
+            <asp:Parameter Name="IsShowOnMenu" Type="String" />
+            <asp:Parameter Name="IsShowOnHomePage" Type="String" />
+            <asp:Parameter Name="IsAvailable" Type="String" />
+        </SelectParameters>
         <UpdateParameters>
             <asp:Parameter Name="ProjectCategoryID" Type="String" />
             <asp:Parameter Name="ProjectCategoryName" Type="String" />

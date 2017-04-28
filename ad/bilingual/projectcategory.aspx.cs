@@ -114,6 +114,8 @@ public partial class ad_single_projectcategory : System.Web.UI.Page
             string strMetaDescriptionEn = ((RadTextBox)row.FindControl("txtMetaDescriptionEn")).Text.Trim();
             string strImageName = FileImageName.UploadedFiles.Count > 0 ? FileImageName.UploadedFiles[0].GetName() : "";
             string strParentID = ((RadComboBox)row.FindControl("ddlParent")).SelectedValue;
+            if (string.IsNullOrEmpty(strParentID))
+                strParentID = "4";
             string strIsAvailable = ((CheckBox)row.FindControl("chkIsAvailable")).Checked.ToString();
             string strIsShowOnMenu = ((CheckBox)row.FindControl("chkIsShowOnMenu")).Checked.ToString();
             string strIsShowOnHomePage = ((CheckBox)row.FindControl("chkIsShowOnHomePage")).Checked.ToString();
@@ -147,7 +149,7 @@ public partial class ad_single_projectcategory : System.Web.UI.Page
                 if (!string.IsNullOrEmpty(strImageName))
                 {
                     FileImageName.UploadedFiles[0].SaveAs(Server.MapPath(strFullPath));
-                    ResizeCropImage.ResizeByCondition(strFullPath, 40, 40);
+                    //ResizeCropImage.ResizeByCondition(strFullPath, 40, 40);
                 }
                 RadGrid1.Rebind();
             }
@@ -179,7 +181,7 @@ public partial class ad_single_projectcategory : System.Web.UI.Page
                         File.Delete(strOldImagePath);
 
                     FileImageName.UploadedFiles[0].SaveAs(Server.MapPath(strFullPath));
-                    ResizeCropImage.ResizeByCondition(strFullPath, 40, 40);
+                    //ResizeCropImage.ResizeByCondition(strFullPath, 40, 40);
                 }
             }
         }
