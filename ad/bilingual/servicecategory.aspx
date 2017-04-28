@@ -312,7 +312,7 @@
                                         </asp:RadTextBox>
                                     </td>
                                 </tr>
-                                <tr>
+                                <tr class="invisible">
                                     <td class="left" valign="top">
                                         Mô tả
                                     </td>
@@ -392,7 +392,7 @@
                                             Width="500px" EmptyMessage="Tên danh mục(En)..."></asp:RadTextBox>
                                     </td>
                                 </tr>
-                                <tr>
+                                <tr class="invisible">
                                     <td class="left" valign="top">
                                         Mô tả(En)
                                     </td>

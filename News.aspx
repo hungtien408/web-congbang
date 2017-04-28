@@ -1,10 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/site.master" AutoEventWireup="true" CodeFile="News.aspx.cs" Inherits="News" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/site.master" AutoEventWireup="true" CodeFile="News.aspx.cs" Inherits="Services" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-    <title>Công bằng</title>
-    <meta name="description" content="Công bằng" />
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="main_content" Runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="main_content" runat="Server">
     <div id="carousel-example-generic" class="carousel slide bg-ab-slide" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">
@@ -16,33 +14,66 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
             <div class="item">
-                <img src="assets/images/banner-18.png" alt="" />
+                <asp:Repeater ID="RepeaterBanner" runat="server" DataSourceID="odsBannerService">
+                    <ItemTemplate>
+                        <img alt="" src='<%# "~/res/projectcategory/" + Eval("ImageName") %>' runat="server"
+                            visible='<%# string.IsNullOrEmpty( Eval("ImageName").ToString()) ? false : true %>' />
+                    </ItemTemplate>
+                </asp:Repeater>
+                <asp:ObjectDataSource ID="odsBannerService" runat="server" SelectMethod="ProjectCategoryImageSelectAll" TypeName="TLLib.ProjectCategoryImage">
+                    <SelectParameters>
+                        <asp:QueryStringParameter QueryStringField="ni" DefaultValue="7" Name="ProjectCategoryID" Type="String"></asp:QueryStringParameter>
+                        <asp:Parameter DefaultValue="True" Name="IsAvailable" Type="String"></asp:Parameter>
+                        <asp:Parameter Name="Priority" Type="String"></asp:Parameter>
+                        <asp:Parameter DefaultValue="True" Name="SortByPriority" Type="String"></asp:Parameter>
+                        <asp:Parameter Name="IsBackground" Type="String"></asp:Parameter>
+                    </SelectParameters>
+                </asp:ObjectDataSource>
             </div>
         </div>
     </div>
     <div class="main-wrap">
         <div class="left">
             <div class="content-left">
-                <h1>NEWS</h1>
-                <p>Appointed by Sekisui Foam International, Cong Bang Corporation is authorized distributor for Vietnam and Camobdia countries for all range of Thermobreak and Softlon products in Construction and Industry . <br /> <br />
-                We have been supported large techical insulation and  offered  the best  solution for the most of projects to achieve saving engery, life span and comparetitive cost.</p>
+                <asp:Repeater ID="RepeaterService" runat="server" DataSourceID="odsService">
+                    <ItemTemplate>
+                        <h1><%# Eval("ProjectCategoryNameEn") %></h1>
+                        <p>
+                            <%# Eval("ContentEn") %>
+                        </p>
+                    </ItemTemplate>
+                </asp:Repeater>
+                <asp:ObjectDataSource ID="odsService" runat="server" SelectMethod="ProjectCategorySelectOne" TypeName="TLLib.ProjectCategory">
+                    <SelectParameters>
+                        <asp:QueryStringParameter QueryStringField="ni" DefaultValue="7" Name="ProjectCategoryID" Type="String"></asp:QueryStringParameter>
+                    </SelectParameters>
+                </asp:ObjectDataSource>
             </div>
         </div>
         <div class="right">
             <div class="menu-news">
                 <ul>
-                    <li><a href="News-details.aspx">Fusce eget tempor nunc mauris malesuada</a></li>
-                    <li><a href="News-details.aspx">Lectus tellus et dapbus ante fermentum ut</a></li>
-                    <li><a href="News-details.aspx">Fusce posuere massa nisit amet interdum nulla</a></li>
-                    <li><a href="News-details.aspx">Duis lobtis fringilla magna non varius </a></li>
-                    <li><a href="News-details.aspx">Vestibulum fermentum eu metus eu varius</a></li>
-                    <li><a href="News-details.aspx">Praesent pulvinar velit at consequat rutrumodio </a></li>
+                    <asp:Repeater ID="RepeaterServiceCategory" runat="server" DataSourceID="odsServiceCategory">
+                        <ItemTemplate>
+                            <li><a href='<%# SiteCode.progressTitle(Eval("ProjectCategoryNameEn")) + "-ni-" + Eval("ProjectCategoryID") + ".aspx" %>'><%# Eval("ProjectCategoryNameEn") %></a></li>
+                        </ItemTemplate>
+                    </asp:Repeater>
+                    <asp:ObjectDataSource ID="odsServiceCategory" runat="server" SelectMethod="ProjectCategorySelectAll" TypeName="TLLib.ProjectCategory">
+                        <SelectParameters>
+                            <asp:QueryStringParameter QueryStringField="ni" DefaultValue="7" Name="parentID" Type="Int32"></asp:QueryStringParameter>
+                            <asp:Parameter DefaultValue="1" Name="increaseLevelCount" Type="Int32"></asp:Parameter>
+                            <asp:Parameter Name="IsShowOnMenu" Type="String"></asp:Parameter>
+                            <asp:Parameter Name="IsShowOnHomePage" Type="String"></asp:Parameter>
+                            <asp:Parameter DefaultValue="True" Name="IsAvailable" Type="String"></asp:Parameter>
+                        </SelectParameters>
+                </asp:ObjectDataSource>
                 </ul>
+
             </div>
         </div>
     </div>
 </asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="copy_footer" Runat="Server">
+<asp:Content ID="Content3" ContentPlaceHolderID="copy_footer" runat="Server">
     <div class="df-footer">
         <div class="wrap-con">
             <div class="bor">

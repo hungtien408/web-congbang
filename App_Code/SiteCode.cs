@@ -92,4 +92,8 @@ public class SiteCode
     {
         get { return m_strMenu.ToString(); }
     }
+    public static string progressTitle(object input)
+    {
+        return TLLib.Common.ConvertTitle(input.ToString());
+    }
 }

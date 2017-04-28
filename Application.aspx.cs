@@ -14,10 +14,10 @@ public partial class Services : System.Web.UI.Page
         if (!IsPostBack)
         {
             string strTitle, strDescription, strMetaTitle, strMetaDescription;
-            if (!string.IsNullOrEmpty(Request.QueryString["ni"]))
+            if (!string.IsNullOrEmpty(Request.QueryString["api"]))
             {
                 var oProjectCategory = new ProjectCategory();
-                var dv = oProjectCategory.ProjectCategorySelectOne(Request.QueryString["ni"]).DefaultView;
+                var dv = oProjectCategory.ProjectCategorySelectOne(Request.QueryString["api"]).DefaultView;
 
                 if (dv != null && dv.Count <= 0) return;
                 var row = dv[0];

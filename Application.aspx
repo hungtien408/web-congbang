@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/site.master" AutoEventWireup="true" CodeFile="Activities.aspx.cs" Inherits="Services" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/site.master" AutoEventWireup="true" CodeFile="Application.aspx.cs" Inherits="Services" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
@@ -22,7 +22,7 @@
                 </asp:Repeater>
                 <asp:ObjectDataSource ID="odsBannerService" runat="server" SelectMethod="ProjectCategoryImageSelectAll" TypeName="TLLib.ProjectCategoryImage">
                     <SelectParameters>
-                        <asp:QueryStringParameter QueryStringField="aci" DefaultValue="6" Name="ProjectCategoryID" Type="String"></asp:QueryStringParameter>
+                        <asp:QueryStringParameter QueryStringField="api" DefaultValue="5" Name="ProjectCategoryID" Type="String"></asp:QueryStringParameter>
                         <asp:Parameter DefaultValue="True" Name="IsAvailable" Type="String"></asp:Parameter>
                         <asp:Parameter Name="Priority" Type="String"></asp:Parameter>
                         <asp:Parameter DefaultValue="True" Name="SortByPriority" Type="String"></asp:Parameter>
@@ -45,7 +45,7 @@
                 </asp:Repeater>
                 <asp:ObjectDataSource ID="odsService" runat="server" SelectMethod="ProjectCategorySelectOne" TypeName="TLLib.ProjectCategory">
                     <SelectParameters>
-                        <asp:QueryStringParameter QueryStringField="aci" DefaultValue="6" Name="ProjectCategoryID" Type="String"></asp:QueryStringParameter>
+                        <asp:QueryStringParameter QueryStringField="api" DefaultValue="5" Name="ProjectCategoryID" Type="String"></asp:QueryStringParameter>
                     </SelectParameters>
                 </asp:ObjectDataSource>
             </div>
@@ -55,12 +55,12 @@
                 <ul>
                     <asp:Repeater ID="RepeaterServiceCategory" runat="server" DataSourceID="odsServiceCategory">
                         <ItemTemplate>
-                            <li><a href='<%# SiteCode.progressTitle(Eval("ProjectCategoryNameEn")) + "-aci-" + Eval("ProjectCategoryID") + ".aspx" %>'><%# Eval("ProjectCategoryNameEn") %></a></li>
+                            <li><a href='<%# SiteCode.progressTitle(Eval("ProjectCategoryNameEn")) + "-api-" + Eval("ProjectCategoryID") + ".aspx" %>'><%# Eval("ProjectCategoryNameEn") %></a></li>
                         </ItemTemplate>
                     </asp:Repeater>
                     <asp:ObjectDataSource ID="odsServiceCategory" runat="server" SelectMethod="ProjectCategorySelectAll" TypeName="TLLib.ProjectCategory">
                         <SelectParameters>
-                            <asp:QueryStringParameter QueryStringField="aci" DefaultValue="6" Name="parentID" Type="Int32"></asp:QueryStringParameter>
+                            <asp:QueryStringParameter QueryStringField="api" DefaultValue="5" Name="parentID" Type="Int32"></asp:QueryStringParameter>
                             <asp:Parameter DefaultValue="1" Name="increaseLevelCount" Type="Int32"></asp:Parameter>
                             <asp:Parameter Name="IsShowOnMenu" Type="String"></asp:Parameter>
                             <asp:Parameter Name="IsShowOnHomePage" Type="String"></asp:Parameter>

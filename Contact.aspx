@@ -1,6 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/site.master" AutoEventWireup="true" CodeFile="Activities.aspx.cs" Inherits="Services" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/site.master" AutoEventWireup="true" CodeFile="Contact.aspx.cs" Inherits="Contact_hcm" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+    <title>Công bằng</title>
+    <meta name="description" content="Công bằng" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="main_content" runat="Server">
     <div id="carousel-example-generic" class="carousel slide bg-ab-slide" data-ride="carousel">
@@ -22,7 +24,7 @@
                 </asp:Repeater>
                 <asp:ObjectDataSource ID="odsBannerService" runat="server" SelectMethod="ProjectCategoryImageSelectAll" TypeName="TLLib.ProjectCategoryImage">
                     <SelectParameters>
-                        <asp:QueryStringParameter QueryStringField="aci" DefaultValue="6" Name="ProjectCategoryID" Type="String"></asp:QueryStringParameter>
+                        <asp:QueryStringParameter QueryStringField="ci" DefaultValue="8" Name="ProjectCategoryID" Type="String"></asp:QueryStringParameter>
                         <asp:Parameter DefaultValue="True" Name="IsAvailable" Type="String"></asp:Parameter>
                         <asp:Parameter Name="Priority" Type="String"></asp:Parameter>
                         <asp:Parameter DefaultValue="True" Name="SortByPriority" Type="String"></asp:Parameter>
@@ -45,30 +47,36 @@
                 </asp:Repeater>
                 <asp:ObjectDataSource ID="odsService" runat="server" SelectMethod="ProjectCategorySelectOne" TypeName="TLLib.ProjectCategory">
                     <SelectParameters>
-                        <asp:QueryStringParameter QueryStringField="aci" DefaultValue="6" Name="ProjectCategoryID" Type="String"></asp:QueryStringParameter>
+                        <asp:QueryStringParameter QueryStringField="ci" DefaultValue="8" Name="ProjectCategoryID" Type="String"></asp:QueryStringParameter>
                     </SelectParameters>
                 </asp:ObjectDataSource>
             </div>
         </div>
         <div class="right">
-            <div class="menu-right">
-                <ul>
-                    <asp:Repeater ID="RepeaterServiceCategory" runat="server" DataSourceID="odsServiceCategory">
+            <div class="menu-contact">
+                <div class="follow-us item">
+                    <span>Follow us on</span>
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-google-plus"></i></a>
+                </div>
+                <div class="hover-contact item">
+                    <p>Contact</p>
+                </div>
+                <div class="contact-box-hid">
+                    <%--<ul>
+                        <li class="local">90/27 Trần Văn Ơn, P. Tân Sơn Nhì, Quận Tân Phú, Tp.Hồ Chí Minh</li>
+                        <li class="phone">(848) 6260 4120 – 6260 4131</li>
+                        <li class="fax">Fax: (848) 6253 9039</li>
+                        <li class="mail">info@congbang.com.vn</li>
+                        
+                    </ul>--%>
+                    <asp:Repeater ID="Repeater1" runat="server" DataSourceID="odsService">
                         <ItemTemplate>
-                            <li><a href='<%# SiteCode.progressTitle(Eval("ProjectCategoryNameEn")) + "-aci-" + Eval("ProjectCategoryID") + ".aspx" %>'><%# Eval("ProjectCategoryNameEn") %></a></li>
+                            <%# Eval("DescriptionEn") %>
                         </ItemTemplate>
                     </asp:Repeater>
-                    <asp:ObjectDataSource ID="odsServiceCategory" runat="server" SelectMethod="ProjectCategorySelectAll" TypeName="TLLib.ProjectCategory">
-                        <SelectParameters>
-                            <asp:QueryStringParameter QueryStringField="aci" DefaultValue="6" Name="parentID" Type="Int32"></asp:QueryStringParameter>
-                            <asp:Parameter DefaultValue="1" Name="increaseLevelCount" Type="Int32"></asp:Parameter>
-                            <asp:Parameter Name="IsShowOnMenu" Type="String"></asp:Parameter>
-                            <asp:Parameter Name="IsShowOnHomePage" Type="String"></asp:Parameter>
-                            <asp:Parameter DefaultValue="True" Name="IsAvailable" Type="String"></asp:Parameter>
-                        </SelectParameters>
-                </asp:ObjectDataSource>
-                </ul>
-
+                </div>
             </div>
         </div>
     </div>
