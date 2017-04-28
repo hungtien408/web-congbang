@@ -312,7 +312,7 @@
                                         </asp:RadTextBox>
                                     </td>
                                 </tr>
-                                <tr>
+                                <tr class="invisible">
                                     <td class="left" valign="top">
                                         Mô tả
                                     </td>
@@ -392,7 +392,7 @@
                                             Width="500px" EmptyMessage="Tên danh mục(En)..."></asp:RadTextBox>
                                     </td>
                                 </tr>
-                                <tr>
+                                <tr class="invisible">
                                     <td class="left" valign="top">
                                         Mô tả(En)
                                     </td>
@@ -427,6 +427,86 @@
                                     <td>
                                         <asp:RadEditor ID="txtContentEn" ContentFilters="ConvertCharactersToEntities,ConvertToXhtml,OptimizeSpans,IndentHTMLContent,ConvertFontToSpan,IECleanAnchors,FixUlBoldItalic,RemoveScripts,FixEnclosingP" runat="server" Language="vi-VN" Skin="Office2007"
                                             Width="98%" Content='<%# Bind("ContentEn") %>'>
+                                            <ImageManager DeletePaths="~/Uploads/Image/" UploadPaths="~/Uploads/Image/" ViewPaths="~/Uploads/Image/" MaxUploadFileSize="1024000" />
+                                            <FlashManager DeletePaths="~/Uploads/Video/" UploadPaths="~/Uploads/Video/" ViewPaths="~/Uploads/Video/" />
+                                            <DocumentManager DeletePaths="~/Uploads/File/" UploadPaths="~/Uploads/File/" ViewPaths="~/Uploads/File/" MaxUploadFileSize="1024000" />
+                                            <MediaManager DeletePaths="~/Uploads/Media/" UploadPaths="~/Uploads/Media/" ViewPaths="~/Uploads/Media/" />
+                                            <TemplateManager DeletePaths="~/Uploads/Template/" UploadPaths="~/Uploads/Template/"
+                                                ViewPaths="~/Uploads/Template/" />
+                                        </asp:RadEditor>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <h3>
+                                            (Ngôn Ngữ Campuchia)</h3>
+                                        <hr />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="left" valign="top">
+                                        Meta Title(Cam)
+                                    </td>
+                                    <td>
+                                        <asp:RadTextBox ID="txtMetaTitleCam" runat="server" Text='<%# Bind("MetaTitleCam") %>'
+                                            Width="500px" EmptyMessage="Meta Title(Cam)...">
+                                        </asp:RadTextBox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="left" valign="top">
+                                        Meta Description(Cam)
+                                    </td>
+                                    <td>
+                                        <asp:RadTextBox ID="txtMetaDescriptionCam" runat="server" Text='<%# Bind("MetaDescriptionCam") %>'
+                                            Width="500px" EmptyMessage="Meta Description(Cam)...">
+                                        </asp:RadTextBox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="left" valign="top">
+                                        Tên danh mục(Cam)
+                                    </td>
+                                    <td>
+                                        <asp:RadTextBox ID="txtProjectCategoryNameCam" runat="server" Text='<%# (Container is GridEditFormInsertItem) ? "" : Eval("ProjectCategoryNameCam") %>'
+                                            Width="500px" EmptyMessage="Tên danh mục(Cam)..."></asp:RadTextBox>
+                                    </td>
+                                </tr>
+                                <tr class="invisible">
+                                    <td class="left" valign="top">
+                                        Mô tả(Cam)
+                                    </td>
+                                    <td>
+                                        <asp:RadEditor ID="txtDescriptionCam" ContentFilters="ConvertCharactersToEntities,ConvertToXhtml,OptimizeSpans,IndentHTMLContent,ConvertFontToSpan,IECleanAnchors,FixUlBoldItalic,RemoveScripts,FixEnclosingP" runat="server" Height="200" Language="vi-VN"
+                                            Skin="Office2007" Width="98%" Content='<%# Bind("DescriptionCam") %>'>
+                                            <ImageManager DeletePaths="~/Uploads/Image/" UploadPaths="~/Uploads/Image/" ViewPaths="~/Uploads/Image/" MaxUploadFileSize="1024000" />
+                                            <FlashManager DeletePaths="~/Uploads/Video/" UploadPaths="~/Uploads/Video/" ViewPaths="~/Uploads/Video/" />
+                                            <DocumentManager DeletePaths="~/Uploads/File/" UploadPaths="~/Uploads/File/" ViewPaths="~/Uploads/File/" MaxUploadFileSize="1024000" />
+                                            <MediaManager DeletePaths="~/Uploads/Media/" UploadPaths="~/Uploads/Media/" ViewPaths="~/Uploads/Media/" />
+                                            <TemplateManager DeletePaths="~/Uploads/Template/" UploadPaths="~/Uploads/Template/"
+                                                ViewPaths="~/Uploads/Template/" />
+                                            <Tools>
+                                                <asp:EditorToolGroup>
+                                                    <asp:EditorTool Name="Copy" />
+                                                    <asp:EditorTool Name="Cut" />
+                                                    <asp:EditorTool Name="Paste" />
+                                                    <asp:EditorTool Name="Bold" />
+                                                    <asp:EditorTool Name="Italic" />
+                                                    <asp:EditorTool Name="Underline" />
+                                                    <asp:EditorTool Name="InsertLink" />
+                                                    <asp:EditorTool Name="ForeColor" />
+                                                </asp:EditorToolGroup>
+                                            </Tools>
+                                        </asp:RadEditor>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="left" valign="top">
+                                        Nội dung
+                                    </td>
+                                    <td>
+                                        <asp:RadEditor ID="txtContentCam" ContentFilters="ConvertCharactersToEntities,ConvertToXhtml,OptimizeSpans,IndentHTMLContent,ConvertFontToSpan,IECleanAnchors,FixUlBoldItalic,RemoveScripts,FixEnclosingP" runat="server" Language="vi-VN" Skin="Office2007"
+                                            Width="98%" Content='<%# Bind("ContentCam") %>'>
                                             <ImageManager DeletePaths="~/Uploads/Image/" UploadPaths="~/Uploads/Image/" ViewPaths="~/Uploads/Image/" MaxUploadFileSize="1024000" />
                                             <FlashManager DeletePaths="~/Uploads/Video/" UploadPaths="~/Uploads/Video/" ViewPaths="~/Uploads/Video/" />
                                             <DocumentManager DeletePaths="~/Uploads/File/" UploadPaths="~/Uploads/File/" ViewPaths="~/Uploads/File/" MaxUploadFileSize="1024000" />
@@ -480,20 +560,25 @@
         <InsertParameters>
             <asp:Parameter Name="ProjectCategoryName" Type="String" />
             <asp:Parameter Name="ProjectCategoryNameEn" Type="String" />
+            <asp:Parameter Name="ProjectCategoryNameCam" Type="String" />
             <asp:Parameter Name="ConvertedProjectCategoryName" Type="String" />
             <asp:Parameter Name="Description" Type="String" />
             <asp:Parameter Name="DescriptionEn" Type="String" />
+            <asp:Parameter Name="DescriptionCam" Type="String" />
             <asp:Parameter Name="Content" Type="String" />
             <asp:Parameter Name="ContentEn" Type="String" />
+            <asp:Parameter Name="ContentCam" Type="String" />
             <asp:Parameter Name="MetaTitle" Type="String" />
             <asp:Parameter Name="MetaTitleEn" Type="String" />
+            <asp:Parameter Name="MetaTitleCam" Type="String" />
             <asp:Parameter Name="MetaDescription" Type="String" />
             <asp:Parameter Name="MetaDescriptionEn" Type="String" />
-            <asp:Parameter Name="ImageName" Type="String" />
-            <asp:Parameter Name="ParentID" Type="String" />
-            <asp:Parameter Name="IsShowOnMenu" Type="String" />
-            <asp:Parameter Name="IsShowOnHomePage" Type="String" />
-            <asp:Parameter Name="IsAvailable" Type="String" />
+            <asp:Parameter Name="MetaDescriptionCam" Type="String" />
+            <asp:Parameter Name="ImageName" Type="String"></asp:Parameter>
+            <asp:Parameter Name="ParentID" Type="String"></asp:Parameter>
+            <asp:Parameter Name="IsShowOnMenu" Type="String"></asp:Parameter>
+            <asp:Parameter Name="IsShowOnHomePage" Type="String"></asp:Parameter>
+            <asp:Parameter Name="IsAvailable" Type="String"></asp:Parameter>
         </InsertParameters>
         <SelectParameters>
             <asp:Parameter DefaultValue="0" Name="parentID" Type="Int32" />
@@ -506,20 +591,25 @@
             <asp:Parameter Name="ProjectCategoryID" Type="String" />
             <asp:Parameter Name="ProjectCategoryName" Type="String" />
             <asp:Parameter Name="ProjectCategoryNameEn" Type="String" />
+            <asp:Parameter Name="ProjectCategoryNameCam" Type="String" />
             <asp:Parameter Name="ConvertedProjectCategoryName" Type="String" />
             <asp:Parameter Name="Description" Type="String" />
             <asp:Parameter Name="DescriptionEn" Type="String" />
+            <asp:Parameter Name="DescriptionCam" Type="String" />
             <asp:Parameter Name="Content" Type="String" />
             <asp:Parameter Name="ContentEn" Type="String" />
+            <asp:Parameter Name="ContentCam" Type="String" />
             <asp:Parameter Name="MetaTitle" Type="String" />
             <asp:Parameter Name="MetaTitleEn" Type="String" />
+            <asp:Parameter Name="MetaTitleCam" Type="String" />
             <asp:Parameter Name="MetaDescription" Type="String" />
             <asp:Parameter Name="MetaDescriptionEn" Type="String" />
-            <asp:Parameter Name="ImageName" Type="String" />
-            <asp:Parameter Name="ParentID" Type="String" />
-            <asp:Parameter Name="IsShowOnMenu" Type="String" />
-            <asp:Parameter Name="IsShowOnHomePage" Type="String" />
-            <asp:Parameter Name="IsAvailable" Type="String" />
+            <asp:Parameter Name="MetaDescriptionCam" Type="String" />
+            <asp:Parameter Name="ImageName" Type="String"></asp:Parameter>
+            <asp:Parameter Name="ParentID" Type="String"></asp:Parameter>
+            <asp:Parameter Name="IsShowOnMenu" Type="String"></asp:Parameter>
+            <asp:Parameter Name="IsShowOnHomePage" Type="String"></asp:Parameter>
+            <asp:Parameter Name="IsAvailable" Type="String"></asp:Parameter>
         </UpdateParameters>
     </asp:ObjectDataSource>
     <asp:RadProgressManager ID="RadProgressManager1" runat="server" />

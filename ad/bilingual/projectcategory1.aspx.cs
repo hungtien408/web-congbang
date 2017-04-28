@@ -103,15 +103,20 @@ public partial class ad_single_projectcategory : System.Web.UI.Page
 
             string strProjectCategoryName = ((RadTextBox)row.FindControl("txtProjectCategoryName")).Text.Trim();
             string strProjectCategoryNameEn = ((RadTextBox)row.FindControl("txtProjectCategoryNameEn")).Text.Trim();
+            string strProjectCategoryNameCam = ((RadTextBox)row.FindControl("txtProjectCategoryNameCam")).Text.Trim();
             string strConvertedProjectCategoryName = Common.ConvertTitle(strProjectCategoryName);
             string strDescription = HttpUtility.HtmlDecode(FCKEditorFix.Fix(((RadEditor)row.FindControl("txtDescription")).Content.Trim()));
             string strDescriptionEn = HttpUtility.HtmlDecode(FCKEditorFix.Fix(((RadEditor)row.FindControl("txtDescriptionEn")).Content.Trim()));
+            string strDescriptionCam = HttpUtility.HtmlDecode(FCKEditorFix.Fix(((RadEditor)row.FindControl("txtDescriptionCam")).Content.Trim()));
             string strContent = HttpUtility.HtmlDecode(FCKEditorFix.Fix(((RadEditor)row.FindControl("txtContent")).Content.Trim()));
             string strContentEn = HttpUtility.HtmlDecode(FCKEditorFix.Fix(((RadEditor)row.FindControl("txtContentEn")).Content.Trim()));
+            string strContentCam = HttpUtility.HtmlDecode(FCKEditorFix.Fix(((RadEditor)row.FindControl("txtContentCam")).Content.Trim()));
             string strMetaTitle = ((RadTextBox)row.FindControl("txtMetaTitle")).Text.Trim();
             string strMetaTitleEn = ((RadTextBox)row.FindControl("txtMetaTitleEn")).Text.Trim();
+            string strMetaTitleCam = ((RadTextBox)row.FindControl("txtMetaTitleCam")).Text.Trim();
             string strMetaDescription = ((RadTextBox)row.FindControl("txtMetaDescription")).Text.Trim();
             string strMetaDescriptionEn = ((RadTextBox)row.FindControl("txtMetaDescriptionEn")).Text.Trim();
+            string strMetaDescriptionCam = ((RadTextBox)row.FindControl("txtMetaDescriptionCam")).Text.Trim();
             string strImageName = FileImageName.UploadedFiles.Count > 0 ? FileImageName.UploadedFiles[0].GetName() : "";
             string strParentID = ((RadComboBox)row.FindControl("ddlParent")).SelectedValue;
             string strIsAvailable = ((CheckBox)row.FindControl("chkIsAvailable")).Checked.ToString();
@@ -126,15 +131,20 @@ public partial class ad_single_projectcategory : System.Web.UI.Page
                 strImageName = oProjectCategory.ProjectCategoryInsert(
                     strProjectCategoryName,
                     strProjectCategoryNameEn,
+                    strProjectCategoryNameCam,
                     strConvertedProjectCategoryName,
                     strDescription,
                     strDescriptionEn,
+                    strDescriptionCam,
                     strContent,
                     strContentEn,
+                    strContentCam,
                     strMetaTitle,
                     strMetaTitleEn,
+                    strMetaTitleCam,
                     strMetaDescription,
                     strMetaDescriptionEn,
+                    strMetaDescriptionCam,
                     strImageName,
                     strParentID,
                     strIsShowOnMenu,
@@ -160,11 +170,14 @@ public partial class ad_single_projectcategory : System.Web.UI.Page
 
                 dsUpdateParam["ProjectCategoryName"].DefaultValue = strProjectCategoryName;
                 dsUpdateParam["ProjectCategoryNameEn"].DefaultValue = strProjectCategoryNameEn;
+                dsUpdateParam["ProjectCategoryNameCam"].DefaultValue = strProjectCategoryNameCam;
                 dsUpdateParam["ConvertedProjectCategoryName"].DefaultValue = strConvertedProjectCategoryName;
                 dsUpdateParam["Description"].DefaultValue = strDescription;
                 dsUpdateParam["DescriptionEn"].DefaultValue = strDescriptionEn;
+                dsUpdateParam["DescriptionCam"].DefaultValue = strDescriptionCam;
                 dsUpdateParam["Content"].DefaultValue = strContent;
                 dsUpdateParam["ContentEn"].DefaultValue = strContentEn;
+                dsUpdateParam["ContentCam"].DefaultValue = strContentCam;
                 dsUpdateParam["ImageName"].DefaultValue = strImageName;
                 dsUpdateParam["ParentID"].DefaultValue = strParentID;
                 dsUpdateParam["IsShowOnMenu"].DefaultValue = strIsShowOnMenu;
