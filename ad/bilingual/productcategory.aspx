@@ -92,7 +92,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="cphBody" runat="Server">
     <h3 class="mainTitle">
         <img alt="" src="../assets/images/category.png" class="vam" />
-        Danh Mục Dự Án</h3>
+        Danh Mục Sản Phẩm</h3>
     <br />
     <asp:RadAjaxPanel ID="RadAjaxPanel1" runat="server" ClientEvents-OnRequestStart="conditionalPostback"
         Width="100%">
@@ -174,6 +174,14 @@
                             </div>
                         </ItemTemplate>
                     </asp:GridTemplateColumn>
+                    <asp:GridTemplateColumn DataField="ProjectCategoryNameCam" HeaderText="Tên danh mục(Tiếng Campuchia)">
+                        <ItemTemplate>
+                            <div class='<%#"catlevel level" +  Eval("Level") %>' style='padding-left: <%# string.IsNullOrEmpty(Eval("Level").ToString()) ? 0 : Convert.ToInt32(Eval("Level")) * 10 %>px'>
+                                <asp:Label ID="lblProjectCategoryNameCam" runat="server" Font-Bold='<%# Eval("ParentID").ToString() == "0" ? true : false %>'
+                                    Text='<%# Eval("ProjectCategoryNameCam")%>'></asp:Label>
+                            </div>
+                        </ItemTemplate>
+                    </asp:GridTemplateColumn>
                     <asp:GridBoundColumn DataField="ProjectCategoryID" HeaderText="ID" SortExpression="ProjectCategoryID">
                     </asp:GridBoundColumn>
                     <asp:GridTemplateColumn>
@@ -201,13 +209,13 @@
                                 Text='<%# Eval("ParentCategoryName")%>'></asp:Label>
                         </ItemTemplate>
                     </asp:GridTemplateColumn>
-                    <asp:GridTemplateColumn DataField="IsShowOnMenu" HeaderText="Xem trên menu">
+                    <asp:GridTemplateColumn DataField="IsShowOnMenu" HeaderText="Xem trên menu" Visible="false">
                         <ItemTemplate>
                             <asp:CheckBox ID="chkIsShowOnMenu" runat="server" Checked='<%# Eval("IsShowOnMenu") == DBNull.Value ? false : Convert.ToBoolean(Eval("IsShowOnMenu"))%>'
                                 CssClass="checkbox" />
                         </ItemTemplate>
                     </asp:GridTemplateColumn>
-                    <asp:GridTemplateColumn DataField="IsShowOnHomePage" HeaderText="Xem trên trang chủ">
+                    <asp:GridTemplateColumn DataField="IsShowOnHomePage" HeaderText="Xem trên trang chủ" Visible="false">
                         <ItemTemplate>
                             <asp:CheckBox ID="chkIsShowOnHomePage" runat="server" Checked='<%# Eval("IsShowOnHomePage") == DBNull.Value ? false : Convert.ToBoolean(Eval("IsShowOnHomePage"))%>'
                                 CssClass="checkbox" />
@@ -228,7 +236,7 @@
                             </div>
                         </ItemTemplate>
                     </asp:GridTemplateColumn>
-                    <asp:GridTemplateColumn HeaderText="Ảnh">
+                    <asp:GridTemplateColumn HeaderText="Ảnh" Visible="false">
                         <ItemTemplate>
                             <asp:Panel ID="Panel1" runat="server" Visible='<%# string.IsNullOrEmpty( Eval("ImageName").ToString()) ? false : true %>'>
                                 <a class="screenshot" rel='../../res/productcategory/<%# Eval("ImageName") %>'>
@@ -249,9 +257,9 @@
                     <FormTemplate>
                         <asp:Panel ID="Panel1" runat="server" DefaultButton="lnkUpdate">
                             <h3 class="searchTitle">
-                                Thông Tin Danh Mục Dự Án</h3>
+                                Thông Tin Danh Mục Sản Phẩm</h3>
                             <table class="search">
-                                <tr>
+                                <tr class="invisible">
                                     <td class="left" valign="top">
                                         Ảnh đại diện
                                     </td>
@@ -269,7 +277,7 @@
                                         Danh mục cấp trên
                                     </td>
                                     <td>
-                                        <asp:RadComboBox ID="ddlParent" runat="server" DataSourceID='<%# (Container is GridEditFormInsertItem) ? "ObjectDataSource1" : "ObjectDataSource2" %>'
+                                        <asp:RadComboBox ID="ddlParent" runat="server" DataSourceID='<%# (Container is GridEditFormInsertItem) ? "ObjectDataSource1" : "ObjectDataSource1" %>'
                                             DataTextField="ProjectCategoryName" DataValueField="ProjectCategoryID" Filter="Contains"
                                             OnDataBound="DropDownList_DataBound" Width="504px">
                                         </asp:RadComboBox>
@@ -519,10 +527,10 @@
                                 <tr>
                                     <td class="left" colspan="2">
                                         <asp:CheckBox ID="chkIsShowOnMenu" runat="server" Checked='<%# (Container is GridEditFormInsertItem) ? true : (Eval("IsShowOnMenu") == DBNull.Value ? false : Convert.ToBoolean(Eval("IsShowOnMenu"))) %>'
-                                            CssClass="checkbox" Text=" Xem trên menu" />
+                                            CssClass="checkbox" Text=" Xem trên menu" Visible="false" />
                                         &nbsp;&nbsp;
                                         <asp:CheckBox ID="chkIsShowOnHomePage" runat="server" Checked='<%# (Container is GridEditFormInsertItem) ? true : (Eval("IsShowOnHomePage") == DBNull.Value ? false : Convert.ToBoolean(Eval("IsShowOnHomePage"))) %>'
-                                            CssClass="checkbox" Text=" Xem trên trang chủ" />
+                                            CssClass="checkbox" Text=" Xem trên trang chủ" Visible="false" />
                                         &nbsp;&nbsp;
                                         <asp:CheckBox ID="chkIsAvailable" runat="server" Checked='<%# (Container is GridEditFormInsertItem) ? true : (Eval("IsAvailable") == DBNull.Value ? false : Convert.ToBoolean(Eval("IsAvailable"))) %>'
                                             CssClass="checkbox" Text=" Hiển thị" />

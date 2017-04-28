@@ -9,72 +9,39 @@
         <div id="carousel-example-generic" class="carousel slide bg-ab-slide intro_show" data-ride="carousel">
             <!-- Indicators -->
             <ol class="carousel-indicators">
-                <li data-target="#carousel-example-generic" data-slide-to="0"></li>
-                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+                <asp:ListView ID="lstItem" runat="server"
+                    DataSourceID="odsServiceCategory" EnableModelValidation="True">
+                    <ItemTemplate>
+                        <li data-target="#carousel-example-generic" data-slide-to='<%# Container.DataItemIndex %>' class='<%# (Container.DataItemIndex) == 0 ? "active" : "" %>'></li>
+                    </ItemTemplate>
+                    <LayoutTemplate>
+                        <span runat="server" id="itemPlaceholder" />
+                    </LayoutTemplate>
+                </asp:ListView>
             </ol>
 
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
-                <div class="item">
-                    <img src="assets/images/banner-2.png" alt="" />
-                    <div class="carousel-caption">
-                        <div class="left">
-                            <div class="head">
-                                <h1>Introduction</h1>
-                                <img src="assets/images/logo-1.jpg" alt="" />
-                            </div>
-                            <div class="wrap-content">
-                                <h1>FOUND 2008</h1>
-                                <p>Appointed by Sekisui Foam International, Cong Bang Corporation is authorized distributor for Vietnam and Camobdia countries for all range of Thermobreak and Softlon products in Construction and Industry. <br />                                    We have supported large techical insulation and  offered  the best  solution for the most of projects to achieve saving engery, life span and comparetitive cost.</p>
+                <asp:Repeater ID="RepeaterServiceCategory" runat="server" DataSourceID="odsServiceCategory">
+                    <ItemTemplate>
+                        <div class="item">
+                            <img alt="" src='<%# "~/res/projectcategory/" + Eval("ImageName") %>' runat="server"
+                                visible='<%# string.IsNullOrEmpty( Eval("ImageName").ToString()) ? false : true %>' />
+                            <div class="carousel-caption">
+                                <%# Eval("Content") %>
                             </div>
                         </div>
-                        <div class="right">
-                            <div class="wrap-right">
-                                <p>Since 2008 up to now, we have already supplied the hundred of projects around Vietnam and Cambodia countries such as International & Domestic Airport Terminal, Hospital, Commercial Building & Office, Pharmaceutical Factory, Brewery & Beverage Factories, Luxury & 5-star Hotel, Supermarket...</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="assets/images/banner-3.png" alt="" />
-                    <div class="carousel-caption">
-                        <div class="left">
-                            <div class="wrap-content">
-                                <p>OurExperienced Sales Engineer Team will always support IMMIDIATELY you or your projects at Da Nang Ref Office – Ho Chi Minh Head Office or Phonm Penh Office if you have any query about thermal insualtion or original equipment manufacturing (OEM) products. <br /> <br />                                    We are proud of Technical Engineering Team that guide how to install our product  with the best performance such as saving material & time, good-looking, Evently we are able to supply this installed service  when you requrire. </p>
-                            </div>
-                        </div>
-                        <div class="right">
-                            <img src="assets/images/img-1.png" alt="" />
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="assets/images/banner-4.png" alt="" />
-                    <div class="carousel-caption">
-                        <div class="left">
-                        </div>
-                        <div class="right">
-                            <div class="wrap-right">
-                                <p>We have been supplying Thermobreak and  Softlon for many projects at the same time  so our stock is huge and abosolutely adapt many inquires  with large volume as urgent cases. <br />    With the warehouses around  Vietnam & Cambodia that will always deliver the goods faster, convenient ordering and ESPEICALLY your schedule in TIME.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="assets/images/banner-5.png" alt="" />
-                    <div class="carousel-caption">
-                        <div class="left">
-                        </div>
-                        <div class="other-right">
-                            <h1>BRINGS YOU <br class="break" />
-                                TRUE VALUE</h1>
-                            <p>Cong Bang Corporation  is managed by NEW generation leader with global vision, sustainability, improvement to commit bringing TRUE VALUE to all of customers, partners and  staff . <br /> <br />
-                            With PHƯƠNG CHÂM, chúng tôi phục vụ bạn tốt hơn mỗi ngày với chất lượng sản phẩm vượt trội và dịch vụ sau bán hàng tuyệt hảo sẽ làm bạn hài lòng </p>
-                        </div>
-                    </div>
-                </div>
+                    </ItemTemplate>
+                </asp:Repeater>
+                <asp:ObjectDataSource ID="odsServiceCategory" runat="server" SelectMethod="ProjectCategorySelectAll" TypeName="TLLib.ProjectCategory">
+                    <SelectParameters>
+                        <asp:Parameter DefaultValue="1" Name="parentID" Type="Int32"></asp:Parameter>
+                        <asp:Parameter DefaultValue="1" Name="increaseLevelCount" Type="Int32"></asp:Parameter>
+                        <asp:Parameter Name="IsShowOnMenu" Type="String"></asp:Parameter>
+                        <asp:Parameter Name="IsShowOnHomePage" Type="String"></asp:Parameter>
+                        <asp:Parameter DefaultValue="True" Name="IsAvailable" Type="String"></asp:Parameter>
+                    </SelectParameters>
+                </asp:ObjectDataSource>
             </div>
         </div>
     </div>

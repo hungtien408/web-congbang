@@ -63,7 +63,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphBody" runat="Server">
     <fieldset>
-        <h3 class="searchTitle">Thông Tin Dự Án</h3>
+        <h3 class="searchTitle">Thông Tin</h3>
         <asp:FormView ID="FormView1" runat="server" DataSourceID="ObjectDataSource2" EnableModelValidation="True"
             Width="100%">
             <ItemTemplate>
