@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/site.master" AutoEventWireup="true" CodeFile="News-details.aspx.cs" Inherits="News_details" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/site.master" AutoEventWireup="true" CodeFile="Activities-details.aspx.cs" Inherits="News_details" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <title>Công bằng</title>
@@ -70,7 +70,7 @@
                 </asp:Repeater>
                 <asp:ObjectDataSource ID="odsContent" runat="server" SelectMethod="ProjectSelectOne" TypeName="TLLib.Project">
                     <SelectParameters>
-                        <asp:QueryStringParameter QueryStringField="nd" Name="ProjectID" Type="String"></asp:QueryStringParameter>
+                        <asp:QueryStringParameter QueryStringField="acd" Name="ProjectID" Type="String"></asp:QueryStringParameter>
 
 
                     </SelectParameters>
@@ -83,7 +83,7 @@
                         <asp:Parameter Name="Keyword" Type="String"></asp:Parameter>
                         <asp:Parameter Name="ProjectTitle" Type="String"></asp:Parameter>
                         <asp:Parameter Name="Description" Type="String"></asp:Parameter>
-                        <asp:QueryStringParameter QueryStringField="nid" DefaultValue="" Name="ProjectCategoryID" Type="String"></asp:QueryStringParameter>
+                        <asp:QueryStringParameter QueryStringField="acid" DefaultValue="" Name="ProjectCategoryID" Type="String"></asp:QueryStringParameter>
                         <asp:Parameter Name="Tag" Type="String"></asp:Parameter>
                         <asp:Parameter Name="IsHot" Type="String"></asp:Parameter>
                         <asp:Parameter Name="IsNew" Type="String"></asp:Parameter>
@@ -105,7 +105,7 @@
                 <ul>
                     <asp:Repeater ID="RepeaterSame" runat="server" DataSourceID="odsSame" EnableViewState="false">
                         <ItemTemplate>
-                            <li><a href="<%# SiteCode.progressTitle(Eval("ProjectTitleEn")) + "-nd-" + Eval("ProjectID") + ".aspx" %>"><%# Eval("ProjectTitleEn") %></a></li>
+                            <li><a href="<%# SiteCode.progressTitle(Eval("ProjectTitleEn")) + "-acd-" + Eval("ProjectID") + ".aspx" %>"><%# Eval("ProjectTitleEn") %></a></li>
                         </ItemTemplate>
                     </asp:Repeater>
                     <asp:ObjectDataSource ID="odsSame" runat="server" SelectMethod="ProjectSameSelectAll" TypeName="TLLib.Project">

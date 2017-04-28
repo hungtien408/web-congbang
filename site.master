@@ -73,7 +73,8 @@
                 <div id="header">
                     <div class="wrap-con">
                         <div class="logo">
-                            <a href="~/" runat="server"><img src="assets/images/logo.png" alt="" /></a>
+                            <a href="~/" runat="server">
+                                <img src="assets/images/logo.png" alt="" /></a>
                         </div>
                         <ul id="menu" class="desktop-992">
                             <li><a href="~/" runat="server">Home</a>
@@ -83,122 +84,75 @@
                             </li>
                             <li><a href="Services.aspx">Services</a>
                                 <ul>
-                                    <li><a href="#">Consultant</a>
-                                        <%--<ul>
-                                            <li><a href="#">Thermal Insulation</a>
-                                                <ul>
-                                                    <li><a href="#">Internal & External Duct Insulation</a>
-                                                        <ul>
-                                                            <li><a href="#">Advantages</a></li>
-                                                            <li><a href="#">Specification</a></li>
-                                                            <li><a href="#">Photos Library</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="#">Acoustic Duct Linning </a>
-                                                        <ul>
-                                                            <li><a href="#">Advantages</a></li>
-                                                            <li><a href="#">Specification</a></li>
-                                                            <li><a href="#">Photos Library</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="#">Hot & Cold Pipe Insulation</a>
-                                                        <ul>
-                                                            <li><a href="#">Advantages</a></li>
-                                                            <li><a href="#">Specification</a></li>
-                                                            <li><a href="#">Photos Library</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="#">Roof, Wall & Underslab Insulation</a>
-                                                        <ul>
-                                                            <li><a href="#">Advantages</a></li>
-                                                            <li><a href="#">Specification</a></li>
-                                                            <li><a href="#">Photos Library</a></li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">Acoustic Fllooring Underlay</a></li>
-                                            <li><a href="#">Others</a></li>
-                                        </ul>--%>
-                                    </li>
-                                    <li><a href="#">Supplier</a></li>
-                                    <li><a href="#">Technical Services</a></li>
-                                    <li><a href="#">Industrial</a></li>
+                                    <asp:Repeater ID="Repeater1" runat="server" DataSourceID="odsService" EnableViewState="false">
+                                        <ItemTemplate>
+                                            <li><a href="<%# SiteCode.progressTitle(Eval("ProjectCategoryNameEn")) + "-si-" + Eval("ProjectCategoryID") + ".aspx" %>"><%# Eval("ProjectCategoryNameEn") %></a></li>
+                                        </ItemTemplate>
+                                    </asp:Repeater>
+                                    <asp:ObjectDataSource ID="odsService" runat="server" SelectMethod="ProjectCategorySelectAll" TypeName="TLLib.ProjectCategory">
+                                        <SelectParameters>
+                                            <asp:Parameter DefaultValue="1" Name="parentID" Type="Int32"></asp:Parameter>
+                                            <asp:Parameter DefaultValue="2" Name="increaseLevelCount" Type="Int32"></asp:Parameter>
+                                            <asp:Parameter Name="IsShowOnMenu" Type="String"></asp:Parameter>
+                                            <asp:Parameter Name="IsShowOnHomePage" Type="String"></asp:Parameter>
+                                            <asp:Parameter DefaultValue="true" Name="IsAvailable" Type="String"></asp:Parameter>
+                                        </SelectParameters>
+                                    </asp:ObjectDataSource>
                                 </ul>
                             </li>
                             <li><a href="Products.aspx">Products</a>
                                 <ul>
-                                    <li><a href="#">Thermal Insulation</a>
-                                        <%--<ul>
-                                            <li><a href="#">Internal & External Duct Insulation</a>
-                                                <ul>
-                                                    <li><a href="#">Technical Information</a></li>
-                                                    <li><a href="#">Certificates & Test Report</a></li>
-                                                    <li><a href="#">Catalog</a></li>
-                                                    <li><a href="#">Thermobreak ’s Recognization</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">Hot & Cold Pipe Insulation</a>
-                                                <ul>
-                                                    <li><a href="#">Technical Information</a></li>
-                                                    <li><a href="#">Certificates & Test Report</a></li>
-                                                    <li><a href="#">Catalog</a></li>
-                                                    <li><a href="#">Thermobreak ’s Recognization</a></li>
-                                                </ul></li>
-                                            <li><a href="#">Underslab – Roof & Wall Insulation</a>
-                                                <ul>
-                                                    <li><a href="#">Technical Information</a></li>
-                                                    <li><a href="#">Certificates & Test Report</a></li>
-                                                    <li><a href="#">Catalog</a></li>
-                                                    <li><a href="#">Thermobreak ’s Recognization</a></li>
-                                                </ul></li>
-                                            <li><a href="#">Equipment Insulation</a>
-                                                <ul>
-                                                    <li><a href="#">Technical Information</a></li>
-                                                    <li><a href="#">Certificates & Test Report</a></li>
-                                                    <li><a href="#">Catalog</a></li>
-                                                    <li><a href="#">Thermobreak ’s Recognization</a></li>
-                                                </ul></li>
-                                        </ul>--%>
-                                    </li>
-                                    <li><a href="#">Acoustic Underlay</a>
-                                        <%--<ul>
-                                            <li><a href="#">Acoustic for Underscreed</a></li>
-                                            <li><a href="#">Acoustic for Timber Flooring Underlay</a></li>
-                                        </ul>--%>
-                                    </li>
-                                    <li><a href="#">Accessories</a>
-                                        <%--<ul>
-                                            <li><a href="#">Thermobreak Foil Tape</a></li>
-                                            <li><a href="#">Thermaloc Pipe Support</a></li>
-                                            <li><a href="#">Duct Gasket</a></li>
-                                        </ul>--%>
-                                    </li>
-                                    <li><a href="#">Industrial</a>
-                                        <%--<ul>
-                                            <li><a href="#">OEMs</a></li>
-                                            <li><a href="#">Manufacturing</a></li>
-                                        </ul>--%>
-                                    </li>
-                                    <li><a href="#">Others</a></li>
+                                    <asp:Repeater ID="Repeater2" runat="server" DataSourceID="odsProducts" EnableViewState="false">
+                                        <ItemTemplate>
+                                            <li><a href="<%# SiteCode.progressTitle(Eval("ProjectCategoryNameEn")) + "-si-" + Eval("ProjectCategoryID") + ".aspx" %>"><%# Eval("ProjectCategoryNameEn") %></a></li>
+                                        </ItemTemplate>
+                                    </asp:Repeater>
+                                    <asp:ObjectDataSource ID="odsProducts" runat="server" SelectMethod="ProjectCategorySelectAll" TypeName="TLLib.ProjectCategory">
+                                        <SelectParameters>
+                                            <asp:Parameter DefaultValue="3" Name="parentID" Type="Int32"></asp:Parameter>
+                                            <asp:Parameter DefaultValue="2" Name="increaseLevelCount" Type="Int32"></asp:Parameter>
+                                            <asp:Parameter Name="IsShowOnMenu" Type="String"></asp:Parameter>
+                                            <asp:Parameter Name="IsShowOnHomePage" Type="String"></asp:Parameter>
+                                            <asp:Parameter DefaultValue="true" Name="IsAvailable" Type="String"></asp:Parameter>
+                                        </SelectParameters>
+                                    </asp:ObjectDataSource>
                                 </ul>
                             </li>
                             <li><a href="Projects.aspx">Projects</a></li>
                             <li><a href="#">Applications</a>
                                 <ul>
-                                    <li><a href="#">Ductwork & Pipework</a></li>
-                                    <li><a href="#">Raised Floor system</a></li>
-                                    <li><a href="#">Tank & Equipments</a></li>
-                                    <li><a href="#">Underslab, Roof and Wall</a></li>
-                                    <li><a href="#">Acoustic Flooring</a></li>
+                                    <asp:Repeater ID="Repeater3" runat="server" DataSourceID="odsApplications" EnableViewState="false">
+                                        <ItemTemplate>
+                                            <li><a href="<%# SiteCode.progressTitle(Eval("ProjectCategoryNameEn")) + "-si-" + Eval("ProjectCategoryID") + ".aspx" %>"><%# Eval("ProjectCategoryNameEn") %></a></li>
+                                        </ItemTemplate>
+                                    </asp:Repeater>
+                                    <asp:ObjectDataSource ID="odsApplications" runat="server" SelectMethod="ProjectCategorySelectAll" TypeName="TLLib.ProjectCategory">
+                                        <SelectParameters>
+                                            <asp:Parameter DefaultValue="5" Name="parentID" Type="Int32"></asp:Parameter>
+                                            <asp:Parameter DefaultValue="2" Name="increaseLevelCount" Type="Int32"></asp:Parameter>
+                                            <asp:Parameter Name="IsShowOnMenu" Type="String"></asp:Parameter>
+                                            <asp:Parameter Name="IsShowOnHomePage" Type="String"></asp:Parameter>
+                                            <asp:Parameter DefaultValue="true" Name="IsAvailable" Type="String"></asp:Parameter>
+                                        </SelectParameters>
+                                    </asp:ObjectDataSource>
                                 </ul>
                             </li>
                             <li><a href="Activities.aspx">Activities</a>
                                 <ul>
-                                    <li><a href="#">Communiative Responsibility</a></li>
-                                    <li><a href="#">Staff Responsibility</a></li>
-                                    <li><a href="#">Marketing Activity</a></li>
-                                    <li><a href="#">Customers</a></li>
+                                    <asp:Repeater ID="Repeater4" runat="server" DataSourceID="odsActivities" EnableViewState="false">
+                                        <ItemTemplate>
+                                            <li><a href="<%# SiteCode.progressTitle(Eval("ProjectCategoryNameEn")) + "-si-" + Eval("ProjectCategoryID") + ".aspx" %>"><%# Eval("ProjectCategoryNameEn") %></a></li>
+                                        </ItemTemplate>
+                                    </asp:Repeater>
+                                    <asp:ObjectDataSource ID="odsActivities" runat="server" SelectMethod="ProjectCategorySelectAll" TypeName="TLLib.ProjectCategory">
+                                        <SelectParameters>
+                                            <asp:Parameter DefaultValue="6" Name="parentID" Type="Int32"></asp:Parameter>
+                                            <asp:Parameter DefaultValue="2" Name="increaseLevelCount" Type="Int32"></asp:Parameter>
+                                            <asp:Parameter Name="IsShowOnMenu" Type="String"></asp:Parameter>
+                                            <asp:Parameter Name="IsShowOnHomePage" Type="String"></asp:Parameter>
+                                            <asp:Parameter DefaultValue="true" Name="IsAvailable" Type="String"></asp:Parameter>
+                                        </SelectParameters>
+                                    </asp:ObjectDataSource>
                                 </ul>
                             </li>
                             <li><a href="News.aspx">News</a>
@@ -210,9 +164,20 @@
                             </li>
                             <li><a href="javascript:void(0);">Contact</a>
                                 <ul>
-                                    <li><a href="Contact-hcm.aspx">Ho Chi Minh Head Office</a></li>
-                                    <li><a href="Contact-dn.aspx">Da Nang Rep Office</a></li>
-                                    <li><a href="Contact-cam.aspx">Phnom Penh Office</a></li>
+                                    <asp:Repeater ID="Repeater5" runat="server" DataSourceID="odsContact" EnableViewState="false">
+                                        <ItemTemplate>
+                                            <li><a href="<%# SiteCode.progressTitle(Eval("ProjectCategoryNameEn")) + "-si-" + Eval("ProjectCategoryID") + ".aspx" %>"><%# Eval("ProjectCategoryNameEn") %></a></li>
+                                        </ItemTemplate>
+                                    </asp:Repeater>
+                                    <asp:ObjectDataSource ID="odsContact" runat="server" SelectMethod="ProjectCategorySelectAll" TypeName="TLLib.ProjectCategory">
+                                        <SelectParameters>
+                                            <asp:Parameter DefaultValue="8" Name="parentID" Type="Int32"></asp:Parameter>
+                                            <asp:Parameter DefaultValue="2" Name="increaseLevelCount" Type="Int32"></asp:Parameter>
+                                            <asp:Parameter Name="IsShowOnMenu" Type="String"></asp:Parameter>
+                                            <asp:Parameter Name="IsShowOnHomePage" Type="String"></asp:Parameter>
+                                            <asp:Parameter DefaultValue="true" Name="IsAvailable" Type="String"></asp:Parameter>
+                                        </SelectParameters>
+                                    </asp:ObjectDataSource>
                                 </ul>
                             </li>
                         </ul>
@@ -263,7 +228,7 @@
 
         <!-- main js -->
         <script src="assets/js/jquery.main.js"></script>
-        
+
         <!-- end main js -->
     </form>
 </body>

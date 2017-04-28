@@ -55,7 +55,7 @@
                 <ul>
                     <asp:Repeater ID="RepeaterServiceCategory" runat="server" DataSourceID="odsServiceCategory">
                         <ItemTemplate>
-                            <li><a href='<%# SiteCode.progressTitle(Eval("ProjectCategoryNameEn")) + "-aci-" + Eval("ProjectCategoryID") + ".aspx" %>'><%# Eval("ProjectCategoryNameEn") %></a></li>
+                            <li><a href='<%# SiteCode.progressTitle(Eval("ProjectCategoryNameEn")) + "-"+(Eval("CountProject").ToString() == "0"?"aci":"acid")+"-" + Eval("ProjectCategoryID") + ".aspx" %>'><%# Eval("ProjectCategoryNameEn") %></a></li>
                         </ItemTemplate>
                     </asp:Repeater>
                     <asp:ObjectDataSource ID="odsServiceCategory" runat="server" SelectMethod="ProjectCategorySelectAll" TypeName="TLLib.ProjectCategory">

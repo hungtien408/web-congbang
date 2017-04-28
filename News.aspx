@@ -55,7 +55,7 @@
                 <ul>
                     <asp:Repeater ID="RepeaterServiceCategory" runat="server" DataSourceID="odsServiceCategory">
                         <ItemTemplate>
-                            <li><a href='<%# SiteCode.progressTitle(Eval("ProjectCategoryNameEn")) + "-ni-" + Eval("ProjectCategoryID") + ".aspx" %>'><%# Eval("ProjectCategoryNameEn") %></a></li>
+                            <li><a href='<%# SiteCode.progressTitle(Eval("ProjectCategoryNameEn")) + "-"+(Eval("CountProject").ToString() == "0"?"ni":"nid")+"-" + Eval("ProjectCategoryID") + ".aspx" %>'><%# Eval("ProjectCategoryNameEn") %></a></li>
                         </ItemTemplate>
                     </asp:Repeater>
                     <asp:ObjectDataSource ID="odsServiceCategory" runat="server" SelectMethod="ProjectCategorySelectAll" TypeName="TLLib.ProjectCategory">
@@ -66,7 +66,7 @@
                             <asp:Parameter Name="IsShowOnHomePage" Type="String"></asp:Parameter>
                             <asp:Parameter DefaultValue="True" Name="IsAvailable" Type="String"></asp:Parameter>
                         </SelectParameters>
-                </asp:ObjectDataSource>
+                    </asp:ObjectDataSource>
                 </ul>
 
             </div>
