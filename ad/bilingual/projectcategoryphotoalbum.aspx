@@ -173,7 +173,7 @@
                                     <NumberFormat AllowRounding="false" DecimalDigits="0" GroupSeparator="." />
                                 </asp:RadNumericTextBox>
                                 <asp:CheckBox ID="chkIsAvailable" runat="server" Checked='<%# string.IsNullOrEmpty(Eval("IsAvailable").ToString()) ? false : Eval("IsAvailable") %>'
-                                    ToolTip="Hiển thị" TextAlign="Left" CssClass="checkbox vam" />
+                                    ToolTip="Hiển thị" TextAlign="Left" CssClass="checkbox vam" Text="Hiển thị"/>
                             </td>
                             <td align="right">
                                 <%--<asp:LinkButton ID="btnEditSelected" runat="server" CommandName="Edit" CssClass="item"><img width="14px" class="vam" alt="" title="Sửa" src="../assets/images/tools.png" /></asp:LinkButton>
