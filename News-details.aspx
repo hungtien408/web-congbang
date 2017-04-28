@@ -20,17 +20,29 @@
             </div>
         </div>
     </div>
+    <div class="news-slide">
+        <div class="swiper-container ">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="assets/images/img-project1.jpg" /></div>
+                <div class="swiper-slide">
+                    <img src="assets/images/img-project2.jpg" /></div>
+                <div class="swiper-slide">
+                    <img src="assets/images/img-project3.jpg" /></div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
     <div class="main-wrap">
         <div class="left">
             <div class="content-left img-cont">
                 <h1>Lectus tellus et dapbus ante fermentum ut</h1>
                 <p>Appointed by Sekisui Foam International, Cong Bang Corporation is authorized distributor for Vietnam and Camobdia countries for all range of Thermobreak and Softlon products in Construction and Industry . <br />
                 We have been supported large techical insulation and  offered  the best  solution for the most of projects to achieve saving engery, life span and comparetitive cost. Fusce eget tempor nunc. Mauris malesuada lectus tellus, et dapibus ante fermentum ut. Fusce posuere massa nisl, sit amet interdum nulla tristique in. <br />
-                    <img src="assets/images/news-1.png" alt="Alternate Text" />
                 </p>
                 <p>Appointed by Sekisui Foam International, Cong Bang Corporation is authorized distributor for Vietnam and Camobdia countries for all range of Thermobreak and Softlon products in Construction and Industry . <br />
                 We have been supported large techical insulation and  offered  the best  solution for the most of projects to achieve saving engery, life span and comparetitive cost. Fusce eget tempor nunc. Mauris malesuada lectus tellus, et dapibus ante fermentum ut. Fusce posuere massa nisl, sit amet interdum nulla tristique in. <br />
-                    <img src="assets/images/news-1.png" alt="Alternate Text" />
                 </p>
             </div>
         </div>
@@ -44,6 +56,32 @@
                     <li><a href="News-details.aspx">Vestibulum fermentum eu metus eu varius</a></li>
                     <li><a href="News-details.aspx">Praesent pulvinar velit at consequat rutrumodio </a></li>
                 </ul>
+            </div>
+        </div>
+    </div>
+    <div class="news-video">
+        <div class="wrapper-video">
+            <div class="video-details">
+                <div id="jwplayer1"></div>
+                <script type="text/javascript">
+                    jwplayer.key = "yl/yqfTaFkHTZsvJEK6NtJYZZujiAxc3knwh";
+                    $(document).ready(function () {
+                        var w_height = $(window).height();
+                        var w_width = $(window).width();
+                        jwplayer('jwplayer1').setup({
+                            image: '',
+                            file: 'https://www.youtube.com/watch?v=DydIus2xA3I',
+                            flashplayer: "assets/js/jwplayer.flash.swf",
+                            height: 160,
+                            width: 240,
+                            dock: true,
+                            //autostart: true,
+                            primary: "html5",
+                            aspectratio: '16:9',
+                            //stretching: "fill",
+                        });
+                    });
+                </script>
             </div>
         </div>
     </div>

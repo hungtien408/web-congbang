@@ -106,7 +106,10 @@ public partial class ad_single_projectphotoalbum : System.Web.UI.Page
                 var strDescription = ((TextBox)item.FindControl("txtDescription")).Text.Trim();
                 var strTitleEn = ((TextBox)item.FindControl("txtTitleEn")).Text.Trim();
                 var strDescriptionEn = ((TextBox)item.FindControl("txtDescriptionEn")).Text.Trim();
+                var strTitleCam = ((TextBox)item.FindControl("txtTitleCam")).Text.Trim();
+                var strDescriptionCam = ((TextBox)item.FindControl("txtDescriptionCam")).Text.Trim();
                 var IsAvailable = ((CheckBox)item.FindControl("chkAddIsAvailable")).Checked.ToString();
+                var IsBackground = ((CheckBox)item.FindControl("chkAddIsBackground")).Checked.ToString();
                 var Priority = ((RadNumericTextBox)item.FindControl("txtPriority")).Text.Trim();
                 var oProjectImage = new ProjectImage();
 
@@ -117,7 +120,10 @@ public partial class ad_single_projectphotoalbum : System.Web.UI.Page
                     strDescription,
                     strTitleEn,
                     strDescriptionEn,
+                    strTitleCam,
+                    strDescriptionCam,
                     Request.QueryString["PI"],
+                    IsBackground,
                     IsAvailable,
                     Priority);
 
@@ -142,10 +148,12 @@ public partial class ad_single_projectphotoalbum : System.Web.UI.Page
                 var strConvertedProjectName = Common.ConvertTitle(strProjectTitle);
                 var strImageName = FileImageName.UploadedFiles.Count > 0 ? FileImageName.UploadedFiles[0].GetName() : "";
                 var strOldImageName = ((HiddenField)e.ListViewItem.FindControl("hdnImageName")).Value;
+                var strIsBackground = ((CheckBox)item.FindControl("chkAddIsBackground")).Checked.ToString();
                 var strIsAvailable = ((CheckBox)item.FindControl("chkAddIsAvailable")).Checked.ToString();
 
                 dsUpdateParam["ImageName"].DefaultValue = strImageName;
                 dsUpdateParam["ConvertedProjectName"].DefaultValue = strConvertedProjectName;
+                dsUpdateParam["IsBackground"].DefaultValue = strIsBackground;
                 dsUpdateParam["IsAvailable"].DefaultValue = strIsAvailable;
 
                 if (!string.IsNullOrEmpty(strImageName))
@@ -173,17 +181,19 @@ public partial class ad_single_projectphotoalbum : System.Web.UI.Page
             }
             else if (e.CommandName == "QuickUpdate")
             {
-                string ProjectImageID, Priority, IsAvailable;
+                string ProjectImageID, Priority, IsBackground, IsAvailable;
                 var oProjectImage = new ProjectImage();
 
                 foreach (RadListViewDataItem item in RadListView1.Items)
                 {
                     ProjectImageID = item.GetDataKeyValue("ProjectImageID").ToString();
                     Priority = ((RadNumericTextBox)item.FindControl("txtPriority")).Text.Trim();
+                    IsBackground = ((CheckBox)item.FindControl("chkIsBackground")).Checked.ToString();
                     IsAvailable = ((CheckBox)item.FindControl("chkIsAvailable")).Checked.ToString();
 
                     oProjectImage.ProjectImageQuickUpdate(
                         ProjectImageID,
+                        IsBackground,
                         IsAvailable,
                         Priority
                     );
@@ -214,6 +224,37 @@ public partial class ad_single_projectphotoalbum : System.Web.UI.Page
         {
             lblError.Text = ex.Message;
         }
+    }
+
+    protected void FileImageAlbum_FileUploaded(object sender, FileUploadedEventArgs e)
+    {
+        var FileImageAlbum = (RadAsyncUpload)sender;
+        var Parent = FileImageAlbum.NamingContainer;
+        var ProjectID = Request.QueryString["PI"];//((HiddenField)Parent.FindControl("hdnProductID")).Value;
+        //var RadListView1 = (RadListView)Parent.FindControl("RadListView1");
+        //var RadListView2 = (RadListView)Parent.FindControl("RadListView2");
+
+        string targetFolder = "~/res/project/album/";
+        string newName = Guid.NewGuid().GetHashCode().ToString("X") + e.File.GetExtension();
+        e.File.SaveAs(Server.MapPath(targetFolder + newName));
+
+        ResizeCropImage.ResizeByCondition(targetFolder + newName, 800, 800);
+        ResizeCropImage.CreateThumbNailByCondition("~/res/project/album/", "~/res/project/album/thumbs/", newName, 120, 120);
+
+        //if (string.IsNullOrEmpty(ProductID))
+        //{
+        //    TempImage.Rows.Add(new object[] { newName });
+
+        //    RadListView2.DataSource = TempImage;
+        //    RadListView2.DataBind();
+        //}
+        //else
+        //{
+            var oProjectImage = new ProjectImage();
+
+            oProjectImage.ProjectImageInsert(newName, "", "", "", "", "", "", "", ProjectID, "False", "True", "");
+            RadListView1.Rebind();
+        //}
     }
 
     #endregion

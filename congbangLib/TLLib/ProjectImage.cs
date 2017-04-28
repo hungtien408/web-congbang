@@ -20,7 +20,10 @@ namespace TLLib
             string Descripttion,
             string TitleEn,
             string DescripttionEn,
+            string TitleCam,
+            string DescripttionCam,
             string ProjectID,
+            string IsBackground,
             string IsAvailable,
             string Priority
         )
@@ -36,7 +39,10 @@ namespace TLLib
                 cmd.Parameters.AddWithValue("@Descripttion", string.IsNullOrEmpty(Descripttion) ? dbNULL : (object)Descripttion);
                 cmd.Parameters.AddWithValue("@TitleEn", string.IsNullOrEmpty(TitleEn) ? dbNULL : (object)TitleEn);
                 cmd.Parameters.AddWithValue("@DescripttionEn", string.IsNullOrEmpty(DescripttionEn) ? dbNULL : (object)DescripttionEn);
+                cmd.Parameters.AddWithValue("@TitleCam", string.IsNullOrEmpty(TitleCam) ? dbNULL : (object)TitleCam);
+                cmd.Parameters.AddWithValue("@DescripttionCam", string.IsNullOrEmpty(DescripttionCam) ? dbNULL : (object)DescripttionCam);
                 cmd.Parameters.AddWithValue("@ProjectID", string.IsNullOrEmpty(ProjectID) ? dbNULL : (object)ProjectID);
+                cmd.Parameters.AddWithValue("@IsBackground", string.IsNullOrEmpty(IsBackground) ? dbNULL : (object)IsBackground);
                 cmd.Parameters.AddWithValue("@IsAvailable", string.IsNullOrEmpty(IsAvailable) ? dbNULL : (object)IsAvailable);
                 cmd.Parameters.AddWithValue("@Priority", string.IsNullOrEmpty(Priority) ? dbNULL : (object)Priority);
                 
@@ -70,7 +76,10 @@ namespace TLLib
             string Descripttion,
             string TitleEn,
             string DescripttionEn,
+            string TitleCam,
+            string DescripttionCam,
             string ProjectID,
+            string IsBackground,
             string IsAvailable,
             string Priority
         )
@@ -87,7 +96,10 @@ namespace TLLib
                 cmd.Parameters.AddWithValue("@Descripttion", string.IsNullOrEmpty(Descripttion) ? dbNULL : (object)Descripttion);
                 cmd.Parameters.AddWithValue("@TitleEn", string.IsNullOrEmpty(TitleEn) ? dbNULL : (object)TitleEn);
                 cmd.Parameters.AddWithValue("@DescripttionEn", string.IsNullOrEmpty(DescripttionEn) ? dbNULL : (object)DescripttionEn);
+                cmd.Parameters.AddWithValue("@TitleCam", string.IsNullOrEmpty(TitleCam) ? dbNULL : (object)TitleCam);
+                cmd.Parameters.AddWithValue("@DescripttionCam", string.IsNullOrEmpty(DescripttionCam) ? dbNULL : (object)DescripttionCam);
                 cmd.Parameters.AddWithValue("@ProjectID", string.IsNullOrEmpty(ProjectID) ? dbNULL : (object)ProjectID);
+                cmd.Parameters.AddWithValue("@IsBackground", string.IsNullOrEmpty(IsBackground) ? dbNULL : (object)IsBackground);
                 cmd.Parameters.AddWithValue("@IsAvailable", string.IsNullOrEmpty(IsAvailable) ? dbNULL : (object)IsAvailable);
                 cmd.Parameters.AddWithValue("@Priority", string.IsNullOrEmpty(Priority) ? dbNULL : (object)Priority);
                 
@@ -112,6 +124,7 @@ namespace TLLib
 
         public int ProjectImageQuickUpdate(
             string ProjectImageID,
+            string IsBackground,
             string IsAvailable,
             string Priority
         )
@@ -122,6 +135,7 @@ namespace TLLib
                 var cmd = new SqlCommand("usp_ProjectImage_QuickUpdate", scon);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@ProjectImageID", string.IsNullOrEmpty(ProjectImageID) ? dbNULL : (object)ProjectImageID);
+                cmd.Parameters.AddWithValue("@IsBackground", string.IsNullOrEmpty(IsBackground) ? dbNULL : (object)IsBackground);
                 cmd.Parameters.AddWithValue("@IsAvailable", string.IsNullOrEmpty(IsAvailable) ? dbNULL : (object)IsAvailable);
                 cmd.Parameters.AddWithValue("@Priority", string.IsNullOrEmpty(Priority) ? dbNULL : (object)Priority);
 
@@ -175,6 +189,7 @@ namespace TLLib
 
         public DataTable ProjectImageSelectAll(
             string ProjectID,
+            string IsBackground,
             string IsAvailable,
             string Priority,
             string SortByPriority
@@ -187,6 +202,7 @@ namespace TLLib
                 var cmd = new SqlCommand("usp_ProjectImage_SelectAll", scon);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@ProjectID", string.IsNullOrEmpty(ProjectID) ? dbNULL : (object)ProjectID);
+                cmd.Parameters.AddWithValue("@IsBackground", string.IsNullOrEmpty(IsBackground) ? dbNULL : (object)IsBackground);
                 cmd.Parameters.AddWithValue("@IsAvailable", string.IsNullOrEmpty(IsAvailable) ? dbNULL : (object)IsAvailable);
                 cmd.Parameters.AddWithValue("@Priority", string.IsNullOrEmpty(Priority) ? dbNULL : (object)Priority);
                 cmd.Parameters.AddWithValue("@SortByPriority", string.IsNullOrEmpty(SortByPriority) ? dbNULL : (object)SortByPriority);

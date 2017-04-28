@@ -3,12 +3,15 @@
     });
     $(window).resize(function () {
         height_win();
+        main_img_project();
     });
     $(function () {
         myfunload();
         height_win();
         respon_intro();
         bg_ab();
+        main_img_project();
+        bg_swipper();
     });
 })(jQuery);
 function height_win() {
@@ -77,6 +80,45 @@ function myfunload() {
         $(this).prev().hide();
         $('.contact-box-hid').addClass('active');
     });
+
+    /**/
+    $('.img-project').owlCarousel({
+        margin: 10,
+        loop: true,
+        nav: false,
+        autoplay: true,
+        autoplayTimeout: 5000,
+        autoplayHoverPause: true,
+        items: 1
+    });
+    /**/
+    var swiper = new Swiper('.swiper-container', {
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        slidesPerView: 1,
+        slidesPerView: 'auto',
+        //slidesPerColumn: 2,
+        paginationClickable: true,
+        spaceBetween: 0,
+        //autoplay: 3000,
+        //loop: true,
+        keyboardControl: true,
+        //effect: 'fade',
+        //breakpoints: {
+        //    1200: {
+        //        slidesPerView: 2,
+        //    },
+        //    992: {
+        //        slidesPerView: 1,
+        //    },
+        //    768: {
+        //        slidesPerView: 2,
+        //    },
+        //    640: {
+        //        slidesPerView: 1,
+        //    }
+        //}
+    });
 }
 /*=========================================================================*/
 //================== scroll top
@@ -93,6 +135,19 @@ $('.scroll-to-top').on('click', function (e) {
     $('html, body').animate({ scrollTop: 0 }, 800);
     return false;
 });
+
+function main_img_project() {
+    n = $(window).height();
+    $('.main-img-project').height(n - 165);
+    $('.news-slide').height(n - 420);
+}
+function bg_swipper() {
+    $('.swiper-container .swiper-slide').each(function () {
+        n = $(this).children('img').attr('src');
+        $(this).css('background-image', 'url("' + n + '")');
+        $(this).children('img').hide();
+    });
+}
 
 function mainHeight() {
     var win_height = $(window).height();

@@ -4,12 +4,11 @@
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="cphHead" runat="Server">
     <style type="text/css">
-        .myClass:hover
-        {
+        .myClass:hover {
             background-color: #a1da29 !important;
         }
-        .txt
-        {
+
+        .txt {
             border: 0px !important;
             background: #eeeeee !important;
             color: Black !important;
@@ -72,27 +71,24 @@
         function containerMouseout(sender) {
             sender.getElementsByTagName("div")[0].style.display = "none";
         }
-            // ]]>
+        // ]]>
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphBody" runat="Server">
     <fieldset>
-        <h3 class="searchTitle">
-            Thông Tin Dự Án</h3>
+        <h3 class="searchTitle">Thông Tin Dự Án</h3>
         <asp:FormView ID="FormView1" runat="server" DataSourceID="ObjectDataSource2" EnableModelValidation="True"
             Width="100%">
             <ItemTemplate>
                 <div class="mInfo" style="min-width: 800px">
                     <table class="search" style="border: 0">
                         <tr>
-                            <td class="left">
-                                Tên dự án:
+                            <td class="left">Tên dự án:
                             </td>
                             <td>
                                 <asp:Label ID="lblProjectTitle" runat="server" Text='<%# Eval("ProjectTitle")%>'></asp:Label>
                             </td>
-                            <td class="left">
-                                Danh mục:
+                            <td class="left">Danh mục:
                             </td>
                             <td>
                                 <%# Eval("ProjectCategoryName")%>
@@ -111,21 +107,18 @@
     </fieldset>
     <br />
     <asp:RadAjaxPanel runat="server" ID="RadAjaxPanel1" ClientEvents-OnRequestStart="conditionalPostback">
-        <asp:Panel ID="Panel1" DefaultButton="btnSearch" runat="server">
-            <h4 class="searchTitle">
-                Tìm kiếm
+        <asp:Panel ID="Panel1" DefaultButton="btnSearch" runat="server" Visible="false">
+            <h4 class="searchTitle">Tìm kiếm
             </h4>
             <table class="search">
                 <tr>
-                    <td class="left">
-                        Tiêu đề video
+                    <td class="left">Tiêu đề video
                     </td>
                     <td class="left">
                         <asp:RadTextBox ID="txtSearchTitle" runat="server" Width="300px">
                         </asp:RadTextBox>
                     </td>
-                    <td class="left">
-                        Mô tả video
+                    <td class="left">Mô tả video
                     </td>
                     <td>
                         <asp:RadTextBox ID="txtSearchDescription" runat="server" Width="300px">
@@ -180,8 +173,8 @@
             <ItemTemplate>
                 <asp:HiddenField ID="hdnImagePath" runat="server" Value='<%# Eval("ImagePath") %>' />
                 <asp:HiddenField ID="hdnVideoPath" runat="server" Value='<%# Eval("ProjectVideoPath") %>' />
-                <fieldset style="float: left; margin: 5px 5px 50px 5px; padding: 2px 2px 2px 2px;
-                    position: relative; background: #eeeeee" class="myClass" onmouseover="containerMouseover(this)"
+                <fieldset style="float: left; margin: 5px 5px 50px 5px; padding: 2px 2px 2px 2px; position: relative; background: #eeeeee"
+                    class="myClass" onmouseover="containerMouseover(this)"
                     onmouseout="containerMouseout(this)">
                     <object id="player" width="<%#ImageWidth %>" height="<%#ImageHeight %>" name="player"
                         classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000">
@@ -198,8 +191,8 @@
                     <div style="margin-top: -30px; position: absolute; display: none; width: <%#ImageHeight.Value/1.5 %>px;">
                         <asp:Label ID="Label1" runat="server" Text='<%# Eval("Title") %>' CssClass="txt"></asp:Label>
                     </div>
-                    <table style="bottom: -25px; position: absolute; width: <%#ImageHeight.Value %>px;
-                        border-collapse: collapse; font-size: 8pt" cellspacing="0" cellpadding="0">
+                    <table style="bottom: -25px; position: absolute; width: <%#ImageHeight.Value %>px; border-collapse: collapse; font-size: 8pt"
+                        cellspacing="0" cellpadding="0">
                         <tr>
                             <td>
                                 <asp:CheckBox ID="chkSelect" runat="server" ToolTip="Chọn" CssClass="select vam"
@@ -222,12 +215,10 @@
             </ItemTemplate>
             <InsertItemTemplate>
                 <asp:Panel ID="Panel2" runat="server" DefaultButton="lnkUpdate">
-                    <h3 class="searchTitle clear">
-                        Thêm Video Mới</h3>
+                    <h3 class="searchTitle clear">Thêm Video Mới</h3>
                     <table class="search">
                         <tr>
-                            <td class="left">
-                                File ảnh
+                            <td class="left">File ảnh
                             </td>
                             <td>
                                 <asp:RadUpload ID="FileImagePath" runat="server" ControlObjectsVisibility="None"
@@ -237,8 +228,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td class="left">
-                                File video
+                            <td class="left">File video
                             </td>
                             <td>
                                 <asp:RadUpload ID="FileVideoPath" runat="server" ControlObjectsVisibility="None"
@@ -248,40 +238,60 @@
                             </td>
                         </tr>
                         <tr>
-                            <td class="left">
-                                Tiêu đề video
+                            <td class="left">Tiêu đề video
                             </td>
                             <td>
                                 <asp:TextBox ID="txtTitle" Width="500px" runat="server"></asp:TextBox>
                             </td>
                         </tr>
+                        <asp:Panel ID="Panel3" runat="server" Visible="false">
+                            <tr>
+                                <td class="left" valign="top">Mô tả video
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="txtDescription" runat="server" Width="500px"></asp:TextBox>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="left">Tiêu đề video(En)
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="txtTitleEn" Width="500px" runat="server"></asp:TextBox>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="left" valign="top">Mô tả video(En)
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="txtDescriptionEn" runat="server" Width="500px"></asp:TextBox>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="left">Tiêu đề video(Cam)
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="txtTitleCam" Width="500px" runat="server"></asp:TextBox>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="left" valign="top">Mô tả video(Cam)
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="txtDescriptionCam" runat="server" Width="500px"></asp:TextBox>
+                                </td>
+                            </tr>
+                        </asp:Panel>
                         <tr>
-                            <td class="left" valign="top">
-                                Mô tả video
+                            <td class="left" valign="top">Embed Code
                             </td>
                             <td>
-                                <asp:TextBox ID="txtDescription" runat="server" Width="500px"></asp:TextBox>
+                                <asp:RadTextBox ID="txtGLobalEmbedScript" runat="server" Text='<%# Bind("GLobalEmbedScript") %>'
+                                    Width="500px" TextMode="MultiLine" Columns="2" EmptyMessage="Embed Code...">
+                                </asp:RadTextBox>
                             </td>
                         </tr>
                         <tr>
-                            <td class="left">
-                                Tiêu đề video(En)
-                            </td>
-                            <td>
-                                <asp:TextBox ID="txtTitleEn" Width="500px" runat="server"></asp:TextBox>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="left" valign="top">
-                                Mô tả video(En)
-                            </td>
-                            <td>
-                                <asp:TextBox ID="txtDescriptionEn" runat="server" Width="500px"></asp:TextBox>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="left">
-                                Thứ tự
+                            <td class="left">Thứ tự
                             </td>
                             <td>
                                 <asp:RadNumericTextBox ID="txtPriority" runat="server" Width="500px" Text='<%# Bind("Priority") %>'
@@ -324,12 +334,10 @@
                 <asp:HiddenField ID="hdnImagePath" runat="server" Value='<%# Eval("ImagePath") %>' />
                 <asp:HiddenField ID="hdnProjectVideoPath" runat="server" Value='<%# Eval("ProjectVideoPath") %>' />
                 <asp:Panel ID="Panel2" runat="server" DefaultButton="lnkUpdate">
-                    <h3 class="searchTitle clear">
-                        Cập Nhật Video</h3>
+                    <h3 class="searchTitle clear">Cập Nhật Video</h3>
                     <table class="search">
                         <tr>
-                            <td class="left">
-                                File ảnh
+                            <td class="left">File ảnh
                             </td>
                             <td>
                                 <asp:RadUpload ID="FileImagePath" runat="server" ControlObjectsVisibility="None"
@@ -343,8 +351,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td class="left">
-                                File video
+                            <td class="left">File video
                             </td>
                             <td>
                                 <asp:RadUpload ID="FileVideoPath" runat="server" ControlObjectsVisibility="None"
@@ -354,40 +361,60 @@
                             </td>
                         </tr>
                         <tr>
-                            <td class="left">
-                                Tiêu đề video
+                            <td class="left">Tiêu đề video
                             </td>
                             <td>
                                 <asp:TextBox ID="txtTitle" Width="500px" runat="server" Text='<%# Bind("Title") %>'></asp:TextBox>
                             </td>
                         </tr>
+                        <asp:Panel ID="Panel3" runat="server" Visible="false">
+                            <tr>
+                                <td class="left" valign="top">Mô tả video
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="txtDescription" runat="server" Width="500px" Text='<%# Bind("Description")%>'></asp:TextBox>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="left">Tiêu đề video (En)
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="txtTitleEn" Width="500px" runat="server" Text='<%# Bind("TitleEn") %>'></asp:TextBox>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="left" valign="top">Mô tả video (En)
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="txtDescriptionEn" runat="server" Width="500px" Text='<%# Bind("DescriptionEn")%>'></asp:TextBox>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="left">Tiêu đề video(Cam)
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="txtTitleCam" Width="500px" Text='<%# Bind("TitleCam") %>' runat="server"></asp:TextBox>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="left" valign="top">Mô tả video(Cam)
+                                </td>
+                                <td>
+                                    <asp:TextBox ID="txtDescriptionCam" runat="server" Text='<%# Bind("DescriptionCam")%>' Width="500px"></asp:TextBox>
+                                </td>
+                            </tr>
+                        </asp:Panel>
                         <tr>
-                            <td class="left" valign="top">
-                                Mô tả video
+                            <td class="left" valign="top">Embed Code
                             </td>
                             <td>
-                                <asp:TextBox ID="txtDescription" runat="server" Width="500px" Text='<%# Bind("Description")%>'></asp:TextBox>
+                                <asp:RadTextBox ID="txtGLobalEmbedScript" runat="server" Text='<%# Bind("GLobalEmbedScript") %>'
+                                    Width="500px" TextMode="MultiLine" Columns="2" EmptyMessage="Embed Code...">
+                                </asp:RadTextBox>
                             </td>
                         </tr>
                         <tr>
-                            <td class="left">
-                                Tiêu đề video
-                            </td>
-                            <td>
-                                <asp:TextBox ID="txtTitleEn" Width="500px" runat="server" Text='<%# Bind("TitleEn") %>'></asp:TextBox>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="left" valign="top">
-                                Mô tả video
-                            </td>
-                            <td>
-                                <asp:TextBox ID="txtDescriptionEn" runat="server" Width="500px" Text='<%# Bind("DescriptionEn")%>'></asp:TextBox>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="left">
-                                Thứ tự
+                            <td class="left">Thứ tự
                             </td>
                             <td>
                                 <asp:RadNumericTextBox ID="txtPriority" runat="server" Width="500px" Text='<%# Bind("Priority") %>'
@@ -447,6 +474,16 @@
                     <asp:TargetInput ControlID="txtDescriptionEn" />
                 </TargetControls>
             </asp:TextBoxSetting>
+            <asp:TextBoxSetting EmptyMessage="Tiêu đề video(Cam) ...">
+                <TargetControls>
+                    <asp:TargetInput ControlID="txtTitleCam" />
+                </TargetControls>
+            </asp:TextBoxSetting>
+            <asp:TextBoxSetting EmptyMessage="Mô tả video(Cam) ...">
+                <TargetControls>
+                    <asp:TargetInput ControlID="txtDescriptionCam" />
+                </TargetControls>
+            </asp:TextBoxSetting>
             <asp:NumericTextBoxSetting AllowRounding="false" Type="Number" DecimalDigits="0"
                 EmptyMessage="Thứ tự ...">
                 <TargetControls>
@@ -476,9 +513,12 @@
                 <asp:Parameter Name="Description" Type="String" />
                 <asp:Parameter Name="TitleEn" Type="String" />
                 <asp:Parameter Name="DescriptionEn" Type="String" />
+                <asp:Parameter Name="TitleCam" Type="String" />
+                <asp:Parameter Name="DescriptionCam" Type="String" />
                 <asp:Parameter Name="ConvertedTitle" Type="String" />
-                <asp:Parameter Name="ImagePath" Type="String" />
-                <asp:Parameter Name="ProjectVideoPath" Type="String" />
+                <asp:Parameter Name="ImagePath" Type="String"></asp:Parameter>
+                <asp:Parameter Name="ProjectVideoPath" Type="String"></asp:Parameter>
+                <asp:Parameter Name="GLobalEmbedScript" Type="String"></asp:Parameter>
                 <asp:QueryStringParameter Name="ProjectID" QueryStringField="PI" Type="String" />
                 <asp:Parameter Name="IsAvailable" Type="String" />
                 <asp:Parameter Name="Priority" Type="String" />
@@ -487,6 +527,5 @@
     </asp:RadAjaxPanel>
     <asp:RadProgressManager ID="RadProgressManager1" runat="server" />
     <asp:RadProgressArea ID="ProgressArea1" runat="server" Culture="vi-VN" DisplayCancelButton="True"
-        HeaderText="Đang tải" Skin="Office2007" Style="position: fixed; top: 50% !important;
-        left: 50% !important; margin: -93px 0 0 -188px;" />
+        HeaderText="Đang tải" Skin="Office2007" Style="position: fixed; top: 50% !important; left: 50% !important; margin: -93px 0 0 -188px;" />
 </asp:Content>

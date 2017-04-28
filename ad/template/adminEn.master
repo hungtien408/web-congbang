@@ -119,143 +119,35 @@
                     <asp:RadMenuItem runat="server" NavigateUrl="~/ad/bilingual/" Text="Trang Chủ" ImageUrl="~/ad/assets/images/home.png"
                         PostBack="False" Font-Bold="True">
                     </asp:RadMenuItem>
-                    <asp:RadMenuItem runat="server" Owner="RadMenu1" PostBack="False" Text="Sản Phẩm"
-                        Font-Bold="True">
-                        <Items>
-                            <asp:RadMenuItem runat="server" NavigateUrl="~/ad/bilingual/product.aspx" Text="Quản Lý Sản Phẩm">
-                            </asp:RadMenuItem>
-                            <asp:RadMenuItem runat="server" IsSeparator="True">
-                            </asp:RadMenuItem>
-                            <asp:RadMenuItem runat="server" NavigateUrl="~/ad/bilingual/productcategory.aspx"
-                                Text="Quản Lý Danh Mục">
-                            </asp:RadMenuItem>
-                            <asp:RadMenuItem runat="server" IsSeparator="True">
-                            </asp:RadMenuItem>
-                            <asp:RadMenuItem runat="server" NavigateUrl="~/ad/bilingual/manufacturer.aspx" Text="Quản Lý Nhà Sản Xuất">
-                            </asp:RadMenuItem>
-                            <asp:RadMenuItem runat="server" IsSeparator="True">
-                            </asp:RadMenuItem>
-                            <asp:RadMenuItem runat="server" NavigateUrl="~/ad/bilingual/origin.aspx" Text="Quản Lý Xuất Xứ">
-                            </asp:RadMenuItem>
-                        </Items>
+                    <asp:RadMenuItem runat="server" Text="Introduction" PostBack="False" Font-Bold="True"
+                        NavigateUrl="~/ad/bilingual/aboutus.aspx">
                     </asp:RadMenuItem>
-                    <asp:RadMenuItem runat="server" Owner="RadMenu1" PostBack="False" Text="Tin Tức"
-                        Font-Bold="True">
-                        <Items>
-                            <asp:RadMenuItem runat="server" NavigateUrl="~/ad/bilingual/article.aspx" Text="Quản Lý Tin Tức">
-                            </asp:RadMenuItem>
-                            <asp:RadMenuItem runat="server" IsSeparator="True">
-                            </asp:RadMenuItem>
-                            <asp:RadMenuItem runat="server" Text="Quản Lý Danh Mục" NavigateUrl="~/ad/bilingual/articlecategory.aspx">
-                            </asp:RadMenuItem>
-                        </Items>
+                    <asp:RadMenuItem runat="server" Text="Services" PostBack="False" Font-Bold="True"
+                        NavigateUrl="~/ad/bilingual/services.aspx">
                     </asp:RadMenuItem>
-                    <asp:RadMenuItem runat="server" Owner="RadMenu1" PostBack="False" Text="Dịch Vụ"
-                        Font-Bold="True">
-                        <Items>
-                            <asp:RadMenuItem runat="server" NavigateUrl="~/ad/bilingual/service.aspx" Text="Quản Lý Dịch Vụ">
-                            </asp:RadMenuItem>
-                            <asp:RadMenuItem runat="server" IsSeparator="True">
-                            </asp:RadMenuItem>
-                            <asp:RadMenuItem runat="server" Text="Quản Lý Danh Mục" NavigateUrl="~/ad/bilingual/servicecategory.aspx">
-                            </asp:RadMenuItem>
-                        </Items>
+                    <asp:RadMenuItem runat="server" Text="Products" PostBack="False" Font-Bold="True"
+                        NavigateUrl="~/ad/bilingual/products.aspx">
                     </asp:RadMenuItem>
-                    <asp:RadMenuItem runat="server" Owner="RadMenu1" PostBack="False" Text="Tuyển Dụng"
-                        Font-Bold="True">
-                        <Items>
-                            <asp:RadMenuItem runat="server" Text="Quản Lý Tuyển Dụng" NavigateUrl="~/ad/bilingual/career.aspx">
-                            </asp:RadMenuItem>
-                            <asp:RadMenuItem runat="server" IsSeparator="True">
-                            </asp:RadMenuItem>
-                            <asp:RadMenuItem runat="server" Text="Quản Lý Danh Mục" NavigateUrl="~/ad/bilingual/careercategory.aspx">
-                            </asp:RadMenuItem>
-                        </Items>
+                    <asp:RadMenuItem runat="server" Text="Projects" PostBack="False" Font-Bold="True"
+                        NavigateUrl="~/ad/bilingual/projects.aspx">
                     </asp:RadMenuItem>
-                    <asp:RadMenuItem runat="server" Owner="RadMenu1" PostBack="False" Text="Dự Án" Font-Bold="True">
-                        <Items>
-                            <asp:RadMenuItem runat="server" Text="Quản Lý Dự Án" NavigateUrl="~/ad/bilingual/project.aspx">
-                            </asp:RadMenuItem>
-                            <asp:RadMenuItem runat="server" IsSeparator="True">
-                            </asp:RadMenuItem>
-                            <asp:RadMenuItem runat="server" Text="Quản Lý Danh Mục" NavigateUrl="~/ad/bilingual/projectcategory.aspx">
-                            </asp:RadMenuItem>
-                        </Items>
+                    <asp:RadMenuItem runat="server" Text="Application" PostBack="False" Font-Bold="True"
+                        NavigateUrl="~/ad/bilingual/apllication.aspx">
                     </asp:RadMenuItem>
-                    <asp:RadMenuItem runat="server" Owner="RadMenu1" PostBack="False" Text="Download"
-                        Font-Bold="True">
-                        <Items>
-                            <asp:RadMenuItem runat="server" Text="Quản Lý Download" NavigateUrl="~/ad/bilingual/download.aspx">
-                            </asp:RadMenuItem>
-                            <asp:RadMenuItem runat="server" IsSeparator="True">
-                            </asp:RadMenuItem>
-                            <asp:RadMenuItem runat="server" Text="Quản Lý Danh Mục" NavigateUrl="~/ad/bilingual/downloadcategory.aspx">
-                            </asp:RadMenuItem>
-                        </Items>
+                    <asp:RadMenuItem runat="server" Text="Activities" PostBack="False" Font-Bold="True"
+                        NavigateUrl="~/ad/bilingual/activities.aspx">
                     </asp:RadMenuItem>
-                    <asp:RadMenuItem runat="server" Owner="RadMenu1" PostBack="False" Text="Thư Viện Ảnh"
-                        Font-Bold="True" NavigateUrl="~/ad/bilingual/photoalbum.aspx">
-                        <%--<Items>
-                            <asp:RadMenuItem runat="server" Text="Quản Lý Thư Viện Ảnh" NavigateUrl="~/ad/bilingual/photoalbum.aspx">
-                            </asp:RadMenuItem>
-                            <asp:RadMenuItem runat="server" IsSeparator="True">
-                            </asp:RadMenuItem>
-                            <asp:RadMenuItem runat="server" Text="Quản Lý Danh Mục" NavigateUrl="~/ad/bilingual/photoalbumcategory.aspx">
-                            </asp:RadMenuItem>
-                        </Items>--%>
+                    <asp:RadMenuItem runat="server" Text="News" PostBack="False" Font-Bold="True"
+                        NavigateUrl="~/ad/bilingual/news.aspx">
                     </asp:RadMenuItem>
-                    <asp:RadMenuItem runat="server" Text="Video (XML)" PostBack="False" Font-Bold="True"
-                        NavigateUrl="~/ad/bilingual/videoxml.aspx">
+                    <asp:RadMenuItem runat="server" Text="Contact" PostBack="False" Font-Bold="True"
+                        NavigateUrl="~/ad/bilingual/contact.aspx">
                     </asp:RadMenuItem>
-                    <asp:RadMenuItem runat="server" Owner="RadMenu1" PostBack="False" Text="Video" Font-Bold="True">
-                        <Items>
-                            <asp:RadMenuItem runat="server" Text="Quản Lý Video" NavigateUrl="~/ad/bilingual/video.aspx">
-                            </asp:RadMenuItem>
-                            <asp:RadMenuItem runat="server" IsSeparator="True">
-                            </asp:RadMenuItem>
-                            <asp:RadMenuItem runat="server" Text="Quản Lý Danh Mục" NavigateUrl="~/ad/bilingual/videocategory.aspx">
-                            </asp:RadMenuItem>
-                        </Items>
-                    </asp:RadMenuItem>
-                    <asp:RadMenuItem runat="server" Text="Đối Tác" PostBack="False" Font-Bold="True"
-                        NavigateUrl="~/ad/bilingual/partner.aspx">
-                    </asp:RadMenuItem>
-                    <asp:RadMenuItem runat="server" Text="Quảng Cáo" PostBack="False" Font-Bold="True"
-                        NavigateUrl="~/ad/bilingual/advertisement.aspx">
-                    </asp:RadMenuItem>
-                    <asp:RadMenuItem runat="server" Owner="RadMenu1" PostBack="False" Text="Đặt Hàng"
-                        Font-Bold="True">
-                        <Items>
-                            <asp:RadMenuItem runat="server" Text="Quản Lý Đơn Hàng" NavigateUrl="~/ad/bilingual/order.aspx">
-                            </asp:RadMenuItem>
-                            <asp:RadMenuItem runat="server" IsSeparator="True">
-                            </asp:RadMenuItem>
-                            <asp:RadMenuItem runat="server" Text="Quản Lý Thông Tin Khách Hàng" NavigateUrl="~/ad/bilingual/customer.aspx">
-                            </asp:RadMenuItem>
-                        </Items>
-                    </asp:RadMenuItem>
-                    <%--<asp:RadMenuItem runat="server" Text="Đặt Hàng" PostBack="False" Font-Bold="True"
-                        NavigateUrl="~/ad/bilingual/order.aspx">
-                    </asp:RadMenuItem>--%>
-                    <asp:RadMenuItem runat="server" Text="Comment" PostBack="False" Font-Bold="True"
-                        NavigateUrl="~/ad/bilingual/comment.aspx">
-                    </asp:RadMenuItem>
-                    <asp:RadMenuItem runat="server" Text="News Letter" PostBack="False" Font-Bold="True"
-                        NavigateUrl="~/ad/bilingual/newsletter.aspx">
-                    </asp:RadMenuItem>
-                    <asp:RadMenuItem runat="server" Text="Mail Config" PostBack="False" Font-Bold="True"
-                        NavigateUrl="~/ad/bilingual/siteconfig.aspx">
+                    <asp:RadMenuItem runat="server" Text="Banner" PostBack="False" Font-Bold="True"
+                        NavigateUrl="~/ad/bilingual/bannermain.aspx">
                     </asp:RadMenuItem>
                     <asp:RadMenuItem runat="server" Owner="RadMenu1" PostBack="False" Text="Hệ Thống"
-                        Font-Bold="True">
-                        <Items>
-                            <asp:RadMenuItem runat="server" Text="Quản Lý Menu" NavigateUrl="~/ad/bilingual/menu.aspx">
-                            </asp:RadMenuItem>
-                        </Items>
-                        <Items>
-                            <asp:RadMenuItem runat="server" Text="Quản Lý Thành Viên" NavigateUrl="~/ad/bilingual/usermanagement.aspx">
-                            </asp:RadMenuItem>
-                        </Items>
+                        Font-Bold="True" NavigateUrl="~/ad/bilingual/usermanagement.aspx">
                     </asp:RadMenuItem>
                 </Items>
             </asp:RadMenu>
