@@ -120,8 +120,11 @@ public partial class ad_single_projectvideo : System.Web.UI.Page
                 var strDescription = ((TextBox)item.FindControl("txtDescription")).Text.Trim();
                 var strTitleEn = ((TextBox)item.FindControl("txtTitleEn")).Text.Trim();
                 var strDescriptionEn = ((TextBox)item.FindControl("txtDescriptionEn")).Text.Trim();
+                var strTitleCam = ((TextBox)item.FindControl("txtTitleCam")).Text.Trim();
+                var strDescriptionCam = ((TextBox)item.FindControl("txtDescriptionCam")).Text.Trim();
                 var strIsAvailable = ((CheckBox)item.FindControl("chkIsAvailable")).Checked.ToString();
                 var strPriority = ((RadNumericTextBox)item.FindControl("txtPriority")).Text.Trim();
+                var strGLobalEmbedScript = ((RadTextBox)item.FindControl("txtGLobalEmbedScript")).Text.Trim();
                 var oProjectVideo = new ProjectVideo();
 
                 if (e.CommandName == "PerformInsert")
@@ -131,9 +134,12 @@ public partial class ad_single_projectvideo : System.Web.UI.Page
                             strDescription,
                             strTitleEn,
                             strDescriptionEn,
+                            strTitleCam,
+                            strDescriptionCam,
                             strConvertedProjectTitle,
                             strImagePath,
                             strVideoPath,
+                            strGLobalEmbedScript,
                             strProjectID,
                             strIsAvailable,
                             strPriority).ToString();

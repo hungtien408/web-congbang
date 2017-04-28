@@ -340,3 +340,12 @@ table.search td.left
 {
     padding: 0 54px 0 28px !important;
 }
+.btn-add{
+    display:inline-block;
+}
+.file-upload{
+    display: inline-block;
+    width: 210px !important;
+    vertical-align: top;
+    margin-left: 10px;
+}

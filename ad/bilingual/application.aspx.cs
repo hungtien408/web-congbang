@@ -107,7 +107,7 @@ public partial class ad_single_project : System.Web.UI.Page
 
             foreach (GridDataItem item in RadGrid1.Items)
             {
-                ProjectID = item.GetDataKeyValue("ProjectID").ToString(); 
+                ProjectID = item.GetDataKeyValue("ProjectID").ToString();
                 Priority = ((RadNumericTextBox)item.FindControl("txtPriority")).Text.Trim();
                 IsHot = ((CheckBox)item.FindControl("chkIsHot")).Checked.ToString();
                 IsNew = ((CheckBox)item.FindControl("chkIsNew")).Checked.ToString();
@@ -175,6 +175,8 @@ public partial class ad_single_project : System.Web.UI.Page
             string Content = HttpUtility.HtmlDecode(FCKEditorFix.Fix(((RadEditor)row.FindControl("txtContent")).Content.Trim()));
             string Tag = ((TextBox)row.FindControl("txtTag")).Text.Trim();
             string ProjectCategoryID = ((RadComboBox)row.FindControl("ddlProjectCategory")).SelectedValue;
+            if(ProjectCategoryID == "")
+                ProjectCategoryID = "5";
             string IsHot = ((CheckBox)row.FindControl("chkIsHot")).Checked.ToString();
             string IsNew = ((CheckBox)row.FindControl("chkIsNew")).Checked.ToString();
             string IsShowOnHomePage = ((CheckBox)row.FindControl("chkIsShowOnHomePage")).Checked.ToString();
@@ -185,6 +187,12 @@ public partial class ad_single_project : System.Web.UI.Page
             string DescriptionEn = ((RadEditor)row.FindControl("txtDescriptionEn")).Content.Trim();
             string ContentEn = ((RadEditor)row.FindControl("txtContentEn")).Content.Trim();
             string TagEn = ((TextBox)row.FindControl("txtTagEn")).Text.Trim();
+            string MetaTittleCam = ((TextBox)row.FindControl("txtMetaTittleCam")).Text.Trim();
+            string MetaDescriptionCam = ((TextBox)row.FindControl("txtMetaDescriptionCam")).Text.Trim();
+            string ProjectTitleCam = ((TextBox)row.FindControl("txtProjectTitleCam")).Text.Trim();
+            string DescriptionCam = ((RadEditor)row.FindControl("txtDescriptionCam")).Content.Trim();
+            string ContentCam = ((RadEditor)row.FindControl("txtContentCam")).Content.Trim();
+            string TagCam = ((TextBox)row.FindControl("txtTagCam")).Text.Trim();
             if (e.CommandName == "PerformInsert")
             {
                 var oProject = new Project();
@@ -204,6 +212,12 @@ public partial class ad_single_project : System.Web.UI.Page
                 DescriptionEn,
                 ContentEn,
                 TagEn,
+                MetaTittleCam,
+                MetaDescriptionCam,
+                ProjectTitleCam,
+                DescriptionCam,
+                ContentCam,
+                TagCam,
                 ProjectCategoryID,
                 IsHot,
                 IsNew,
@@ -226,14 +240,37 @@ public partial class ad_single_project : System.Web.UI.Page
                 var dsUpdateParam = ObjectDataSource1.UpdateParameters;
                 var strOldImagePath = Server.MapPath("~/res/project/" + OldImageName);
                 var strOldThumbImagePath = Server.MapPath("~/res/project/thumbs/" + OldImageName);
+                var oProject = new Project();
 
-                dsUpdateParam["ConvertedProjectTitle"].DefaultValue = ConvertedProjectTitle;
-                dsUpdateParam["ImageName"].DefaultValue = ImageName;
-                dsUpdateParam["ProjectCategoryID"].DefaultValue = ProjectCategoryID;
-                dsUpdateParam["IsHot"].DefaultValue = IsHot;
-                dsUpdateParam["IsNew"].DefaultValue = IsNew;
-                dsUpdateParam["IsShowOnHomePage"].DefaultValue = IsShowOnHomePage;
-                dsUpdateParam["IsAvailable"].DefaultValue = IsAvailable;
+                oProject.ProjectUpdate(
+                ImageName,
+                ProjectID,
+                MetaTittle,
+                MetaDescription,
+                ProjectTitle,
+                ConvertedProjectTitle,
+                Description,
+                Content,
+                Tag,
+                MetaTittleEn,
+                MetaDescriptionEn,
+                ProjectTitleEn,
+                DescriptionEn,
+                ContentEn,
+                TagEn,
+                MetaTittleCam,
+                MetaDescriptionCam,
+                ProjectTitleCam,
+                DescriptionCam,
+                ContentCam,
+                TagCam,
+                ProjectCategoryID,
+                IsHot,
+                IsNew,
+                IsShowOnHomePage,
+                IsAvailable,
+                Priority
+                );
 
                 if (!string.IsNullOrEmpty(ImageName))
                 {
@@ -275,7 +312,7 @@ public partial class ad_single_project : System.Web.UI.Page
             var dv = (DataView)ObjectDataSource1.Select();
             var ProjectID = ((HiddenField)row.FindControl("hdnProjectID")).Value;
             var ddlProjectCategory = (RadComboBox)row.FindControl("ddlProjectCategory");
-            
+
             if (!string.IsNullOrEmpty(ProjectID))
             {
                 dv.RowFilter = "ProjectID = " + ProjectID;
@@ -288,5 +325,5 @@ public partial class ad_single_project : System.Web.UI.Page
     }
 
     #endregion
-    
+
 }

@@ -18,9 +18,12 @@ namespace TLLib
             string Description,
             string TitleEn,
             string DescriptionEn,
+            string TitleCam,
+            string DescriptionCam,
             string ConvertedTitle,
             string ImagePath,
             string ProjectVideoPath,
+            string GLobalEmbedScript,
             string ProjectID,
             string IsAvailable,
             string Priority
@@ -35,9 +38,12 @@ namespace TLLib
                 cmd.Parameters.AddWithValue("@Description", string.IsNullOrEmpty(Description) ? dbNULL : (object)Description);
                 cmd.Parameters.AddWithValue("@TitleEn", string.IsNullOrEmpty(TitleEn) ? dbNULL : (object)TitleEn);
                 cmd.Parameters.AddWithValue("@DescriptionEn", string.IsNullOrEmpty(DescriptionEn) ? dbNULL : (object)DescriptionEn);
+                cmd.Parameters.AddWithValue("@TitleCam", string.IsNullOrEmpty(TitleCam) ? dbNULL : (object)TitleCam);
+                cmd.Parameters.AddWithValue("@DescriptionCam", string.IsNullOrEmpty(DescriptionCam) ? dbNULL : (object)DescriptionCam);
                 cmd.Parameters.AddWithValue("@ConvertedTitle", string.IsNullOrEmpty(ConvertedTitle) ? dbNULL : (object)ConvertedTitle);
                 cmd.Parameters.AddWithValue("@ImagePath", string.IsNullOrEmpty(ImagePath) ? dbNULL : (object)ImagePath);
                 cmd.Parameters.AddWithValue("@ProjectVideoPath", string.IsNullOrEmpty(ProjectVideoPath) ? dbNULL : (object)ProjectVideoPath);
+                cmd.Parameters.AddWithValue("@GLobalEmbedScript", string.IsNullOrEmpty(GLobalEmbedScript) ? dbNULL : (object)GLobalEmbedScript);
                 cmd.Parameters.AddWithValue("@ProjectID", string.IsNullOrEmpty(ProjectID) ? dbNULL : (object)ProjectID);
                 cmd.Parameters.AddWithValue("@IsAvailable", string.IsNullOrEmpty(IsAvailable) ? dbNULL : (object)IsAvailable);
                 cmd.Parameters.AddWithValue("@Priority", string.IsNullOrEmpty(Priority) ? dbNULL : (object)Priority);
@@ -69,9 +75,12 @@ namespace TLLib
             string Description,
             string TitleEn,
             string DescriptionEn,
+            string TitleCam,
+            string DescriptionCam,
             string ConvertedTitle,
             string ImagePath,
             string ProjectVideoPath,
+            string GLobalEmbedScript,
             string ProjectID,
             string IsAvailable,
             string Priority
@@ -87,9 +96,12 @@ namespace TLLib
                 cmd.Parameters.AddWithValue("@Description", string.IsNullOrEmpty(Description) ? dbNULL : (object)Description);
                 cmd.Parameters.AddWithValue("@TitleEn", string.IsNullOrEmpty(TitleEn) ? dbNULL : (object)TitleEn);
                 cmd.Parameters.AddWithValue("@DescriptionEn", string.IsNullOrEmpty(DescriptionEn) ? dbNULL : (object)DescriptionEn);
+                cmd.Parameters.AddWithValue("@TitleCam", string.IsNullOrEmpty(TitleCam) ? dbNULL : (object)TitleCam);
+                cmd.Parameters.AddWithValue("@DescriptionCam", string.IsNullOrEmpty(DescriptionCam) ? dbNULL : (object)DescriptionCam);
                 cmd.Parameters.AddWithValue("@ConvertedTitle", string.IsNullOrEmpty(ConvertedTitle) ? dbNULL : (object)ConvertedTitle);
                 cmd.Parameters.AddWithValue("@ImagePath", string.IsNullOrEmpty(ImagePath) ? dbNULL : (object)ImagePath);
                 cmd.Parameters.AddWithValue("@ProjectVideoPath", string.IsNullOrEmpty(ProjectVideoPath) ? dbNULL : (object)ProjectVideoPath);
+                cmd.Parameters.AddWithValue("@GLobalEmbedScript", string.IsNullOrEmpty(GLobalEmbedScript) ? dbNULL : (object)GLobalEmbedScript);
                 cmd.Parameters.AddWithValue("@ProjectID", string.IsNullOrEmpty(ProjectID) ? dbNULL : (object)ProjectID);
                 cmd.Parameters.AddWithValue("@IsAvailable", string.IsNullOrEmpty(IsAvailable) ? dbNULL : (object)IsAvailable);
                 cmd.Parameters.AddWithValue("@Priority", string.IsNullOrEmpty(Priority) ? dbNULL : (object)Priority);

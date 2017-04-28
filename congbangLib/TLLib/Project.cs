@@ -28,6 +28,12 @@ namespace TLLib
             string DescriptionEn,
             string ContentEn,
             string TagEn,
+            string MetaTittleCam,
+            string MetaDescriptionCam,
+            string ProjectTitleCam,
+            string DescriptionCam,
+            string ContentCam,
+            string TagCam,
             string ProjectCategoryID,
             string IsHot,
             string IsNew,
@@ -55,6 +61,12 @@ namespace TLLib
                 cmd.Parameters.AddWithValue("@DescriptionEn", string.IsNullOrEmpty(DescriptionEn) ? dbNULL : (object)DescriptionEn);
                 cmd.Parameters.AddWithValue("@ContentEn", string.IsNullOrEmpty(ContentEn) ? dbNULL : (object)ContentEn);
                 cmd.Parameters.AddWithValue("@TagEn", string.IsNullOrEmpty(TagEn) ? dbNULL : (object)TagEn);
+                cmd.Parameters.AddWithValue("@MetaTittleCam", string.IsNullOrEmpty(MetaTittleCam) ? dbNULL : (object)MetaTittleCam);
+                cmd.Parameters.AddWithValue("@MetaDescriptionCam", string.IsNullOrEmpty(MetaDescriptionCam) ? dbNULL : (object)MetaDescriptionCam);
+                cmd.Parameters.AddWithValue("@ProjectTitleCam", string.IsNullOrEmpty(ProjectTitleCam) ? dbNULL : (object)ProjectTitleCam);
+                cmd.Parameters.AddWithValue("@DescriptionCam", string.IsNullOrEmpty(DescriptionCam) ? dbNULL : (object)DescriptionCam);
+                cmd.Parameters.AddWithValue("@ContentCam", string.IsNullOrEmpty(ContentCam) ? dbNULL : (object)ContentCam);
+                cmd.Parameters.AddWithValue("@TagCam", string.IsNullOrEmpty(TagCam) ? dbNULL : (object)TagCam);
                 cmd.Parameters.AddWithValue("@ProjectCategoryID", string.IsNullOrEmpty(ProjectCategoryID) ? dbNULL : (object)ProjectCategoryID);
                 cmd.Parameters.AddWithValue("@IsHot", string.IsNullOrEmpty(IsHot) ? dbNULL : (object)IsHot);
                 cmd.Parameters.AddWithValue("@IsNew", string.IsNullOrEmpty(IsNew) ? dbNULL : (object)IsNew);
@@ -100,6 +112,12 @@ namespace TLLib
             string DescriptionEn,
             string ContentEn,
             string TagEn,
+            string MetaTittleCam,
+            string MetaDescriptionCam,
+            string ProjectTitleCam,
+            string DescriptionCam,
+            string ContentCam,
+            string TagCam,
             string ProjectCategoryID,
             string IsHot,
             string IsNew,
@@ -128,6 +146,12 @@ namespace TLLib
                 cmd.Parameters.AddWithValue("@DescriptionEn", string.IsNullOrEmpty(DescriptionEn) ? dbNULL : (object)DescriptionEn);
                 cmd.Parameters.AddWithValue("@ContentEn", string.IsNullOrEmpty(ContentEn) ? dbNULL : (object)ContentEn);
                 cmd.Parameters.AddWithValue("@TagEn", string.IsNullOrEmpty(TagEn) ? dbNULL : (object)TagEn);
+                cmd.Parameters.AddWithValue("@MetaTittleCam", string.IsNullOrEmpty(MetaTittleCam) ? dbNULL : (object)MetaTittleCam);
+                cmd.Parameters.AddWithValue("@MetaDescriptionCam", string.IsNullOrEmpty(MetaDescriptionCam) ? dbNULL : (object)MetaDescriptionCam);
+                cmd.Parameters.AddWithValue("@ProjectTitleCam", string.IsNullOrEmpty(ProjectTitleCam) ? dbNULL : (object)ProjectTitleCam);
+                cmd.Parameters.AddWithValue("@DescriptionCam", string.IsNullOrEmpty(DescriptionCam) ? dbNULL : (object)DescriptionCam);
+                cmd.Parameters.AddWithValue("@ContentCam", string.IsNullOrEmpty(ContentCam) ? dbNULL : (object)ContentCam);
+                cmd.Parameters.AddWithValue("@TagCam", string.IsNullOrEmpty(TagCam) ? dbNULL : (object)TagCam);
                 cmd.Parameters.AddWithValue("@ProjectCategoryID", string.IsNullOrEmpty(ProjectCategoryID) ? dbNULL : (object)ProjectCategoryID);
                 cmd.Parameters.AddWithValue("@IsHot", string.IsNullOrEmpty(IsHot) ? dbNULL : (object)IsHot);
                 cmd.Parameters.AddWithValue("@IsNew", string.IsNullOrEmpty(IsNew) ? dbNULL : (object)IsNew);
