@@ -9,7 +9,7 @@
         <img alt="" src="../assets/images/accept.png" />
         Hệ Thống Quản Trị
     </h3>
-    <a href="product.aspx" title="Sản phẩm" class="main-button">
+    <%--<a href="product.aspx" title="Sản phẩm" class="main-button">
         <img alt="" src="../assets/images/productx64.png" />
     </a>
     <a href="article.aspx" title="Tin tức" class="main-button">
@@ -56,7 +56,7 @@
     </a>
     <a href="usermanagement.aspx" title="Tài khoản" class="main-button">
         <img alt="" src="../assets/images/userx64.png" />
-    </a>
+    </a>--%>
     <%--<asp:ImageButton ID="ImageButton1" runat="server" ImageAlign="Middle" ImageUrl="~/ad/assets/images/productx64.png"
         AlternateText="Sản phẩm" ToolTip="Sản phẩm" PostBackUrl="~/ad/single/product.aspx" />
     <asp:ImageButton ID="ImageButton2" runat="server" ImageAlign="Middle" ImageUrl="~/ad/assets/images/articlex64.png"
