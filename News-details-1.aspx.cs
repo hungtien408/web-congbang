@@ -17,12 +17,14 @@ public partial class News_details : System.Web.UI.Page
             string strTitle, strMetaTitle, strMetaDescription;
             if (!string.IsNullOrEmpty(Request.QueryString["nid"]))
             {
-                var dv = (DataView)odsContent.Select();
+                var dv = (DataView)odsContent1.Select();
                 if (dv.Count > 0)
                 {
                     var row = dv[0];
                     
                     hdnProjectID.Value = row["ProjectID"].ToString();
+                    Repeater1.DataSource = dv;
+                    Repeater1.DataBind();
                     strTitle = Server.HtmlDecode(row["ProjectTitleEn"].ToString());
                     strMetaTitle = Server.HtmlDecode(row["MetaTittleEn"].ToString());
                     strMetaDescription = Server.HtmlDecode(row["MetaDescriptionEn"].ToString());
@@ -38,6 +40,34 @@ public partial class News_details : System.Web.UI.Page
                 }
                 //lblTitle.Text = strTitle;
             }
+            else  if (!string.IsNullOrEmpty(Request.QueryString["nd"]))
+            {
+                var dv = (DataView)odsContent.Select();
+                if (dv.Count > 0)
+                {
+                    var row = dv[0];
+
+                    hdnProjectID.Value = row["ProjectID"].ToString();
+                    Repeater1.DataSource = dv;
+                    Repeater1.DataBind();
+                    strTitle = Server.HtmlDecode(row["ProjectTitleEn"].ToString());
+                    strMetaTitle = Server.HtmlDecode(row["MetaTittleEn"].ToString());
+                    strMetaDescription = Server.HtmlDecode(row["MetaDescriptionEn"].ToString());
+
+                    //hdnDesign.Value = progressTitle(dv[0]["ProductCategoryName"].ToString()) + "-dci-" + dv[0]["ProductCategoryID"].ToString() + ".aspx";
+                    Page.Title = !string.IsNullOrEmpty(strMetaTitle) ? strMetaTitle : strTitle;
+                    var meta = new HtmlMeta()
+                    {
+                        Name = "description",
+                        Content = strMetaDescription
+                    };
+                    Header.Controls.Add(meta);
+                }
+                //lblTitle.Text = strTitle;
+            }
+
+
+
         }
     }
 }

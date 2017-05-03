@@ -380,7 +380,7 @@
                                             Checked='<%# (Container is GridEditFormInsertItem) ? true : (string.IsNullOrEmpty(Eval("IsAvailable").ToString()) ? false : Eval("IsAvailable")) %>' />
                                     </td>
                                 </tr>
-                                <tr>
+                                <tr class="invisible">
                                     <td class="left">Danh mục
                                     </td>
                                     <td>

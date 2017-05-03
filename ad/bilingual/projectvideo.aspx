@@ -281,7 +281,7 @@
                                 </td>
                             </tr>
                         </asp:Panel>
-                        <tr>
+                        <tr class="invisible">
                             <td class="left" valign="top">Embed Code
                             </td>
                             <td>
