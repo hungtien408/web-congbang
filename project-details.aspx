@@ -100,7 +100,7 @@
             <div class="menu-right PJde-menu">
                 <ul>
                     <asp:HiddenField ID="hdnProjectID" runat="server" />
-                    <asp:HiddenField ID="hdnCategoryID" runat="server" />
+                   
                     <asp:Repeater ID="RepeaterServiceCategory" runat="server" DataSourceID="odsServiceCategory">
                         <ItemTemplate>
                             <li><a href='<%# SiteCode.progressTitle(Eval("ProjectTitleEn")) + "-prd-" + Eval("ProjectID") + ".aspx" %>'><%# Eval("ProjectTitleEn") %></a></li>
@@ -113,7 +113,7 @@
                             <asp:Parameter Name="Keyword" Type="String"></asp:Parameter>
                             <asp:Parameter Name="ProjectTitle" Type="String"></asp:Parameter>
                             <asp:Parameter Name="Description" Type="String"></asp:Parameter>
-                            <asp:ControlParameter ControlID="hdnCategoryID" PropertyName="Value" Name="ProjectCategoryID" Type="String"></asp:ControlParameter>
+                            <asp:ControlParameter ControlID="hdnProjectID" PropertyName="Value" Name="ProjectCategoryID" Type="String"></asp:ControlParameter>
                             <asp:Parameter Name="Tag" Type="String"></asp:Parameter>
                             <asp:Parameter Name="IsHot" Type="String"></asp:Parameter>
                             <asp:Parameter Name="IsNew" Type="String"></asp:Parameter>
