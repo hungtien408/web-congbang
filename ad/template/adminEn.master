@@ -139,7 +139,7 @@
                         </Items>
                     </asp:RadMenuItem>
                     <asp:RadMenuItem runat="server" Text="Application" PostBack="False" Font-Bold="True"
-                        NavigateUrl="~/ad/bilingual/apllicationcategory.aspx">
+                        NavigateUrl="~/ad/bilingual/applicationcategory.aspx">
                     </asp:RadMenuItem>
                     <asp:RadMenuItem runat="server" Text="Activities" PostBack="False" Font-Bold="True">
                         <Items>

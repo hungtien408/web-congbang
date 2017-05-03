@@ -91,7 +91,7 @@
                                     </asp:Repeater>
                                     <asp:ObjectDataSource ID="odsService" runat="server" SelectMethod="ProjectCategorySelectAll" TypeName="TLLib.ProjectCategory">
                                         <SelectParameters>
-                                            <asp:Parameter DefaultValue="1" Name="parentID" Type="Int32"></asp:Parameter>
+                                            <asp:Parameter DefaultValue="2" Name="parentID" Type="Int32"></asp:Parameter>
                                             <asp:Parameter DefaultValue="2" Name="increaseLevelCount" Type="Int32"></asp:Parameter>
                                             <asp:Parameter Name="IsShowOnMenu" Type="String"></asp:Parameter>
                                             <asp:Parameter Name="IsShowOnHomePage" Type="String"></asp:Parameter>
@@ -119,7 +119,7 @@
                                 </ul>
                             </li>
                             <li><a href="Projects.aspx">Projects</a></li>
-                            <li><a href="#">Applications</a>
+                            <li><a href="Application.aspx">Applications</a>
                                 <ul>
                                     <asp:Repeater ID="Repeater3" runat="server" DataSourceID="odsApplications" EnableViewState="false">
                                         <ItemTemplate>
