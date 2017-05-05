@@ -100,6 +100,11 @@ function myfunload() {
         $(this).prev().hide();
         $('.contact-box-hid').addClass('active');
     });
+    $('.closeContact i').click(function () {
+        $('.contact-box-hid').removeClass('active');
+        $('.hover-contact').show();
+        $('.follow-us').show();
+    });
 
     /**/
     $('.img-project').owlCarousel({
