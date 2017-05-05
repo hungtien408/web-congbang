@@ -58,6 +58,7 @@
         </div>
         <div class="right">
             <div class="menu-right">
+                    <asp:HiddenField ID="hdnProjectCategoryID" runat="server" />
                 <ul>
                     <asp:Repeater ID="RepeaterServiceCategory" runat="server" DataSourceID="odsServiceCategory">
                         <ItemTemplate>
@@ -66,8 +67,8 @@
                     </asp:Repeater>
                     <asp:ObjectDataSource ID="odsServiceCategory" runat="server" SelectMethod="ProjectCategorySelectAll" TypeName="TLLib.ProjectCategory">
                         <SelectParameters>
-                            <asp:QueryStringParameter QueryStringField="pi" DefaultValue="3" Name="parentID" Type="Int32"></asp:QueryStringParameter>
-                            <asp:Parameter DefaultValue="1" Name="increaseLevelCount" Type="Int32"></asp:Parameter>
+                              <asp:ControlParameter ControlID="hdnProjectCategoryID" DefaultValue="3" PropertyName="Value" Name="parentID" Type="Int32"></asp:ControlParameter>
+                         <asp:Parameter DefaultValue="1" Name="increaseLevelCount" Type="Int32"></asp:Parameter>
                             <asp:Parameter Name="IsShowOnMenu" Type="String"></asp:Parameter>
                             <asp:Parameter Name="IsShowOnHomePage" Type="String"></asp:Parameter>
                             <asp:Parameter DefaultValue="True" Name="IsAvailable" Type="String"></asp:Parameter>

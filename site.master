@@ -166,7 +166,7 @@
                                 <ul>
                                     <asp:Repeater ID="Repeater5" runat="server" DataSourceID="odsContact" EnableViewState="false">
                                         <ItemTemplate>
-                                            <li><a href="<%# SiteCode.progressTitle(Eval("ProjectCategoryNameEn")) + "-si-" + Eval("ProjectCategoryID") + ".aspx" %>"><%# Eval("ProjectCategoryNameEn") %></a></li>
+                                            <li><a href="<%# SiteCode.progressTitle(Eval("ProjectCategoryNameEn")) + "-ci-" + Eval("ProjectCategoryID") + ".aspx" %>"><%# Eval("ProjectCategoryNameEn") %></a></li>
                                         </ItemTemplate>
                                     </asp:Repeater>
                                     <asp:ObjectDataSource ID="odsContact" runat="server" SelectMethod="ProjectCategorySelectAll" TypeName="TLLib.ProjectCategory">

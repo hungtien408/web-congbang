@@ -21,6 +21,14 @@ public partial class Services : System.Web.UI.Page
 
                 if (dv != null && dv.Count <= 0) return;
                 var row = dv[0];
+                if (row["CountProject"].ToString() != "0")
+                {
+                    hdnProjectCategoryID.Value = Request.QueryString["api"];
+                }
+                else
+                {
+                    hdnProjectCategoryID.Value = row["ParentID"].ToString();
+                }
                 strTitle = Server.HtmlDecode(row["ProjectCategoryName"].ToString());
                 strDescription = Server.HtmlDecode(row["Description"].ToString());
                 strMetaTitle = Server.HtmlDecode(row["MetaTitle"].ToString());
@@ -36,9 +44,9 @@ public partial class Services : System.Web.UI.Page
                 };
                 Header.Controls.Add(meta);
                 //lblTitle.Text = strTitle;
-            }            
-            
-            
+            }
+
+
         }
     }
 }

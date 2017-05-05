@@ -11,15 +11,15 @@
         height_win();
         bg_ab();
         bg_swipper();
-        $('.wrap-absolute p').readmore({
-            speed: 500,
-            collapsedHeight: 48,
-            moreLink: '<a href="#" class="btn-showhide">Xem thêm</a>',
-            lessLink: '<a href="#" class="btn-showhide">Thu gọn</a>',
-        });
-        $(document).on('click','a.btn-showhide', function () {
-            $('.wrap-absolute').toggleClass('true-height');
-        })
+        //$('.wrap-absolute p').readmore({
+        //    speed: 500,
+        //    collapsedHeight: 48,
+        //    moreLink: '<a href="#" class="btn-showhide">Xem thêm</a>',
+        //    lessLink: '<a href="#" class="btn-showhide">Thu gọn</a>',
+        //});
+        //$(document).on('click','a.btn-showhide', function () {
+        //    $('.wrap-absolute').toggleClass('true-height');
+        //})
     });
 })(jQuery);
 function height_win() {
