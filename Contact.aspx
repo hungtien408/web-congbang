@@ -70,6 +70,7 @@
                     <p>Contact</p>
                 </div>
                 <div class="contact-box-hid">
+                    <div class="closeContact"><i class="fa fa-times" aria-hidden="true"></i></div>
                     <%--<ul>
                         <li class="local">90/27 Trần Văn Ơn, P. Tân Sơn Nhì, Quận Tân Phú, Tp.Hồ Chí Minh</li>
                         <li class="phone">(848) 6260 4120 – 6260 4131</li>

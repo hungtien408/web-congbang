@@ -297,7 +297,7 @@ a:visited, a:focus {
     float:left;
     /*width: 880px;*/
     /*max-width: 65%;*/
-    width: 75%;
+    width: 73%;
     position:absolute;
     bottom:0;
 }
@@ -1072,4 +1072,15 @@ a.btn-showhide{
 }
 .jw-icon-hd {
     display:none !important;
+}
+.closeContact i {
+    position:absolute;
+    top:0;
+    right:0;
+    width:30px;
+    height:30px;
+    line-height:30px;
+    text-align:center;
+    background: rgba(0,32,96,1);
+    cursor:pointer;
 }
