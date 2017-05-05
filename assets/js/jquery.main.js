@@ -11,15 +11,15 @@
         height_win();
         bg_ab();
         bg_swipper();
-        //$('.wrap-absolute p').readmore({
-        //    speed: 500,
-        //    collapsedHeight: 48,
-        //    moreLink: '<a href="#" class="btn-showhide">Xem thêm</a>',
-        //    lessLink: '<a href="#" class="btn-showhide">Thu gọn</a>',
-        //});
-        //$(document).on('click','a.btn-showhide', function () {
-        //    $('.wrap-absolute').toggleClass('true-height');
-        //})
+        $('.wrap-absolute p').readmore({
+            speed: 500,
+            collapsedHeight: 48,
+            moreLink: '<a href="#" class="btn-showhide">Xem thêm</a>',
+            lessLink: '<a href="#" class="btn-showhide">Thu gọn</a>',
+        });
+        $(document).on('click', 'a.btn-showhide', function () {
+            $('.wrap-absolute').toggleClass('true-height');
+        })
     });
 })(jQuery);
 function height_win() {
@@ -71,6 +71,14 @@ function myfunload() {
     //    $(this).children('ul').stop(true, false, true).slideToggle(300);
     //    $(this).find('i').toggleClass('fa-chevron-down');
     //});
+    $('#menuMobiles > li').has('ul').addClass('parent-mo');
+    $('.parent-mo > ul').hide();
+    $('.parent-mo span.fa').click(function (e) {
+        e.preventDefault();
+        $(this).parent().next('ul').stop(true, false, true).slideToggle(300);
+    });
+
+    /****/
     $('.main-wrap .left .content-left').mCustomScrollbar({
         theme: "dark-thick",
     });
@@ -156,7 +164,7 @@ function main_img_project() {
     $('.news-slide').height(n - 420);
     $('.main-wrap .right .menu-news').height(n - 390);
     m = $('.img-project').height();
-    $('.PJde-menu').css('max-height',n - (m + 250));
+    $('.PJde-menu').css('max-height', n - (m + 250));
 }
 function bg_swipper() {
     $('.swiper-container .swiper-slide').each(function () {

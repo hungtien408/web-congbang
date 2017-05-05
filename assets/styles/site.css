@@ -348,6 +348,7 @@ a:visited, a:focus {
 }
 .main-wrap .left .content-left.img-cont {
     text-align:justify;
+    height:135px;
 }
 .main-wrap .left .content-left.img-cont img {
     max-width:100%;
