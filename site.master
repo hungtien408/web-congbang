@@ -58,13 +58,13 @@
             $('#menu li').removeClass("active");
             $('#menu li a[href$="' + value + '"]').parents("li").addClass("active");
             $('.menu-list li').removeClass("active");
-            $('.menu-list li a[href$="' + page + '"]').parents("li").addClass("active");
-            var value1 = $('a.a-link-sp').attr('href');
-            $('#menu li li a[href$="' + value1 + '"]').parents("li").addClass("active");
-            $('.menu-list li a[href$="' + value1 + '"]').parents("li").addClass("active");
-            var value2 = $('a.a-link-spc').attr('href');
-            $('#menu li li a[href$="' + value2 + '"]').parents("li").addClass("active");
-            $('.menu-list li a[href$="' + value2 + '"]').parents("li").addClass("active");
+            $('.menu-list li a[href$="' + value + '"]').parents("li").addClass("active");
+
+
+            $('.menu-right li').removeClass("active");
+            $('.menu-right li a[href$="' + value + '"]').parents("li").addClass("active");
+
+         
         }
     </script>
 </head>
