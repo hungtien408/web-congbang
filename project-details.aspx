@@ -8,9 +8,15 @@
     <div id="carousel-example-generic" class="carousel slide bg-ab-slide" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">
-            <li data-target="#carousel-example-generic" data-slide-to="0"></li>
-            <%--<li data-target="#carousel-example-generic" data-slide-to="1"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="2"></li>--%>
+            <asp:ListView ID="lstItem" runat="server"
+                DataSourceID="odsBanner" EnableModelValidation="True">
+                <ItemTemplate>
+                    <li data-target="#carousel-example-generic" data-slide-to='<%# Container.DataItemIndex %>' class='<%# (Container.DataItemIndex) == 0 ? "active" : "" %>'></li>
+                </ItemTemplate>
+                <LayoutTemplate>
+                    <span runat="server" id="itemPlaceholder" />
+                </LayoutTemplate>
+            </asp:ListView>
         </ol>
 
         <!-- Wrapper for slides -->
@@ -25,7 +31,6 @@
             <asp:ObjectDataSource ID="odsBanner" runat="server" SelectMethod="ProjectImageSelectAll" TypeName="TLLib.ProjectImage">
                 <SelectParameters>
                     <asp:ControlParameter ControlID="hdnProjectID" PropertyName="Value" Name="ProjectID" Type="String"></asp:ControlParameter>
-
                     <asp:Parameter DefaultValue="true" Name="IsBackground" Type="String"></asp:Parameter>
                     <asp:Parameter DefaultValue="true" Name="IsAvailable" Type="String"></asp:Parameter>
                     <asp:Parameter Name="Priority" Type="String"></asp:Parameter>
@@ -48,7 +53,7 @@
                         </asp:Repeater>
                         <asp:ObjectDataSource ID="odsSlider" runat="server" SelectMethod="ProjectImageSelectAll" TypeName="TLLib.ProjectImage">
                             <SelectParameters>
-                                <asp:QueryStringParameter QueryStringField="nid" Name="ProjectID" Type="String"></asp:QueryStringParameter>
+                    <asp:ControlParameter ControlID="hdnProjectID" PropertyName="Value" Name="ProjectID" Type="String"></asp:ControlParameter>
                                 <asp:Parameter DefaultValue="false" Name="IsBackground" Type="String"></asp:Parameter>
                                 <asp:Parameter DefaultValue="true" Name="IsAvailable" Type="String"></asp:Parameter>
                                 <asp:Parameter Name="Priority" Type="String"></asp:Parameter>
@@ -64,7 +69,7 @@
                         <ItemTemplate>
                             <h1><%# Eval("ProjectTitleEn") %></h1>
                             <p><%# Eval("ContentEn") %></p>
-                            <span class="readmore">xem chi tiết</span>
+                            <%--<span class="readmore">xem chi tiết</span>--%>
                         </ItemTemplate>
                     </asp:Repeater>
                     <asp:ObjectDataSource ID="odsContent" runat="server" SelectMethod="ProjectSelectOne" TypeName="TLLib.Project">
@@ -100,7 +105,8 @@
             <div class="menu-right PJde-menu">
                 <ul>
                     <asp:HiddenField ID="hdnProjectID" runat="server" />
-                   
+                    <asp:HiddenField ID="hdnProjectCategoryID" runat="server" />
+
                     <asp:Repeater ID="RepeaterServiceCategory" runat="server" DataSourceID="odsServiceCategory">
                         <ItemTemplate>
                             <li><a href='<%# SiteCode.progressTitle(Eval("ProjectTitleEn")) + "-prd-" + Eval("ProjectID") + ".aspx" %>'><%# Eval("ProjectTitleEn") %></a></li>
@@ -113,7 +119,7 @@
                             <asp:Parameter Name="Keyword" Type="String"></asp:Parameter>
                             <asp:Parameter Name="ProjectTitle" Type="String"></asp:Parameter>
                             <asp:Parameter Name="Description" Type="String"></asp:Parameter>
-                            <asp:ControlParameter ControlID="hdnProjectID" PropertyName="Value" Name="ProjectCategoryID" Type="String"></asp:ControlParameter>
+                            <asp:ControlParameter ControlID="hdnProjectCategoryID" PropertyName="Value" Name="ProjectCategoryID" Type="String"></asp:ControlParameter>
                             <asp:Parameter Name="Tag" Type="String"></asp:Parameter>
                             <asp:Parameter Name="IsHot" Type="String"></asp:Parameter>
                             <asp:Parameter Name="IsNew" Type="String"></asp:Parameter>
@@ -135,7 +141,7 @@
             <ItemTemplate>
                 <div class="item">
                     <a href="<%# SiteCode.progressTitle(Eval("ProjectTitleEn")) + "-prd-" + Eval("ProjectID") + ".aspx" %>">
-                        <img src="res/project/album/<%# Eval("ImageName") %>" alt="" />
+                        <img src="res/project/<%# Eval("ImageName") %>" alt="" />
                         <p><%# Eval("ContentEn") %></p>
                     </a>
                 </div>

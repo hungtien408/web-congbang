@@ -59,28 +59,18 @@
         <div class="right">
             <div class="menu-right">
                 <ul>
-                    <asp:Repeater ID="RepeaterListService" runat="server" DataSourceID="odsListService" EnableViewState="false">
+                    <asp:Repeater ID="RepeaterServiceCategory" runat="server" DataSourceID="odsServiceCategory">
                         <ItemTemplate>
-                            <li><a href="<%# SiteCode.progressTitle(Eval("ProjectTitleEn")) + "-acid-" + Eval("ProjectID") + ".aspx" %>"><%# Eval("ProjectTitleEn") %></a></li>
+                            <li><a href='<%# SiteCode.progressTitle(Eval("ProjectCategoryNameEn")) + "-"+(Eval("CountProject").ToString() == "0"?"aci":"acid")+"-" + Eval("ProjectCategoryID") + ".aspx" %>'><%# Eval("ProjectCategoryNameEn") %></a></li>
                         </ItemTemplate>
                     </asp:Repeater>
-                    <asp:ObjectDataSource ID="odsListService" runat="server" SelectMethod="ProjectSelectAll" TypeName="TLLib.Project">
+                    <asp:ObjectDataSource ID="odsServiceCategory" runat="server" SelectMethod="ProjectCategorySelectAll" TypeName="TLLib.ProjectCategory">
                         <SelectParameters>
-                            <asp:Parameter Name="StartRowIndex" Type="String"></asp:Parameter>
-                            <asp:Parameter Name="EndRowIndex" Type="String"></asp:Parameter>
-                            <asp:Parameter Name="Keyword" Type="String"></asp:Parameter>
-                            <asp:Parameter Name="ProjectTitle" Type="String"></asp:Parameter>
-                            <asp:Parameter Name="Description" Type="String"></asp:Parameter>
-                            <asp:Parameter DefaultValue="6" Name="ProjectCategoryID" Type="String"></asp:Parameter>
-                            <asp:Parameter Name="Tag" Type="String"></asp:Parameter>
-                            <asp:Parameter Name="IsHot" Type="String"></asp:Parameter>
-                            <asp:Parameter Name="IsNew" Type="String"></asp:Parameter>
+                            <asp:QueryStringParameter QueryStringField="aci" DefaultValue="6" Name="parentID" Type="Int32"></asp:QueryStringParameter>
+                            <asp:Parameter DefaultValue="1" Name="increaseLevelCount" Type="Int32"></asp:Parameter>
+                            <asp:Parameter Name="IsShowOnMenu" Type="String"></asp:Parameter>
                             <asp:Parameter Name="IsShowOnHomePage" Type="String"></asp:Parameter>
-                            <asp:Parameter Name="FromDate" Type="String"></asp:Parameter>
-                            <asp:Parameter Name="ToDate" Type="String"></asp:Parameter>
-                            <asp:Parameter DefaultValue="true" Name="IsAvailable" Type="String"></asp:Parameter>
-                            <asp:Parameter Name="Priority" Type="String"></asp:Parameter>
-                            <asp:Parameter DefaultValue="true" Name="SortByPriority" Type="String"></asp:Parameter>
+                            <asp:Parameter DefaultValue="True" Name="IsAvailable" Type="String"></asp:Parameter>
                         </SelectParameters>
                     </asp:ObjectDataSource>
                 </ul>

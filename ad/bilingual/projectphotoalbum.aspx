@@ -20,6 +20,9 @@
             text-align: center;
             display: block;
         }
+        .aaa{
+            margin: 0 auto;
+        }
     </style>
     <script type="text/javascript">
         // <![CDATA[
@@ -147,7 +150,7 @@
             </LayoutTemplate>
             <ItemTemplate>
                 <asp:HiddenField ID="hdnImageName" runat="server" Value='<%# Eval("ImageName") %>' />
-                <fieldset style="float: left; margin: 5px 5px 50px 5px; padding: 2px 2px 2px 2px; position: relative; background: #eeeeee"
+                <fieldset style="float: left; margin: 5px 5px 50px 5px; width: 250px; padding: 2px 2px 2px 2px; position: relative; background: #eeeeee"
                     class="myClass" onmouseover="containerMouseover(this)"
                     onmouseout="containerMouseout(this)">
                     <%--<img alt="" src='<%# "~/res/project/album/" + Eval("ImageName") %>' width='<%#ImageWidth %>'

@@ -8,9 +8,15 @@
     <div id="carousel-example-generic" class="carousel slide bg-ab-slide" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">
-            <li data-target="#carousel-example-generic" data-slide-to="0"></li>
-            <%--<li data-target="#carousel-example-generic" data-slide-to="1"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="2"></li>--%>
+            <asp:ListView ID="lstItem" runat="server"
+                DataSourceID="odsBanner" EnableModelValidation="True">
+                <ItemTemplate>
+                    <li data-target="#carousel-example-generic" data-slide-to='<%# Container.DataItemIndex %>' class='<%# (Container.DataItemIndex) == 0 ? "active" : "" %>'></li>
+                </ItemTemplate>
+                <LayoutTemplate>
+                    <span runat="server" id="itemPlaceholder" />
+                </LayoutTemplate>
+            </asp:ListView>
         </ol>
 
         <!-- Wrapper for slides -->
@@ -107,7 +113,7 @@
                                 var w_width = $(window).width();
                                 jwplayer('jwplayer1').setup({
                                     image: 'res/project/video/<%# Eval("ImagePath")%>',
-                                    file: 'res/project/video/<%# Eval("ProjectVideoPath")%>',
+                                    file: '<%# string.IsNullOrEmpty(Eval("ProjectVideoPath").ToString()) ? Eval("GLobalEmbedScript") :"res/project/video/" + Eval("ProjectVideoPath")%>',
                                     flashplayer: "assets/js/jwplayer.flash.swf",
                                     height: 160,
                                     width: 240,

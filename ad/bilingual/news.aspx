@@ -317,9 +317,9 @@
                                 <img alt="Thư viện ảnh" title="Thư viện ảnh" src="../assets/images/PhotoAlbum.png"
                                     onclick="openWindow('projectphotoalbum.aspx?PI=<%# Eval("ProjectID") %>','Thư viện ảnh')"
                                     style="cursor: pointer" />
-                                <img alt="File Download" title="File Download" src="../assets/images/filedownload.png"
+                                <%--<img alt="File Download" title="File Download" src="../assets/images/filedownload.png"
                                     onclick="openWindow('projectdownload.aspx?PI=<%# Eval("ProjectID") %>','File Download')"
-                                    style="cursor: pointer" />
+                                    style="cursor: pointer" />--%>
                                 <img alt="Video" title="Video" src="../assets/images/movie.png" style="cursor: pointer"
                                     onclick="openWindow('projectvideo.aspx?PI=<%# Eval("ProjectID") %>','Video')" />
                             </div>

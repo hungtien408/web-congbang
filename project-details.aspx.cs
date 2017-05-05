@@ -23,6 +23,7 @@ public partial class project_details : System.Web.UI.Page
                     var row = dv[0];
 
                     hdnProjectID.Value = row["ProjectID"].ToString();
+                    hdnProjectCategoryID.Value = row["ProjectCategoryID"].ToString();
                     //hdnCategoryID.Value = row["ProjectCategoryID"].ToString();
                     Repeater1.DataSource = dv;
                     Repeater1.DataBind();
@@ -48,6 +49,7 @@ public partial class project_details : System.Web.UI.Page
                     var row = dv[0];
 
                     hdnProjectID.Value = row["ProjectID"].ToString();
+                    hdnProjectCategoryID.Value = row["ProjectCategoryID"].ToString();
                     //hdnCategoryID.Value = row["ProjectCategoryID"].ToString();
                     Repeater1.DataSource = dv;
                     Repeater1.DataBind();
@@ -73,7 +75,8 @@ public partial class project_details : System.Web.UI.Page
                 {
                     var row = dv[0];
 
-                    hdnProjectID.Value = row["ProjectCategoryID"].ToString();
+                    hdnProjectID.Value = row["ProjectID"].ToString();
+                    hdnProjectCategoryID.Value = row["ProjectCategoryID"].ToString();
                     //hdnCategoryID.Value = row["ProjectCategoryID"].ToString();
                     Repeater1.DataSource = dv;
                     Repeater1.DataBind();

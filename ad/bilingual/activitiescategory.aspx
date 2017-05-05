@@ -264,7 +264,7 @@
                                             Display="Dynamic" ErrorMessage="Sai định dạng ảnh (*.jpg, *.jpeg, *.gif, *.png)"></asp:CustomValidator>
                                     </td>
                                 </tr>
-                                <tr>
+                                <tr class="invisible">
                                     <td class="left" valign="top">
                                         Danh mục cấp trên
                                     </td>

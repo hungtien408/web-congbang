@@ -92,7 +92,7 @@
                                     <asp:ObjectDataSource ID="odsService" runat="server" SelectMethod="ProjectCategorySelectAll" TypeName="TLLib.ProjectCategory">
                                         <SelectParameters>
                                             <asp:Parameter DefaultValue="2" Name="parentID" Type="Int32"></asp:Parameter>
-                                            <asp:Parameter DefaultValue="2" Name="increaseLevelCount" Type="Int32"></asp:Parameter>
+                                            <asp:Parameter DefaultValue="1" Name="increaseLevelCount" Type="Int32"></asp:Parameter>
                                             <asp:Parameter Name="IsShowOnMenu" Type="String"></asp:Parameter>
                                             <asp:Parameter Name="IsShowOnHomePage" Type="String"></asp:Parameter>
                                             <asp:Parameter DefaultValue="true" Name="IsAvailable" Type="String"></asp:Parameter>
@@ -110,7 +110,7 @@
                                     <asp:ObjectDataSource ID="odsProducts" runat="server" SelectMethod="ProjectCategorySelectAll" TypeName="TLLib.ProjectCategory">
                                         <SelectParameters>
                                             <asp:Parameter DefaultValue="3" Name="parentID" Type="Int32"></asp:Parameter>
-                                            <asp:Parameter DefaultValue="2" Name="increaseLevelCount" Type="Int32"></asp:Parameter>
+                                            <asp:Parameter DefaultValue="1" Name="increaseLevelCount" Type="Int32"></asp:Parameter>
                                             <asp:Parameter Name="IsShowOnMenu" Type="String"></asp:Parameter>
                                             <asp:Parameter Name="IsShowOnHomePage" Type="String"></asp:Parameter>
                                             <asp:Parameter DefaultValue="true" Name="IsAvailable" Type="String"></asp:Parameter>
@@ -129,7 +129,7 @@
                                     <asp:ObjectDataSource ID="odsApplications" runat="server" SelectMethod="ProjectCategorySelectAll" TypeName="TLLib.ProjectCategory">
                                         <SelectParameters>
                                             <asp:Parameter DefaultValue="5" Name="parentID" Type="Int32"></asp:Parameter>
-                                            <asp:Parameter DefaultValue="2" Name="increaseLevelCount" Type="Int32"></asp:Parameter>
+                                            <asp:Parameter DefaultValue="1" Name="increaseLevelCount" Type="Int32"></asp:Parameter>
                                             <asp:Parameter Name="IsShowOnMenu" Type="String"></asp:Parameter>
                                             <asp:Parameter Name="IsShowOnHomePage" Type="String"></asp:Parameter>
                                             <asp:Parameter DefaultValue="true" Name="IsAvailable" Type="String"></asp:Parameter>
@@ -172,7 +172,7 @@
                                     <asp:ObjectDataSource ID="odsContact" runat="server" SelectMethod="ProjectCategorySelectAll" TypeName="TLLib.ProjectCategory">
                                         <SelectParameters>
                                             <asp:Parameter DefaultValue="8" Name="parentID" Type="Int32"></asp:Parameter>
-                                            <asp:Parameter DefaultValue="2" Name="increaseLevelCount" Type="Int32"></asp:Parameter>
+                                            <asp:Parameter DefaultValue="1" Name="increaseLevelCount" Type="Int32"></asp:Parameter>
                                             <asp:Parameter Name="IsShowOnMenu" Type="String"></asp:Parameter>
                                             <asp:Parameter Name="IsShowOnHomePage" Type="String"></asp:Parameter>
                                             <asp:Parameter DefaultValue="true" Name="IsAvailable" Type="String"></asp:Parameter>

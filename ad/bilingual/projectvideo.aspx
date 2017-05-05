@@ -21,6 +21,7 @@
             display: block;
         }
     </style>
+    <script src="../../assets/js/jwplayer.js"></script>
     <script type="text/javascript">
         // <![CDATA[
         //On insert and update buttons click temporarily disables ajax to perform upload actions
@@ -174,20 +175,41 @@
                 <asp:HiddenField ID="hdnImagePath" runat="server" Value='<%# Eval("ImagePath") %>' />
                 <asp:HiddenField ID="hdnVideoPath" runat="server" Value='<%# Eval("ProjectVideoPath") %>' />
                 <fieldset style="float: left; margin: 5px 5px 50px 5px; padding: 2px 2px 2px 2px; position: relative; background: #eeeeee"
-                    class="myClass" onmouseover="containerMouseover(this)"
-                    onmouseout="containerMouseout(this)">
-                    <object id="player" width="<%#ImageWidth %>" height="<%#ImageHeight %>" name="player"
+                    class="myClass">
+                    <%--<object id="player" width="<%#ImageWidth %>" height="<%#ImageHeight %>" name="player"
                         classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000">
-                        <param value="../../player.swf" name="movie">
+                        <param value="/player.swf" name="movie">
                         <param value="true" name="allowfullscreen">
                         <param value="never" name="allowscriptaccess">
                         <param value="opaque" name="wmode">
-                        <param value="file=res/project/video/<%# Eval("ProjectVideoPath") %>&image=../../res/project/video/thumbs/<%# Eval("ImagePath") %>&backcolor=111111&frontcolor=FFFFFF&controlbar=none"
+                        <param value="file=/res/project/video/<%# Eval("ProjectVideoPath") %>&image=/res/project/video/thumbs/<%# Eval("ImagePath") %>&backcolor=111111&frontcolor=FFFFFF&controlbar=none"
                             name="flashvars">
-                        <embed id="player2" width="<%#ImageWidth %>" height="<%#ImageHeight %>" flashvars="file=res/project/video/<%# Eval("ProjectVideoPath") %>&image=../../res/project/video/thumbs/<%# Eval("ImagePath") %>&backcolor=111111&frontcolor=FFFFFF&controlbar=none"
-                            wmode="opaque" allowfullscreen="false" allowscriptaccess="never" src="../../player.swf"
+                        <embed id="player2" width="<%#ImageWidth %>" height="<%#ImageHeight %>" flashvars="file=/res/project/video/<%# Eval("ProjectVideoPath") %>&image=/res/project/video/thumbs/<%# Eval("ImagePath") %>&backcolor=111111&frontcolor=FFFFFF&controlbar=none"
+                            wmode="opaque" allowfullscreen="false" allowscriptaccess="never" src="/player.swf"
                             name="player2" type="application/x-shockwave-flash">
-                    </object>
+                    </object>--%>
+                    <div style="position: relative; width: 240px;">
+                        <div id="jwplayer1"></div>
+                        <script type="text/javascript">
+                            jwplayer.key = "yl/yqfTaFkHTZsvJEK6NtJYZZujiAxc3knwh";
+                            $(document).ready(function () {
+                                var w_height = $(window).height();
+                                var w_width = $(window).width();
+                                jwplayer('jwplayer1').setup({
+                                    image: '/res/project/video/<%# Eval("ImagePath")%>',
+                                file: '<%# string.IsNullOrEmpty(Eval("ProjectVideoPath").ToString()) ? Eval("GLobalEmbedScript") :"/res/project/video/" + Eval("ProjectVideoPath")%>',
+                                flashplayer: "/assets/js/jwplayer.flash.swf",
+                                height: 160,
+                                width: 240,
+                                dock: true,
+                                //autostart: true,
+                                primary: "html5",
+                                aspectratio: '16:9',
+                                //stretching: "fill",
+                            });
+                        });
+                        </script>
+                    </div>
                     <div style="margin-top: -30px; position: absolute; display: none; width: <%#ImageHeight.Value/1.5 %>px;">
                         <asp:Label ID="Label1" runat="server" Text='<%# Eval("Title") %>' CssClass="txt"></asp:Label>
                     </div>
