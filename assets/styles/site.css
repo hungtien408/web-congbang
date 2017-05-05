@@ -136,7 +136,10 @@ a:visited, a:focus {
 #header #menu > li > ul > li {
     /*text-align:center;*/
 }
-#header #menu > li > ul li:hover > a {
+#header #menu > li > ul li:hover > a{
+    color:#4090d9;
+}
+#header #menu > li.active > a {
     color:#4090d9;
 }
 #header #menu ul ul {

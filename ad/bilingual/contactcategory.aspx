@@ -312,7 +312,7 @@
                                         </asp:RadTextBox>
                                     </td>
                                 </tr>
-                                <tr class="invisible">
+                                <tr>
                                     <td class="left" valign="top">
                                         Mô tả
                                     </td>
@@ -335,6 +335,7 @@
                                                     <asp:EditorTool Name="Underline" />
                                                     <asp:EditorTool Name="InsertLink" />
                                                     <asp:EditorTool Name="ForeColor" />
+                                                    <asp:EditorTool Name="TemplateManager" />
                                                 </asp:EditorToolGroup>
                                             </Tools>
                                         </asp:RadEditor>
@@ -392,7 +393,7 @@
                                             Width="500px" EmptyMessage="Tên danh mục(En)..."></asp:RadTextBox>
                                     </td>
                                 </tr>
-                                <tr class="invisible">
+                                <tr>
                                     <td class="left" valign="top">
                                         Mô tả(En)
                                     </td>
@@ -415,6 +416,7 @@
                                                     <asp:EditorTool Name="Underline" />
                                                     <asp:EditorTool Name="InsertLink" />
                                                     <asp:EditorTool Name="ForeColor" />
+                                                    <asp:EditorTool Name="TemplateManager" />
                                                 </asp:EditorToolGroup>
                                             </Tools>
                                         </asp:RadEditor>
@@ -472,7 +474,7 @@
                                             Width="500px" EmptyMessage="Tên danh mục(Cam)..."></asp:RadTextBox>
                                     </td>
                                 </tr>
-                                <tr class="invisible">
+                                <tr>
                                     <td class="left" valign="top">
                                         Mô tả(Cam)
                                     </td>
@@ -495,6 +497,7 @@
                                                     <asp:EditorTool Name="Underline" />
                                                     <asp:EditorTool Name="InsertLink" />
                                                     <asp:EditorTool Name="ForeColor" />
+                                                    <asp:EditorTool Name="TemplateManager" />
                                                 </asp:EditorToolGroup>
                                             </Tools>
                                         </asp:RadEditor>

@@ -53,8 +53,10 @@
             $('#menu li a[href*="' + page + '"]').parent("li").addClass("active");
         }
         function changeSubActiveMenu(page) {
-            $('#menu li li').removeClass("active");
-            $('#menu li li a[href$="' + page + '"]').parents("li").addClass("active");
+
+            var value = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
+            $('#menu li').removeClass("active");
+            $('#menu li a[href$="' + value + '"]').parents("li").addClass("active");
             $('.menu-list li').removeClass("active");
             $('.menu-list li a[href$="' + page + '"]').parents("li").addClass("active");
             var value1 = $('a.a-link-sp').attr('href');

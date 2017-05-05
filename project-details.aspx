@@ -142,7 +142,7 @@
                 <div class="item">
                     <a href="<%# SiteCode.progressTitle(Eval("ProjectTitleEn")) + "-prd-" + Eval("ProjectID") + ".aspx" %>">
                         <img src="res/project/<%# Eval("ImageName") %>" alt="" />
-                        <p><%# Eval("ContentEn") %></p>
+                        <p><%# TLLib.Common.SplitSummary(Eval("DescriptionEn").ToString(), 40)  %></p>
                     </a>
                 </div>
             </ItemTemplate>
