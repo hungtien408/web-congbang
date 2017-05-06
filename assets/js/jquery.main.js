@@ -73,9 +73,13 @@ function myfunload() {
     //});
     $('#menuMobiles > li').has('ul').addClass('parent-mo');
     $('.parent-mo > ul').hide();
-    $('.parent-mo span.fa').click(function (e) {
+    //$('.parent-mo span.fa').click(function (e) {
+    //    e.preventDefault();
+    //    $(this).parent().next('ul').stop(true, false, true).slideToggle(300);
+    //});
+    $('.parent-mo a').hover(function (e) {
         e.preventDefault();
-        $(this).parent().next('ul').stop(true, false, true).slideToggle(300);
+        $(this).parent().children('ul').stop(true, false, true).slideToggle(300);
     });
 
     /****/

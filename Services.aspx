@@ -19,23 +19,24 @@
 
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
-            <div class="item">
-                <asp:Repeater ID="RepeaterBanner" runat="server" DataSourceID="odsBannerService">
-                    <ItemTemplate>
+            <asp:Repeater ID="RepeaterBanner" runat="server" DataSourceID="odsBannerService">
+                <ItemTemplate>
+                    <div class="item">
                         <img alt="" src='<%# "~/res/projectcategory/album/" + Eval("ImageName") %>' runat="server"
                             visible='<%# string.IsNullOrEmpty( Eval("ImageName").ToString()) ? false : true %>' />
-                    </ItemTemplate>
-                </asp:Repeater>
-                <asp:ObjectDataSource ID="odsBannerService" runat="server" SelectMethod="ProjectCategoryImageSelectAll" TypeName="TLLib.ProjectCategoryImage">
-                    <SelectParameters>
-                        <asp:QueryStringParameter QueryStringField="si" DefaultValue="2" Name="ProjectCategoryID" Type="String"></asp:QueryStringParameter>
-                        <asp:Parameter DefaultValue="True" Name="IsAvailable" Type="String"></asp:Parameter>
-                        <asp:Parameter Name="Priority" Type="String"></asp:Parameter>
-                        <asp:Parameter DefaultValue="True" Name="SortByPriority" Type="String"></asp:Parameter>
-                        <asp:Parameter Name="IsBackground" Type="String"></asp:Parameter>
-                    </SelectParameters>
-                </asp:ObjectDataSource>
-            </div>
+                    </div>
+                </ItemTemplate>
+            </asp:Repeater>
+            <asp:ObjectDataSource ID="odsBannerService" runat="server" SelectMethod="ProjectCategoryImageSelectAll" TypeName="TLLib.ProjectCategoryImage">
+                <SelectParameters>
+                    <asp:QueryStringParameter QueryStringField="si" DefaultValue="2" Name="ProjectCategoryID" Type="String"></asp:QueryStringParameter>
+                    <asp:Parameter DefaultValue="True" Name="IsAvailable" Type="String"></asp:Parameter>
+                    <asp:Parameter Name="Priority" Type="String"></asp:Parameter>
+                    <asp:Parameter DefaultValue="True" Name="SortByPriority" Type="String"></asp:Parameter>
+                    <asp:Parameter Name="IsBackground" Type="String"></asp:Parameter>
+                </SelectParameters>
+            </asp:ObjectDataSource>
+
         </div>
     </div>
     <div class="main-wrap">
@@ -57,9 +58,9 @@
             </div>
         </div>
         <div class="right">
-            <div class="menu-right">  
-                 <asp:HiddenField ID="hdnProjectCategoryID" runat="server" />
-               
+            <div class="menu-right">
+                <asp:HiddenField ID="hdnProjectCategoryID" runat="server" />
+
                 <ul>
                     <asp:Repeater ID="RepeaterServiceCategory" runat="server" DataSourceID="odsServiceCategory">
                         <ItemTemplate>
@@ -68,13 +69,13 @@
                     </asp:Repeater>
                     <asp:ObjectDataSource ID="odsServiceCategory" runat="server" SelectMethod="ProjectCategorySelectAll" TypeName="TLLib.ProjectCategory">
                         <SelectParameters>
-                              <asp:ControlParameter ControlID="hdnProjectCategoryID" DefaultValue="2" PropertyName="Value" Name="parentID" Type="Int32"></asp:ControlParameter>
-                         <asp:Parameter DefaultValue="1" Name="increaseLevelCount" Type="Int32"></asp:Parameter>
+                            <asp:ControlParameter ControlID="hdnProjectCategoryID" DefaultValue="2" PropertyName="Value" Name="parentID" Type="Int32"></asp:ControlParameter>
+                            <asp:Parameter DefaultValue="1" Name="increaseLevelCount" Type="Int32"></asp:Parameter>
                             <asp:Parameter Name="IsShowOnMenu" Type="String"></asp:Parameter>
                             <asp:Parameter Name="IsShowOnHomePage" Type="String"></asp:Parameter>
                             <asp:Parameter DefaultValue="True" Name="IsAvailable" Type="String"></asp:Parameter>
                         </SelectParameters>
-                </asp:ObjectDataSource>
+                    </asp:ObjectDataSource>
                 </ul>
 
             </div>
