@@ -48,6 +48,27 @@
                         <p>
                             <%# Eval("ContentEn") %>
                         </p>
+                        <asp:ListView ID="lstDownload" runat="server"
+                            DataSourceID="odsDownload" EnableModelValidation="True">
+                            <ItemTemplate>
+                                <li><a href="javascript:void(0);" data-link='<%# Eval("LinkDownload") %>'><%# Eval("FileNameEn") %></a></li>
+                            </ItemTemplate>
+                            <LayoutTemplate>
+                                <div class="wrap-pop-down">
+                                    <ul>
+                                        <li runat="server" id="itemPlaceholder"></li>
+                                    </ul>
+                                </div>
+                            </LayoutTemplate>
+                        </asp:ListView>
+                        <asp:ObjectDataSource ID="odsDownload" runat="server" SelectMethod="ProjectCategoryDownloadSelectAll" TypeName="TLLib.ProjectCategoryDownload">
+                            <SelectParameters>
+                                <asp:QueryStringParameter QueryStringField="pi" Name="ProjectCategoryID" Type="String"></asp:QueryStringParameter>
+                                <asp:Parameter DefaultValue="True" Name="IsAvailable" Type="String"></asp:Parameter>
+                                <asp:Parameter Name="Priority" Type="String"></asp:Parameter>
+                                <asp:Parameter DefaultValue="True" Name="SortByPriority" Type="String"></asp:Parameter>
+                            </SelectParameters>
+                        </asp:ObjectDataSource>
                     </ItemTemplate>
                 </asp:Repeater>
                 <asp:ObjectDataSource ID="odsService" runat="server" SelectMethod="ProjectCategorySelectOne" TypeName="TLLib.ProjectCategory">

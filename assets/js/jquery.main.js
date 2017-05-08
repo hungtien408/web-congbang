@@ -196,9 +196,14 @@ function mainHeight() {
 
 $('.wrap-pop-down li a').click(function (e) {
     e.preventDefault();
+    showPopup();
+    var cb = $(this).attr("data-link");
+    $("[id$='hdnFile']").val(cb);
+});
+function showPopup() {
     $('#main-content').append('<div id="overlay-screen-active">');
     $('.popup .popup-content').css('top', '0');
-});
+}
 $(document).on('click', ".popup-btn-close, #overlay-screen-active", function () {
     $('.popup-content').css('top', '-250%');
     $('#overlay-screen-active').fadeOut();

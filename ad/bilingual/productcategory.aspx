@@ -233,6 +233,9 @@
                                 <img alt="Thư viện ảnh" title="Thư viện ảnh" src="../assets/images/PhotoAlbum.png"
                                     onclick="openWindow('projectcategoryphotoalbum.aspx?PI=<%# Eval("ProjectCategoryID") %>','Thư viện ảnh')"
                                     style="cursor: pointer" />
+                                 <img alt="File Download" title="File Download" src="../assets/images/filedownload.png"
+                                    onclick="openWindow('projectcategorydownload.aspx?PI=<%# Eval("ProjectCategoryID") %>','File Download')"
+                                    style="cursor: pointer" />
                             </div>
                         </ItemTemplate>
                     </asp:GridTemplateColumn>

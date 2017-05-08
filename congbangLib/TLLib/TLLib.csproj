@@ -95,6 +95,7 @@
     <Compile Include="ProductOption.cs" />
     <Compile Include="ProductOptionCategory.cs" />
     <Compile Include="ProductSizeColor.cs" />
+    <Compile Include="ProjectCategoryDownload.cs" />
     <Compile Include="ProjectCategoryImage.cs" />
     <Compile Include="Province.cs" />
     <Compile Include="Service.cs" />

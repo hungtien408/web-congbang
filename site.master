@@ -1,5 +1,7 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="site.master.cs" Inherits="site" %>
-
+<%@ Register Src="~/uc/pop-down.ascx" TagPrefix="uc1" TagName="popdown" %>
+<%@ Register TagPrefix="asp" Namespace="AjaxControlToolkit" Assembly="AjaxControlToolkit" %>
+<%@ Register TagPrefix="asp" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI" %>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -70,6 +72,8 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server">
+        </asp:ToolkitScriptManager>
         <div id="wrapper">
             <div id="wrapper-in">
                 <div id="header">
@@ -106,7 +110,7 @@
                                 <ul>
                                     <asp:Repeater ID="Repeater2" runat="server" DataSourceID="odsProducts" EnableViewState="false">
                                         <ItemTemplate>
-                                            <li><a href="<%# SiteCode.progressTitle(Eval("ProjectCategoryNameEn")) + "-si-" + Eval("ProjectCategoryID") + ".aspx" %>"><%# Eval("ProjectCategoryNameEn") %></a></li>
+                                            <li><a href="<%# SiteCode.progressTitle(Eval("ProjectCategoryNameEn")) + "-pi-" + Eval("ProjectCategoryID") + ".aspx" %>"><%# Eval("ProjectCategoryNameEn") %></a></li>
                                         </ItemTemplate>
                                     </asp:Repeater>
                                     <asp:ObjectDataSource ID="odsProducts" runat="server" SelectMethod="ProjectCategorySelectAll" TypeName="TLLib.ProjectCategory">
@@ -125,7 +129,7 @@
                                 <ul>
                                     <asp:Repeater ID="Repeater3" runat="server" DataSourceID="odsApplications" EnableViewState="false">
                                         <ItemTemplate>
-                                            <li><a href="<%# SiteCode.progressTitle(Eval("ProjectCategoryNameEn")) + "-si-" + Eval("ProjectCategoryID") + ".aspx" %>"><%# Eval("ProjectCategoryNameEn") %></a></li>
+                                            <li><a href="<%# SiteCode.progressTitle(Eval("ProjectCategoryNameEn")) + "-api-" + Eval("ProjectCategoryID") + ".aspx" %>"><%# Eval("ProjectCategoryNameEn") %></a></li>
                                         </ItemTemplate>
                                     </asp:Repeater>
                                     <asp:ObjectDataSource ID="odsApplications" runat="server" SelectMethod="ProjectCategorySelectAll" TypeName="TLLib.ProjectCategory">
@@ -230,6 +234,11 @@
         <script src="assets/js/jquery.main.js"></script>
 
         <!-- end main js -->
+        <%--<asp:UpdatePanel ID="UpdatePanel1" runat="server">
+            <ContentTemplate>--%>
+                <uc1:popdown runat="server" ID="popdown" />
+            <%--</ContentTemplate>
+        </asp:UpdatePanel>   --%>     
     </form>
 </body>
 </html>

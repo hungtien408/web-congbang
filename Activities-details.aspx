@@ -132,7 +132,7 @@
                                 var w_width = $(window).width();
                                 jwplayer('jwplayer1').setup({
                                     image: 'res/project/video/<%# Eval("ImagePath")%>',
-                                    file: 'res/project/video/<%# Eval("ProjectVideoPath")%>',
+                                    file: '<%# string.IsNullOrEmpty(Eval("ProjectVideoPath").ToString()) ? Eval("GLobalEmbedScript") :"res/project/video/" + Eval("ProjectVideoPath")%>',
                                     flashplayer: "assets/js/jwplayer.flash.swf",
                                     height: 160,
                                     width: 240,

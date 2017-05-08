@@ -303,7 +303,7 @@
                                 </td>
                             </tr>
                         </asp:Panel>
-                        <tr class="invisible">
+                        <tr>
                             <td class="left" valign="top">Embed Code
                             </td>
                             <td>
