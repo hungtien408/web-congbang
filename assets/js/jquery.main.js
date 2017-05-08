@@ -170,7 +170,7 @@ $('.scroll-to-top').on('click', function (e) {
 function main_img_project() {
     n = $(window).height();
     $('.main-img-project').height(n - 165);
-    $('.news-slide').height(n - 420);
+    $('.news-slide').height(n - 320);
     $('.main-wrap .right .menu-news').height(n - 390);
     m = $('.img-project').height();
     $('.PJde-menu').css('max-height', n - (m + 250));
