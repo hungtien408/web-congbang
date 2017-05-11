@@ -151,7 +151,7 @@
                         <asp:Parameter Name="Keyword" Type="String"></asp:Parameter>
                         <asp:Parameter Name="Title" Type="String"></asp:Parameter>
                         <asp:Parameter Name="Description" Type="String"></asp:Parameter>
-                        <asp:QueryStringParameter QueryStringField="nid" Name="ProjectID" Type="String"></asp:QueryStringParameter>
+                        <asp:QueryStringParameter QueryStringField="acd" Name="ProjectID" Type="String"></asp:QueryStringParameter>
                         <asp:Parameter DefaultValue="" Name="IsAvailable" Type="String"></asp:Parameter>
                         <asp:Parameter Name="Priority" Type="String"></asp:Parameter>
                         <asp:Parameter Name="SortByPriority" Type="String"></asp:Parameter>
