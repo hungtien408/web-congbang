@@ -132,7 +132,8 @@
                                 var w_width = $(window).width();
                                 jwplayer('jwplayer1').setup({
                                     image: 'res/project/video/<%# Eval("ImagePath")%>',
-                                    file: '<%# string.IsNullOrEmpty(Eval("ProjectVideoPath").ToString()) ? Eval("GLobalEmbedScript") :"res/project/video/" + Eval("ProjectVideoPath")%>',
+                                    //file: '<%# string.IsNullOrEmpty(Eval("ProjectVideoPath").ToString()) ? Eval("GLobalEmbedScript") :"res/project/video/" + Eval("ProjectVideoPath")%>',
+                                    file: "https://www.youtube.com/watch?v=FeJvogOa38E",
                                     flashplayer: "assets/js/jwplayer.flash.swf",
                                     height: 160,
                                     width: 240,
@@ -151,7 +152,7 @@
                         <asp:Parameter Name="Keyword" Type="String"></asp:Parameter>
                         <asp:Parameter Name="Title" Type="String"></asp:Parameter>
                         <asp:Parameter Name="Description" Type="String"></asp:Parameter>
-                        <asp:QueryStringParameter QueryStringField="nid" Name="ProjectID" Type="String"></asp:QueryStringParameter>
+                        <asp:QueryStringParameter QueryStringField="acd" Name="ProjectID" Type="String"></asp:QueryStringParameter>
                         <asp:Parameter DefaultValue="" Name="IsAvailable" Type="String"></asp:Parameter>
                         <asp:Parameter Name="Priority" Type="String"></asp:Parameter>
                         <asp:Parameter Name="SortByPriority" Type="String"></asp:Parameter>
