@@ -12,6 +12,10 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="copy_footer" runat="Server">
     <div class="df-footer ft-trangchu">
         <div class="wrap-con">
+            <div class="door">
+                <a href="Introduction.aspx">
+                <img src="assets/images/bg-ft-df.png" alt="" /></a>
+            </div>
             <div class="bor bg-df-ft">
                 <h1>Welcome to</h1>
                 <a href="#">
