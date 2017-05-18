@@ -582,6 +582,37 @@ a:visited, a:focus {
 
 
 /**/
+.door {
+    float:right;
+    margin-left:35px;
+    position:relative;
+    width:35px;
+    height:125px;
+}
+.door a {
+    display:block;
+    height:100%;
+    padding-top:7px;
+}
+.door img {
+    position: absolute;
+    transform-origin: left;
+    width: 35px;
+    transition: all 2s ease;
+    transform: rotateY(25deg);
+    -webkit-transform: rotateY(25deg);
+    -moz-transform: rotateY(25deg);
+    -ms-transform: rotateY(25deg);
+    -o-transform: rotateY(25deg);
+}
+.door img:hover {
+    transform: rotateY(205deg);
+    -webkit-transform: rotateY(205deg);
+    -moz-transform: rotateY(205deg);
+    -ms-transform: rotateY(205deg);
+    -o-transform: rotateY(205deg);
+}
+
 .df-footer {
     position:fixed;
     width:100%;
@@ -594,10 +625,10 @@ a:visited, a:focus {
     float:right;
     padding-top:7px;
 }
-.df-footer .bor.bg-df-ft {
+/*.df-footer .bor.bg-df-ft {
     background:url(../images/bg-ft-df.png) no-repeat center right;
     padding-right:55px;
-}
+}*/
 .df-footer .bor h1 {
     font-size:30px;
     margin:0;
