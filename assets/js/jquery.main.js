@@ -77,9 +77,9 @@ function myfunload() {
     //    e.preventDefault();
     //    $(this).parent().next('ul').stop(true, false, true).slideToggle(300);
     //});
-    $('.parent-mo a').hover(function (e) {
+    $('.parent-mo').hover(function (e) {
         e.preventDefault();
-        $(this).parent().children('ul').stop(true, false, true).slideToggle(300);
+        $(this).children('ul').stop(true, false, true).slideToggle(300);
     });
 
     /****/
