@@ -1133,3 +1133,6 @@ a.btn-showhide{
     height: 31px;
     width: 31px;
 }
+.right .mCSB_scrollTools {
+    display:none !important;
+}
