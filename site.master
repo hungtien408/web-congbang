@@ -258,6 +258,17 @@
         <uc1:popdown runat="server" ID="popdown" />
         <%--</ContentTemplate>
         </asp:UpdatePanel>   --%>
+        <script type="text/javascript">
+            $(document).bind("contextmenu cut copy", function (e) {
+                e.preventDefault();
+            });
+            $(document).bind("mousedown", function (e) {
+                return false;
+            });
+            $(document).on("dragstart", function (e) {
+                return false;
+            });
+        </script>
     </form>
 </body>
 </html>
