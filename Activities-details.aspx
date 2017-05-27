@@ -132,8 +132,7 @@
                                 var w_width = $(window).width();
                                 jwplayer('jwplayer1').setup({
                                     image: 'res/project/video/<%# Eval("ImagePath")%>',
-                                    //file: '<%# string.IsNullOrEmpty(Eval("ProjectVideoPath").ToString()) ? Eval("GLobalEmbedScript") :"res/project/video/" + Eval("ProjectVideoPath")%>',
-                                    file: "https://www.youtube.com/watch?v=FeJvogOa38E",
+                                    file: '<%# string.IsNullOrEmpty(Eval("ProjectVideoPath").ToString()) ? Eval("GLobalEmbedScript") :"res/project/video/" + Eval("ProjectVideoPath")%>',
                                     flashplayer: "assets/js/jwplayer.flash.swf",
                                     height: 160,
                                     width: 240,
