@@ -503,7 +503,7 @@ a:visited, a:focus {
 }
 .popup .popup-content {
     width: 380px;
-    height: 415px;
+    height: 440px;
     padding: 30px 25px;
     background:#fff;
     position:fixed;
@@ -520,12 +520,8 @@ a:visited, a:focus {
     -o-transition: all .5s;
     transition: all .5s;
 }
-.popup .popup-content .form-popup p {
-    color:#555;
-    font-size:15px;
-    margin-bottom:15px;
-}
-.popup .popup-content .form-popup .form-group {
+.popup .popup-content .form-popup{
+    padding-top: 30px;
 }
 .popup .popup-content .form-popup .form-group span {
     width:85px;

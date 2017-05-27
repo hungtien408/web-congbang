@@ -16,25 +16,22 @@
     <asp:HiddenField ID="hdnFile" runat="server" />
     <div class="popup-content">
         <div class="form-popup">
-            <p>
-                <asp:ValidationSummary ValidationGroup="SendEmail"  ID="ValidationSummary1" runat="server" />
-            </p>
             <div class="form-group">
                 <asp:Label ID="Label1" runat="server" Text="Name"></asp:Label>
                 <asp:TextBox ID="txtName" runat="server"></asp:TextBox>
                 <asp:RequiredFieldValidator CssClass="lb-error" ID="RequiredFieldValidator3" runat="server"
                     Display="Dynamic" ValidationGroup="SendEmail" ControlToValidate="txtName"
-                    ErrorMessage="Informaton required!" ForeColor="Red"></asp:RequiredFieldValidator>
+                    ErrorMessage="Name: Informaton required!" ForeColor="Red"></asp:RequiredFieldValidator>
             </div>
             <div class="form-group">
                 <asp:Label ID="Label2" runat="server" Text="Email"></asp:Label>
                 <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox>
                 <asp:RegularExpressionValidator CssClass="lb-error" ID="RegularExpressionValidator1"
-                    runat="server" ValidationGroup="SendEmail" ControlToValidate="txtEmail" ErrorMessage="Email không đúng!"
+                    runat="server" ValidationGroup="SendEmail" ControlToValidate="txtEmail" ErrorMessage="Email: not match!"
                     ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" Display="Dynamic"
                     ForeColor="Red"></asp:RegularExpressionValidator>
                 <asp:RequiredFieldValidator CssClass="lb-error" ID="RequiredFieldValidator4" runat="server"
-                    ValidationGroup="SendEmail" ControlToValidate="txtEmail" ErrorMessage="Informaton required!"
+                    ValidationGroup="SendEmail" ControlToValidate="txtEmail" ErrorMessage="Email: Informaton required!"
                     Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
             </div>
             <div class="form-group">
@@ -42,7 +39,7 @@
                 <asp:TextBox ID="txtPhone" runat="server"></asp:TextBox>
                 <asp:RequiredFieldValidator CssClass="lb-error" ID="RequiredFieldValidator1" runat="server"
                     Display="Dynamic" ValidationGroup="SendEmail" ControlToValidate="txtPhone"
-                    ErrorMessage="Informaton required!" ForeColor="Red"></asp:RequiredFieldValidator>
+                    ErrorMessage="Phone: Informaton required!" ForeColor="Red"></asp:RequiredFieldValidator>
             </div>
             <div class="form-group">
                 <asp:Label ID="Label4" runat="server" Text="Address"></asp:Label>
@@ -58,7 +55,7 @@
                     Display="Dynamic" ValidationGroup="SendEmail" ControlToValidate="txtVerifyCode"
                     ErrorMessage="Informaton required!" ForeColor="Red"></asp:RequiredFieldValidator>--%>
                 <asp:RadCaptcha ID="RadCaptcha1"  ValidatedTextBoxID="txtVerifyCode" ValidationGroup="SendEmail"
-                    runat="server" Display="None" ErrorMessage="Code: not match."
+                    runat="server" Display="Dynamic" ErrorMessage="Code: not match."
                     CaptchaLinkButtonText="Refesh" CssClass="cap" EnableRefreshImage="True">
                     <CaptchaImage RenderImageOnly="True" Width="125" Height="35" BackgroundNoise="High"
                         BackgroundColor="White" TextColor="Black" FontFamily="Tohoma" TextLength="5" />

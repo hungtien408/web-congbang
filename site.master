@@ -262,9 +262,9 @@
             $(document).bind("contextmenu cut copy", function (e) {
                 e.preventDefault();
             });
-            $(document).bind("mousedown", function (e) {
-                return false;
-            });
+            //$(document).bind("mousedown", function (e) {
+            //    return false;
+            //});
             $(document).on("dragstart", function (e) {
                 return false;
             });
