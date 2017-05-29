@@ -5,6 +5,7 @@
     $(window).resize(function () {
         height_win();
         main_img_project();
+        $('.scroll-popup .popup-content').mCustomScrollbar('update');
     });
     $(function () {
         myfunload();
@@ -97,6 +98,10 @@ function myfunload() {
     });
     $('.PJde-menu').mCustomScrollbar({
         theme: "dark-thick",
+    });
+    $('.scroll-popup .popup-content').mCustomScrollbar({
+        theme: "dark-thick",
+        autoHideScrollbar: true
     });
 
     $('.hover-contact').click(function () {
@@ -202,7 +207,7 @@ $('.wrap-pop-down li a').click(function (e) {
 });
 function showPopup() {
     $('#main-content').append('<div id="overlay-screen-active">');
-    $('.popup .popup-content').css('top', '0');
+    $('.popup .popup-content').css('top', '50px');
 }
 $(document).on('click', ".popup-btn-close, #overlay-screen-active", function () {
     $('.popup-content').css('top', '-250%');

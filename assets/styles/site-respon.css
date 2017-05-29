@@ -178,5 +178,19 @@
     
 }
 @media screen and (max-width: 420px){
-	
+	.popup .popup-content {
+        width:310px;
+    }
+    .popup .popup-content .form-popup .form-group.capcha input[type="text"] {
+        width: calc(100% - 93px);
+    }
+    .form-group.capcha {
+        text-align:center;
+    }
+    .form-group.capcha span {
+        text-align:left;
+    }
+    .cap {
+        margin:5px 0;
+    }
 }
