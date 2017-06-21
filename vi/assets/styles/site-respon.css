@@ -1,0 +1,196 @@
+﻿.ipadmo-992 { /* ẩn nút menu */
+    display: none;
+}
+.menu-mobile {
+    max-height:100%;
+}
+.menu-mobile.mCustomScrollbar .mCSB_inside > .mCSB_container {
+    margin-right:0;
+}
+.menu-mobile.mCustomScrollbar .mCSB_scrollTools {
+    right:-20px;
+}
+@media screen and (max-width: 1140px){
+    #header #menu > li {
+        padding:0 10px;
+    }
+    .main-wrap .left {
+        width:70%;
+    }
+}
+@media (min-width: 993px) and (max-width: 1199px) {
+    
+}
+
+@media (max-width: 992px) {
+    .ipadmo-992 { /* hiện menu đt */
+        display: block;
+    }
+    .desktop-992 { /* ẩn menu pc */
+        display: none;
+    }
+    .menu-mobile .logo {
+        background:rgba(0,32,96,1);
+        padding:5px;
+    }
+    .menu-mo {
+        color:#fff;
+        margin-top:22px;
+    }
+    .menu-mo span {
+        color:#fff;
+    }
+}
+@media screen and (max-width: 991px){
+    .main-wrap {
+        position:static;
+        padding:100px 15px;
+    }
+    .main-wrap .left {
+        float:none;
+        position:relative;
+        width:100%;
+        margin-bottom:25px;
+    }
+    .main-wrap .left .content-left {
+        height:auto;
+        padding-right:30px;
+    }
+    .main-wrap .right {
+        float:none;
+        position:relative;
+        bottom:0;
+        right:0;
+    }
+    .main-wrap .right .menu-right {
+        width:100%;
+    }
+    .bg-ab-slide {
+        height: 100%;
+        position: absolute;
+        width: 100%;
+    }
+    .carousel-indicators {
+        display:none;
+    }
+    .df-footer {
+        position:absolute;
+    }
+    /**/
+    .intro_show {
+        position:static;
+    }
+    .intro_show .carousel-caption {
+        position:relative;
+    }
+    .wrap-intro .item {
+        padding:100px 15px 100px;
+    }
+    .main-wrap .right .menu-news {
+        width:100%;
+        height:400px !important;
+    }
+    .news-slide {
+        height:450px !important;
+        position:static;
+        width:calc(100% - 30px);
+        margin:0 15px -75px;
+        padding-top:100px;
+    }
+    .news-video {
+        display:none;
+    }
+    .main-img-project {
+        height:400px !important;
+    }
+    .main-wrap .right .menu-right {
+        max-height:initial !important;
+    }
+    .img-project {
+        display:none !important;
+        position:static;
+        padding:15px;
+        margin-top:-75px;
+        padding-bottom:150px;
+    }
+    .main-wrap .right .menu-contact {
+        width:100%;
+    }
+    .main-wrap .right .menu-contact .item {
+        margin:0 auto;
+        width:240px;
+    }
+    .hover-contact {
+        display:none !important;
+    }
+    .main-wrap .right .menu-contact .contact-box-hid {
+        display:block;
+        position:static;
+        width:100%;
+        height:auto;
+        margin-top:25px;
+    }
+    /**/
+    .bg-ab-slide .carousel-caption .left {
+        margin-bottom:25px;
+    }
+    .bg-ab-slide .carousel-caption .left,.bg-ab-slide .carousel-caption .right {
+        position:static;
+        width:100%;
+        max-width:100%;
+    }
+    .bg-ab-slide .carousel-caption .other-right {
+        position:static;
+        width:100%;
+        background: rgba(0,32,96,0.6);
+        padding:30px;
+    }
+    .ft-trangchu {
+        position:static;
+    }
+}
+@media screen and (max-width: 970px) {
+   
+}
+@media screen and (max-width: 820px) {
+
+}       
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 992px){ 
+	
+}
+@media screen and (max-width: 767px){
+	
+}
+@media screen and (max-width: 639px){
+	
+}
+@media screen and (max-width: 550px){
+    #header .logo {
+        width:160px;
+        margin-top:27px;
+    }
+    #header .logo img {
+        width:100%;
+    }
+}
+@media screen and (max-width: 480px) {
+    
+}
+@media screen and (max-width: 420px){
+	.popup .popup-content {
+        width:310px;
+    }
+    .popup .popup-content .form-popup .form-group.capcha input[type="text"] {
+        width: calc(100% - 93px);
+    }
+    .form-group.capcha {
+        text-align:center;
+    }
+    .form-group.capcha span {
+        text-align:left;
+    }
+    .cap {
+        margin:5px 0;
+    }
+}

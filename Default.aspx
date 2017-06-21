@@ -41,11 +41,11 @@
                 <a href="#">
                     <img src="assets/images/logo-1.jpg" alt="" /></a>
                 <div class="lang">
-                    <a href="#">
+                    <a href="/vi/">
                         <img src="assets/images/vi.png" alt="" /></a>
-                    <a href="#">
+                    <a href="/">
                         <img src="assets/images/en.png" alt="" /></a>
-                    <a href="#">
+                    <a href="/cam/">
                         <img src="assets/images/thai.png" alt="" /></a>
                 </div>
             </div>
