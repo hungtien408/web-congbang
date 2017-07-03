@@ -2,7 +2,7 @@
     outline:none;
 }
 body{
-    font-family: Arial;
+   font-family: 'Courier New';
 	font-size: 14px;
 	line-height: 22px;
 	color:#fff;
@@ -76,7 +76,7 @@ a:visited, a:focus {
     padding-right:0;
 }
 #header #menu > li a{
-    font-family: 'GillSansMT';
+    font-family: 'Courier New';
     font-weight:bold;
     color:#fff;
     font-size:17px;
@@ -374,7 +374,7 @@ a:visited, a:focus {
     display:block;
     font-size:15px;
     color:#fff;
-    font-family: 'GillSansMT';
+    font-family: 'Courier New';
     text-align:center;
     margin-bottom:8px;
     border:1px solid #2754b0;
