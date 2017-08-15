@@ -96,7 +96,7 @@
         Dự Án
     </h3>
     <asp:RadAjaxPanel ID="RadAjaxPanel1" runat="server" ClientEvents-OnRequestStart="conditionalPostback">
-        <asp:Panel ID="pnlSearch" DefaultButton="btnSearch" runat="server" Visible="false">
+        <asp:Panel ID="pnlSearch" DefaultButton="btnSearch" runat="server">
             <h4 class="searchTitle">Tìm kiếm
             </h4>
             <table class="search">
@@ -107,15 +107,15 @@
                         <asp:RadTextBox ID="txtSearchProjectTitle" runat="server" Width="130px">
                         </asp:RadTextBox>
                     </td>
-                    <td class="left">Mô tả
+                    <td class="left invisible">Mô tả
                     </td>
-                    <td>
+                    <td class="invisible">
                         <asp:RadTextBox ID="txtSearchDescription" runat="server" Width="130px">
                         </asp:RadTextBox>
                     </td>
-                    <td class="left">Từ ngày
+                    <td class="left invisible">Từ ngày
                     </td>
-                    <td>
+                    <td class="invisible">
                         <asp:RadDatePicker ShowPopupOnFocus="True" ID="dpFromDate" runat="server" Culture="vi-VN"
                             Calendar-CultureInfo="vi-VN" Width="138px">
                             <Calendar runat="server">
@@ -127,9 +127,9 @@
                             </Calendar>
                         </asp:RadDatePicker>
                     </td>
-                    <td class="left">Đến ngày
+                    <td class="left invisible">Đến ngày
                     </td>
-                    <td>
+                    <td class="invisible">
                         <asp:RadDatePicker ShowPopupOnFocus="True" ID="dpToDate" runat="server" Culture="vi-VN"
                             Calendar-CultureInfo="vi-VN" Width="138px">
                             <Calendar runat="server">
@@ -151,15 +151,15 @@
                             Width="134px">
                         </asp:RadComboBox>
                     </td>
-                    <td class="left">Tag
+                    <td class="left invisible">Tag
                     </td>
-                    <td>
+                    <td class="invisible">
                         <asp:RadTextBox ID="txtSearchTag" runat="server" Width="130px">
                         </asp:RadTextBox>
                     </td>
-                    <td class="left">Xem trên trang chủ
+                    <td class="left invisible">Xem trên trang chủ
                     </td>
-                    <td>
+                    <td class="invisible">
                         <asp:RadComboBox Filter="Contains" ID="ddlSearchIsShowOnHomePage" runat="server"
                             Width="134px">
                             <Items>
@@ -169,9 +169,9 @@
                             </Items>
                         </asp:RadComboBox>
                     </td>
-                    <td class="left">Hiển thị
+                    <td class="left invisible">Hiển thị
                     </td>
-                    <td>
+                    <td class="invisible">
                         <asp:RadComboBox Filter="Contains" ID="ddlSearchIsAvailable" runat="server" Width="134px">
                             <Items>
                                 <asp:RadComboBoxItem Value="" />
@@ -181,7 +181,7 @@
                         </asp:RadComboBox>
                     </td>
                 </tr>
-                <tr>
+                <tr class="invisible">
                     <td class="left">Thứ tự
                     </td>
                     <td>
