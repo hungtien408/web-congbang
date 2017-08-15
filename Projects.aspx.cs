@@ -21,10 +21,10 @@ public partial class Services : System.Web.UI.Page
 
                 if (dv != null && dv.Count <= 0) return;
                 var row = dv[0];
-                strTitle = Server.HtmlDecode(row["ProjectCategoryName"].ToString());
-                strDescription = Server.HtmlDecode(row["Description"].ToString());
-                strMetaTitle = Server.HtmlDecode(row["MetaTitle"].ToString());
-                strMetaDescription = Server.HtmlDecode(row["MetaDescription"].ToString());
+                strTitle = Server.HtmlDecode(row["ProjectCategoryNameEn"].ToString());
+                strDescription = Server.HtmlDecode(row["DescriptionEn"].ToString());
+                strMetaTitle = Server.HtmlDecode(row["MetaTitleEn"].ToString());
+                strMetaDescription = Server.HtmlDecode(row["MetaDescriptionEn"].ToString());
 
                 //hdnDesign.Value = progressTitle(dv[0]["ProductCategoryName"].ToString()) + "-dci-" + dv[0]["ProductCategoryID"].ToString() + ".aspx";
                 Page.Title = !string.IsNullOrEmpty(strMetaTitle) ? strMetaTitle : strTitle;

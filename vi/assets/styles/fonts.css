@@ -1,0 +1,21 @@
+﻿@font-face {
+  font-family: 'GillSansMT';
+  src: url('../fonts/font-web/GillSansMTPro-Light.eot');
+  src: url('../fonts/font-web/GillSansMTPro-Light.woff') format('woff'),
+       url('../fonts/font-web/GillSansMTPro-Light.ttf') format('truetype'),
+       url('../fonts/font-web/GillSansMTPro-Light.svg#GillSansMTPro-Light') format('svg'),
+       url('../fonts/font-web/GillSansMTPro-Light.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'GillSansMT';
+  src: url('../fonts/font-web/GillSansMTPro-Medium.eot');
+  src: url('../fonts/font-web/GillSansMTPro-Medium.woff') format('woff'),
+       url('../fonts/font-web/GillSansMTPro-Medium.ttf') format('truetype'),
+       url('../fonts/font-web/GillSansMTPro-Medium.svg#GillSansMTPro-Medium') format('svg'),
+       url('../fonts/font-web/GillSansMTPro-Medium.eot?#iefix') format('embedded-opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+

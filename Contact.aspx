@@ -43,7 +43,7 @@
         </div>
     </div>
     <div class="main-wrap">
-        <div class="left">
+        <div class="left" style="width:35%;">
             <div class="content-left">
                 <asp:Repeater ID="RepeaterService" runat="server" DataSourceID="odsService">
                     <ItemTemplate>

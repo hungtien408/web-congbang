@@ -72,23 +72,23 @@
 
     protected void Application_BeginRequest(Object sender, EventArgs e)
     {
-        var app = sender as HttpApplication;
+        //var app = sender as HttpApplication;
 
-        if (app != null)
-        {
-            string host = app.Request.Url.Host.ToLower();
+        //if (app != null)
+        //{
+        //    string host = app.Request.Url.Host.ToLower();
 
-            if (!host.StartsWith("www") && !host.StartsWith("localhost"))
-            {
-                string requestUrl = app.Request.RawUrl.ToLower();
-                string scheme = app.Request.Url.Scheme;
-                requestUrl = requestUrl.EndsWith("default.aspx") ? "" : requestUrl;
-                string newURL = scheme + "://www." + host + requestUrl;
+        //    if (!host.StartsWith("www") && !host.StartsWith("localhost"))
+        //    {
+        //        string requestUrl = app.Request.RawUrl.ToLower();
+        //        string scheme = app.Request.Url.Scheme;
+        //        requestUrl = requestUrl.EndsWith("default.aspx") ? "" : requestUrl;
+        //        string newURL = scheme + "://www." + host + requestUrl;
 
-                app.Context.Response.RedirectLocation = newURL;
-                app.Context.Response.StatusCode = 301;
-                app.Context.Response.End();
-            }
-        }
+        //        app.Context.Response.RedirectLocation = newURL;
+        //        app.Context.Response.StatusCode = 301;
+        //        app.Context.Response.End();
+        //    }
+        //}
     }
 </script>

@@ -1,0 +1,275 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="site.master.cs" Inherits="site" %>
+
+<%@ Register Src="~/cam/uc/pop-down.ascx" TagPrefix="uc1" TagName="popdown" %>
+<%@ Register TagPrefix="asp" Namespace="AjaxControlToolkit" Assembly="AjaxControlToolkit" %>
+<%@ Register TagPrefix="asp" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI" %>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" type="image/ico" href="favicon.ico" />
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- Bootstrap -->
+    <link href="/cam/assets/styles/bootstrap.min.css" rel="stylesheet" />
+    <link href="/cam/assets/styles/font-awesome.min.css" rel="stylesheet" />
+    <%--<link href="/cam/assets/styles/slick.css" rel="stylesheet" />--%>
+    <link href="/cam/assets/styles/swiper.min.css" rel="stylesheet" />
+    <link href="/cam/assets/styles/owl.carousel.min.css" rel="stylesheet" />
+    <link href="/cam/assets/styles/jquery.mCustomScrollbar.css" rel="stylesheet" />
+
+    <%--<link rel="stylesheet" type="text/css" href="/cam/assets/styles/owl.carousel.min.css" />--%>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <style type="text/css">
+            .corner
+            { 
+                behavior: url(PIE.htc); 
+            }
+            .fullbox-img
+            {
+	            -ms-behavior: url(backgroundsize.min.htc);
+	            behavior: url(backgroundsize.min.htc);
+            }
+        </style>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/104.2/respond.min.js"></script>
+    <![endif]-->
+    <title></title>
+    <!--main style-->
+    <link href="/cam/assets/styles/fonts.css" rel="stylesheet" />
+    <link href="/cam/assets/styles/site.css" rel="stylesheet" />
+    <link href="/cam/assets/styles/site-respon.css" rel="stylesheet" />
+    <!--end main style-->
+    <script src="/cam/assets/js/jwplayer.js"></script>
+    <script src="/cam/assets/js/jquery.js"></script>
+    <script src="/cam/assets/js/jquery.easing.1.3.js"></script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <!--active menu-->
+    <script type="text/javascript">
+        function changeActiveMenu(page) {
+            $('#menu li').removeClass("active");
+            $('#menu li a[href*="' + page + '"]').parent("li").addClass("active");
+        }
+        function changeSubActiveMenu(page) {
+
+            var value = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
+
+            $('#menu li').removeClass("active");
+            $('#menu li a[href$="' + value + '"]').parents("li").addClass("active");
+            $('.menu-list li').removeClass("active");
+            $('.menu-list li a[href$="' + value + '"]').parents("li").addClass("active");
+
+
+            $('.menu-right li').removeClass("active");
+            $('.menu-right li a[href$="' + value + '"]').parents("li").addClass("active");
+
+
+        }
+    </script>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server">
+        </asp:ToolkitScriptManager>
+        <div id="wrapper">
+            <div id="wrapper-in">
+                <div id="header">
+                    <div class="wrap-con">
+                        <div class="logo">
+                            <a href="~/cam/" runat="server">
+                                <img src="/cam/assets/images/logo.png" alt="" /></a>
+                        </div>
+                        <ul id="menu" class="desktop-992">
+                            <li><a href="~/cam/" runat="server">ផ្ទះ</a>
+                                <ul>
+                                    <li><a href="Introduction.aspx">សេចក្តីផ្តើម</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="Services.aspx">សេវាកម្ម</a>
+                                <ul>
+                                    <asp:Repeater ID="Repeater1" runat="server" DataSourceID="odsService" EnableViewState="false">
+                                        <ItemTemplate>
+                                            <li><a href="<%# SiteCode.progressTitle(Eval("ProjectCategoryNameCam")) + "-si-" + Eval("ProjectCategoryID") + ".aspx" %>"><%# Eval("ProjectCategoryNameCam") %></a></li>
+                                        </ItemTemplate>
+                                    </asp:Repeater>
+                                    <asp:ObjectDataSource ID="odsService" runat="server" SelectMethod="ProjectCategorySelectAll" TypeName="TLLib.ProjectCategory">
+                                        <SelectParameters>
+                                            <asp:Parameter DefaultValue="2" Name="parentID" Type="Int32"></asp:Parameter>
+                                            <asp:Parameter DefaultValue="1" Name="increaseLevelCount" Type="Int32"></asp:Parameter>
+                                            <asp:Parameter Name="IsShowOnMenu" Type="String"></asp:Parameter>
+                                            <asp:Parameter Name="IsShowOnHomePage" Type="String"></asp:Parameter>
+                                            <asp:Parameter DefaultValue="true" Name="IsAvailable" Type="String"></asp:Parameter>
+                                        </SelectParameters>
+                                    </asp:ObjectDataSource>
+                                </ul>
+                            </li>
+                            <li><a href="Products.aspx">ផលិតផល</a>
+                                <ul>
+                                    <asp:Repeater ID="Repeater2" runat="server" DataSourceID="odsProducts" EnableViewState="false">
+                                        <ItemTemplate>
+                                            <li><a href="<%# SiteCode.progressTitle(Eval("ProjectCategoryNameCam")) + "-pi-" + Eval("ProjectCategoryID") + ".aspx" %>"><%# Eval("ProjectCategoryNameCam") %></a></li>
+                                        </ItemTemplate>
+                                    </asp:Repeater>
+                                    <asp:ObjectDataSource ID="odsProducts" runat="server" SelectMethod="ProjectCategorySelectAll" TypeName="TLLib.ProjectCategory">
+                                        <SelectParameters>
+                                            <asp:Parameter DefaultValue="3" Name="parentID" Type="Int32"></asp:Parameter>
+                                            <asp:Parameter DefaultValue="1" Name="increaseLevelCount" Type="Int32"></asp:Parameter>
+                                            <asp:Parameter Name="IsShowOnMenu" Type="String"></asp:Parameter>
+                                            <asp:Parameter Name="IsShowOnHomePage" Type="String"></asp:Parameter>
+                                            <asp:Parameter DefaultValue="true" Name="IsAvailable" Type="String"></asp:Parameter>
+                                        </SelectParameters>
+                                    </asp:ObjectDataSource>
+                                </ul>
+                            </li>
+                            <li><a href="Projects.aspx">គម្រោង</a>
+                                <ul>
+                                    <asp:Repeater ID="RepeaterProjectCategory" runat="server" DataSourceID="odsProjectCategory">
+                                        <ItemTemplate>
+                                            <li><a href='<%# SiteCode.progressTitle(Eval("ProjectCategoryNameCam")) + "-"+(Eval("CountProject").ToString() == "0"?"pri":"prid")+"-" + Eval("ProjectCategoryID") + ".aspx" %>'><%# Eval("ProjectCategoryNameCam") %></a></li>
+                                        </ItemTemplate>
+                                    </asp:Repeater>
+                                    <asp:ObjectDataSource ID="odsProjectCategory" runat="server" SelectMethod="ProjectCategorySelectAll" TypeName="TLLib.ProjectCategory">
+                                        <SelectParameters>
+                                            <asp:QueryStringParameter QueryStringField="pri" DefaultValue="4" Name="parentID" Type="Int32"></asp:QueryStringParameter>
+                                            <asp:Parameter DefaultValue="1" Name="increaseLevelCount" Type="Int32"></asp:Parameter>
+                                            <asp:Parameter Name="IsShowOnMenu" Type="String"></asp:Parameter>
+                                            <asp:Parameter Name="IsShowOnHomePage" Type="String"></asp:Parameter>
+                                            <asp:Parameter DefaultValue="True" Name="IsAvailable" Type="String"></asp:Parameter>
+                                        </SelectParameters>
+                                    </asp:ObjectDataSource>
+                                </ul>
+                            </li>
+                            <li><a href="Application.aspx">ការកម្មវិធី</a>
+                                <ul>
+                                    <asp:Repeater ID="Repeater3" runat="server" DataSourceID="odsApplications" EnableViewState="false">
+                                        <ItemTemplate>
+                                            <li><a href="<%# SiteCode.progressTitle(Eval("ProjectCategoryNameCam")) + "-api-" + Eval("ProjectCategoryID") + ".aspx" %>"><%# Eval("ProjectCategoryNameCam") %></a></li>
+                                        </ItemTemplate>
+                                    </asp:Repeater>
+                                    <asp:ObjectDataSource ID="odsApplications" runat="server" SelectMethod="ProjectCategorySelectAll" TypeName="TLLib.ProjectCategory">
+                                        <SelectParameters>
+                                            <asp:Parameter DefaultValue="5" Name="parentID" Type="Int32"></asp:Parameter>
+                                            <asp:Parameter DefaultValue="1" Name="increaseLevelCount" Type="Int32"></asp:Parameter>
+                                            <asp:Parameter Name="IsShowOnMenu" Type="String"></asp:Parameter>
+                                            <asp:Parameter Name="IsShowOnHomePage" Type="String"></asp:Parameter>
+                                            <asp:Parameter DefaultValue="true" Name="IsAvailable" Type="String"></asp:Parameter>
+                                        </SelectParameters>
+                                    </asp:ObjectDataSource>
+                                </ul>
+                            </li>
+                            <li><a href="Activities.aspx">សកម្មភាព</a>
+                                <ul>
+                                    <asp:Repeater ID="Repeater4" runat="server" DataSourceID="odsActivitieCategory">
+                                        <ItemTemplate>
+                                            <li><a href='<%# SiteCode.progressTitle(Eval("ProjectCategoryNameCam")) + "-"+(Eval("CountProject").ToString() == "0"?"aci":"acid")+"-" + Eval("ProjectCategoryID") + ".aspx" %>'><%# Eval("ProjectCategoryNameCam") %></a></li>
+                                        </ItemTemplate>
+                                    </asp:Repeater>
+                                    <asp:ObjectDataSource ID="odsActivitieCategory" runat="server" SelectMethod="ProjectCategorySelectAll" TypeName="TLLib.ProjectCategory">
+                                        <SelectParameters>
+                                            <asp:QueryStringParameter QueryStringField="aci" DefaultValue="6" Name="parentID" Type="Int32"></asp:QueryStringParameter>
+                                            <asp:Parameter DefaultValue="1" Name="increaseLevelCount" Type="Int32"></asp:Parameter>
+                                            <asp:Parameter Name="IsShowOnMenu" Type="String"></asp:Parameter>
+                                            <asp:Parameter Name="IsShowOnHomePage" Type="String"></asp:Parameter>
+                                            <asp:Parameter DefaultValue="True" Name="IsAvailable" Type="String"></asp:Parameter>
+                                        </SelectParameters>
+                                    </asp:ObjectDataSource>
+                                </ul>
+                            </li>
+                            <li><a href="News.aspx">ព័ត៍មាន</a>
+                                <%--<ul>
+                                    <li><a href="#">News 1</a></li>
+                                    <li><a href="#">News 2</a></li>
+                                    <li><a href="#">News 3</a></li>
+                                </ul>--%>
+                            </li>
+                            <li><a href="javascript:void(0);">ទំនក់ទំនង</a>
+                                <ul>
+                                    <asp:Repeater ID="Repeater5" runat="server" DataSourceID="odsContact" EnableViewState="false">
+                                        <ItemTemplate>
+                                            <li><a href="<%# SiteCode.progressTitle(Eval("ProjectCategoryNameCam")) + "-ci-" + Eval("ProjectCategoryID") + ".aspx" %>"><%# Eval("ProjectCategoryNameCam") %></a></li>
+                                        </ItemTemplate>
+                                    </asp:Repeater>
+                                    <asp:ObjectDataSource ID="odsContact" runat="server" SelectMethod="ProjectCategorySelectAll" TypeName="TLLib.ProjectCategory">
+                                        <SelectParameters>
+                                            <asp:Parameter DefaultValue="8" Name="parentID" Type="Int32"></asp:Parameter>
+                                            <asp:Parameter DefaultValue="1" Name="increaseLevelCount" Type="Int32"></asp:Parameter>
+                                            <asp:Parameter Name="IsShowOnMenu" Type="String"></asp:Parameter>
+                                            <asp:Parameter Name="IsShowOnHomePage" Type="String"></asp:Parameter>
+                                            <asp:Parameter DefaultValue="true" Name="IsAvailable" Type="String"></asp:Parameter>
+                                        </SelectParameters>
+                                    </asp:ObjectDataSource>
+                                </ul>
+                            </li>
+                        </ul>
+                        <a class="panel-a menu-mo ipadmo-992" href="#menumobile" data-position="true" data-type="false">
+                            <span class="fa fa-reorder"></span>Menu
+                        </a>
+                    </div>
+                </div>
+                <div id="main-content">
+                    <asp:ContentPlaceHolder ID="main_content" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+                <div id="footer">
+                    <asp:ContentPlaceHolder ID="copy_footer" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+            <!--menumobile-->
+            <div id="menumobile" class="mobile-panel mobilep-left">
+                <div class="menu-in">
+                    <div class="menu-mobile">
+                        <div class="logo">
+                            <a id="A2" href="~/cam/" runat="server">
+                                <img class="img-responsive" src="/cam/assets/images/logo.png" alt="logo" />
+                            </a>
+                        </div>
+                        <ul id="menuMobiles" class="menu-nav">
+                            <%--<li class="home"><a id="A3" href="~/cam/" runat="server">Trang chủ</a></li>--%>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--menumobile-->
+        </div>
+        <%--<a href="#" class="scroll-to-top"><i class="glyphicon glyphicon-chevron-up"></i></a>--%>
+        <div id="runScript" runat="server"></div>
+        <script src="/cam/assets/js/bootstrap.min.js"></script>
+        <script src="/cam/assets/js/jquery.panel.mobile.js"></script>
+        <%--<script src="/cam/assets/js/slick.min.js"></script>--%>
+        <script src="/cam/assets/js/swiper.jquery.min.js"></script>
+        <script src="/cam/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+        <script src="/cam/assets/js/owl.carousel.min.js"></script>
+        <script src="/cam/assets/js/readmore.js"></script>
+
+        <%--<script src="/cam/assets/js/owl.carousel.min.js"></script> --%>
+
+        <!-- main js -->
+        <script src="/cam/assets/js/jquery.main.js"></script>
+
+        <!-- end main js -->
+        <%--<asp:UpdatePanel ID="UpdatePanel1" runat="server">
+            <ContentTemplate>--%>
+        <uc1:popdown runat="server" ID="popdown" />
+        <%--</ContentTemplate>
+        </asp:UpdatePanel>   --%>
+        <script type="text/javascript">
+            $(document).bind("contextmenu cut copy", function (e) {
+                e.preventDefault();
+            });
+            //$(document).bind("mousedown", function (e) {
+            //    return false;
+            //});
+            $(document).on("dragstart", function (e) {
+                return false;
+            });
+        </script>
+    </form>
+</body>
+</html>
