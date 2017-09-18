@@ -22,7 +22,7 @@
                 <asp:Parameter Name="Website" Type="String" />
                 <asp:Parameter Name="FromDate" Type="String" />
                 <asp:Parameter Name="ToDate" Type="String" />
-                <asp:Parameter Name="IsAvailable" Type="String" />
+                <asp:Parameter DefaultValue="True" Name="IsAvailable" Type="String" />
                 <asp:Parameter Name="Priority" Type="String" />
                 <asp:Parameter Name="SortByPriority" Type="String" />
             </SelectParameters>
