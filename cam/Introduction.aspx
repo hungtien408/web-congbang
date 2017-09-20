@@ -6,7 +6,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="main_content" runat="Server">
     <div class="wrap-intro">
-        <div id="carousel-example-generic" class="carousel slide bg-ab-slide intro_show" data-ride="carousel">
+        <div id="carousel-example-generic" class="carousel slide bg-ab-slide intro_show"  data-interval="30000" data-ride="carousel">
             <!-- Indicators -->
             <ol class="carousel-indicators">
                 <asp:ListView ID="lstItem" runat="server"

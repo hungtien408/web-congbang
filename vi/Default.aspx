@@ -39,7 +39,7 @@
             <div class="bor bg-df-ft">
                 <h1>Chào mừng</h1>
                 <a href="/vi/">
-                    <img src="/vi/assets/images/logo-1.jpg" alt="" /></a>
+                    <img src="/vi/assets/images/logo-1.png" alt="" /></a>
                 <div class="lang">
                     <a href="/vi/">
                         <img src="/vi/assets/images/vi.png" alt="" /></a>

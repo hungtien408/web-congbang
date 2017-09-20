@@ -129,7 +129,7 @@
                             <asp:Parameter Name="ToDate" Type="String"></asp:Parameter>
                             <asp:Parameter Name="IsAvailable" Type="String" DefaultValue="True"></asp:Parameter>
                             <asp:Parameter Name="Priority" Type="String"></asp:Parameter>
-                            <asp:Parameter DefaultValue="" Name="SortByPriority" Type="String"></asp:Parameter>
+                            <asp:Parameter DefaultValue="True" Name="SortByPriority" Type="String"></asp:Parameter>
                         </SelectParameters>
                     </asp:ObjectDataSource>
                 </ul>
