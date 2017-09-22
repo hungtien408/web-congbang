@@ -38,8 +38,10 @@
             </div>
             <div class="bor bg-df-ft">
                 <h1>Welcome to</h1>
-                <a href="#">
+                <a href="#" class="desktop-992">
                     <img src="assets/images/logo-1.png" alt="" /></a>
+                <a href="#" class="ipadmo-992">
+                    <img src="assets/images/logo-3.png" alt="" /></a>
                 <div class="lang">
                     <a href="/vi/">
                         <img src="assets/images/vi.png" alt="" /></a>
