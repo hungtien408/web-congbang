@@ -148,6 +148,25 @@
     .ft-trangchu {
         position:static;
     }
+    /**/
+    .main-wrap {
+        max-height: 250px;
+        padding: 0;
+        position: absolute;
+        bottom: 85px;
+    }
+    .df-footer {
+        padding-bottom: 0;
+    }
+    .main-wrap .mCSB_inside > .mCSB_container {
+        margin-right: 0;
+    }
+    .main-wrap > .mCustomScrollBox {
+        padding: 0 15px;
+    }
+    .main-wrap .left .content-left .mCSB_inside > .mCSB_container {
+        margin-right: 0;
+    }
 }
 @media screen and (max-width: 970px) {
    

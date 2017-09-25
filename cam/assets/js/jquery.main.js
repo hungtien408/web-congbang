@@ -25,15 +25,20 @@
 })(jQuery);
 function height_win() {
     n = $(window).height();
+    $('#wrapper-in').height(n);
     $('.absolute-bg').height(n);
     if ($(window).width() >= 992) {
         $('#main-content').height(n);
+        $('.main-wrap').mCustomScrollbar("destroy");
     }
     else {
         $('#main-content').height('auto');
+        $('.main-wrap').mCustomScrollbar({
+            theme: "dark-thick"
+        });
     }
 
-    $('.menu-mobile').css('min-height', n);
+    $('#menu-mobile').css('min-height', n);
 }
 function bg_ab() {
     n = $('.absolute-bg img').attr('src');
@@ -85,7 +90,7 @@ function myfunload() {
 
     /****/
     $('.main-wrap .left .content-left').mCustomScrollbar({
-        theme: "dark-thick",
+        theme: "dark-thick"
     });
     $('.bg-ab-slide .carousel-caption .right .wrap-right').mCustomScrollbar({
         theme: "dark-thick",

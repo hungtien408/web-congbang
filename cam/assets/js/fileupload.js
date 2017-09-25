@@ -181,7 +181,7 @@ function setValue() {
     $('.hdnVideo').val($('.fileNewVideo').val());
 }
 
-(new Image()).src = "/cam/assets/assets/images/vertical.png";
+(new Image()).src = "/vi/assets/assets/images/vertical.png";
 
 
 //update video

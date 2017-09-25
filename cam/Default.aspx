@@ -38,8 +38,10 @@
             </div>
             <div class="bor bg-df-ft">
                 <h1>ស្វាគមន៍​មកកាន់</h1>
-                <a href="/cam/">
-                    <img src="/cam/assets/images/logo-1.png" alt="" /></a>
+                <a href="/cam/" class="desktop-992">
+                    <img src="assets/images/logo-1.png" alt="" /></a>
+                <a href="/cam/" class="ipadmo-992">
+                    <img src="assets/images/logo-3.png" alt="" /></a>
                 <div class="lang">
                     <a href="/vi/">
                         <img src="/cam/assets/images/vi.png" alt="" /></a>

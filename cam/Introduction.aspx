@@ -28,7 +28,7 @@
                             <img alt="" src='<%# "~/res/projectcategory/" + Eval("ImageName") %>' runat="server"
                                 visible='<%# string.IsNullOrEmpty( Eval("ImageName").ToString()) ? false : true %>' />
                             <div class="carousel-caption">
-                                <%# Eval("Content") %>
+                                <%# Eval("ContentCam") %>
                             </div>
                         </div>
                     </ItemTemplate>

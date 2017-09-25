@@ -174,6 +174,14 @@
                             </div>
                         </ItemTemplate>
                     </asp:GridTemplateColumn>
+                    <asp:GridTemplateColumn DataField="ProjectCategoryNameCam" HeaderText="Tên danh mục(Tiếng Campuchia)">
+                        <ItemTemplate>
+                            <div class='<%#"catlevel level" +  Eval("Level") %>' style='padding-left: <%# string.IsNullOrEmpty(Eval("Level").ToString()) ? 0 : Convert.ToInt32(Eval("Level")) * 10 %>px'>
+                                <asp:Label ID="lblProjectCategoryNameCam" runat="server" Font-Bold='<%# Eval("ParentID").ToString() == "0" ? true : false %>'
+                                           Text='<%# Eval("ProjectCategoryNameCam")%>'></asp:Label>
+                            </div>
+                        </ItemTemplate>
+                    </asp:GridTemplateColumn>
                     <asp:GridBoundColumn DataField="ProjectCategoryID" HeaderText="ID" SortExpression="ProjectCategoryID">
                     </asp:GridBoundColumn>
                     <asp:GridTemplateColumn>
