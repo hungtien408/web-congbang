@@ -49,7 +49,7 @@
     .main-wrap .left {
         float:none;
         position:relative;
-        width:100%;
+        width:100% !important;
         margin-bottom:25px;
     }
     .main-wrap .left .content-left {
@@ -79,9 +79,6 @@
     /**/
     .intro_show {
         position:static;
-    }
-    .intro_show .carousel-caption {
-        position:relative;
     }
     .wrap-intro .item {
         padding:100px 15px 100px;
@@ -166,6 +163,14 @@
     }
     .main-wrap .left .content-left .mCSB_inside > .mCSB_container {
         margin-right: 0;
+    }
+    /**/
+    .intro_show .carousel-caption {
+        position: absolute;
+        bottom: 85px;
+    }
+    .bg-ab-slide .carousel-caption .right .wrap-right {
+        max-height: 100%;
     }
 }
 @media screen and (max-width: 970px) {
