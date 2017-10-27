@@ -246,7 +246,7 @@
         <script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
         <script src="assets/js/owl.carousel.min.js"></script>
         <script src="assets/js/readmore.js"></script>
-
+        <script src="assets/js/jquery.touchSwipe.min.js"></script>
         <%--<script src="assets/js/owl.carousel.min.js"></script> --%>
 
         <!-- main js -->

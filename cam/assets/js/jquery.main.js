@@ -26,6 +26,14 @@
             });
     });
 })(jQuery);
+$(document).ready(function () {
+    $(".carousel").swipe({
+        swipe: function (event, direction, distance, duration, fingerCount, fingerData) {
+            if (direction == 'left') $(this).carousel('next');
+            if (direction == 'right') $(this).carousel('prev');
+        }
+    });
+});
 
 function initMalihu() {
     /****/
@@ -109,9 +117,18 @@ function myfunload() {
     //    e.preventDefault();
     //    $(this).parent().next('ul').stop(true, false, true).slideToggle(300);
     //});
-    $('.parent-mo').hover(function (e) {
-        e.preventDefault();
-        $(this).children('ul').stop(true, false, true).slideToggle(300);
+    $('.parent-mo').click(function () {
+        $('.parent-mo').children('ul').stop(true, false, true).slideUp(300);
+        if ($(this).children('ul').length) {
+            if ($(this).children('ul').hasClass('open')) {
+                return true;
+            }
+            else {
+                $(this).children('ul').addClass('open');
+                $(this).children('ul').stop(true, false, true).slideDown(300);
+                return false;
+            }
+        }
     });
 
     $('.hover-contact').click(function () {

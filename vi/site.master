@@ -247,7 +247,7 @@
         <script src="/vi/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
         <script src="/vi/assets/js/owl.carousel.min.js"></script>
         <script src="/vi/assets/js/readmore.js"></script>
-
+        <script src="/vi/assets/js/jquery.touchSwipe.min.js"></script>
         <%--<script src="/vi/assets/js/owl.carousel.min.js"></script> --%>
 
         <!-- main js -->

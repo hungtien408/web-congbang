@@ -70,8 +70,8 @@
         position: absolute;
         width: 100%;
     }
-    .carousel-indicators {
-        display:none;
+    .carousel-indicators {    
+        bottom: 5px;
     }
     .df-footer {
         position:absolute;

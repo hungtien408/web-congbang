@@ -272,8 +272,9 @@ a:visited, a:focus {
     text-align:left;
 }
 .carousel-indicators li {
-    background:#fff;
-    margin:0;
+    background:#ddd;
+    margin:0;    
+    border: 1px solid #ddd;
 }
 .carousel-indicators li.active {
     background:#4190d9;
